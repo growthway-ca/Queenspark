@@ -115,8 +115,9 @@ def parse_vote_page(html: str, url: str) -> VotePage:
 # Votes and Proceedings: recorded divisions
 # ---------------------------------------------------------------------------
 
-DIVISION_RE = re.compile(r"\b(Carried|Lost|Agreed to|Negatived)\b.*\bon the following division", re.I)
+DIVISION_RE = re.compile(r"\bon the following division\b", re.I)
 INLINE_TOTALS_RE = re.compile(r"Ayes\s+(\d+)\s*,\s*Nays\s+(\d+)", re.I)
+INLINE_TOTALS_REV_RE = re.compile(r"[-–]\s*(\d+)\s+Ayes\s*,\s*(\d+)\s+Nays", re.I)  # "– 0 Ayes, 0 Nays" (tie)
 COUNT_RE = re.compile(r"\((\d+)\)")
 VP_BILL_RE = re.compile(r"\bBill\s+((?:Pr)?\d+)\b", re.I)
 VP_STAGE_RE = re.compile(r"\b(First|Second|Third) Reading of", re.I)
@@ -141,6 +142,7 @@ class VPDivision:
     nays_total: int
     source: str
     names_listed: bool = True  # False for "... division – Ayes 44, Nays 73" (totals only)
+    notes: list[str] = field(default_factory=list)  # source irregularities handled
 
     @property
     def subject(self) -> str:
@@ -173,6 +175,8 @@ def _vp_names(header: Tag) -> list[str]:
     els = table.find_all("div", attrs={"lang": "en"}) or [
         p for p in table.find_all("p") if "MsoFooter" in (p.get("class") or [])
     ]
+    if not els and "votesList" in (table.get("class") or []):
+        els = table.find_all("td")      # 2022-23 pages: bare names in cells
     return [n for n in (_text(e) for e in els) if n]
 
 
@@ -206,6 +210,8 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
     and the Word-derived p.votesProceedingsDocdivisionHeader + p.MsoFooter),
     plus the one-line "on the following division – Ayes N, Nays M" form.
     """
+    if "divisionHeader" not in html and re.search(r"AYES\s*/\s*POUR", html, re.I):
+        return parse_vp_divisions_legacy(html, date, source)
     s = soup_of(html)
     root = s.select_one("main") or s
     divisions: list[VPDivision] = []
@@ -228,7 +234,7 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
             en = _text(el.find("span", attrs={"lang": re.compile("^en$", re.I)})) or _text(el)
             m = COUNT_RE.search(_text(el))
             n = int(m.group(1)) if m else -1
-            names = _vp_names(el)
+            names = _vp_names(el) if n != 0 else []
             if en.lower().startswith("aye"):
                 current.ayes_total, current.ayes = n, names
             elif en.lower().startswith("nay"):
@@ -247,12 +253,16 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
                 result_line=txt, ayes=[], nays=[], ayes_total=-1, nays_total=-1,
                 source=source,
             )
-            m = INLINE_TOTALS_RE.search(txt)
+            m = INLINE_TOTALS_RE.search(txt) or INLINE_TOTALS_REV_RE.search(txt)
             if m:
                 current.ayes_total, current.nays_total = int(m.group(1)), int(m.group(2))
                 current.names_listed = False
             divisions.append(current)
             recent = []
+        elif current is not None and LEGACY_INLINE_RE.match(txt):
+            im = LEGACY_INLINE_RE.match(txt)
+            current.ayes_total, current.nays_total = int(im.group(1)), int(im.group(2))
+            current.names_listed = False
         elif el.name == "h4":
             recent = [txt]
         else:
@@ -305,3 +315,88 @@ def parse_bill_page(html: str, url: str) -> dict:
         "votes": vote_links(html),
         "source": url,
     }
+
+
+# Legacy layout (42nd Parliament): one big table. English text sits in the
+# first of two colspan=2 cells, English-only text in a colspan=4 cell,
+# division headers read "AYES / POUR - 66" (or "... - Continued") and names
+# are <p>s in plain cells.
+LEGACY_INLINE_RE = re.compile(r"^AYES\s*[-–]\s*(\d+)\s+NAYS\s*[-–]\s*(\d+)", re.I)
+NAME_LIKE_RE = re.compile(r"^[A-ZÀ-Ý][\w'’.\-]*(?: [A-ZÀ-Ý][\w'’\-]*)?(?:\s*\([^)]{2,60}\))?$")
+LEGACY_HEADER_RE = re.compile(r"^(AYES|NAYS)\s*/\s*\w+\s*[-–]\s*(\d+|Continued)\b", re.I)
+
+
+def _cell_texts(td) -> list[str]:
+    ps = td.find_all(["p", "h4", "h5", "h6"])
+    if ps:
+        return [t for t in (_text(p) for p in ps) if t]
+    return [t for t in (clean(x) for x in td.get_text("\n").split("\n")) if t]
+
+
+def parse_vp_divisions_legacy(html: str, date: str, source: str) -> list[VPDivision]:
+    """The 42nd Parliament layout: rows of one big table whose column spans
+    vary from page to page. A row whose first cell spans 2+ columns is text
+    (English in the first cell); a row whose first cell spans one column is a
+    list of names, belonging to the most recent AYES/NAYS header."""
+    s = soup_of(html)
+    divisions: list[VPDivision] = []
+    recent: list[str] = []
+    current: VPDivision | None = None
+    side: str | None = None
+    for tr in s.find_all("tr"):
+        tds = tr.find_all("td", recursive=False)
+        if not tds:
+            continue
+        unlabelled = (current is not None and side is None and not current.ayes and not current.nays
+                      and current.ayes_total < 0 and current.names_listed)
+        if current is not None and (side is not None or unlabelled):
+            cells = [_cell_texts(td) for td in tds]
+            flat = [t for c in cells for t in c]
+            if unlabelled and flat and all(NAME_LIKE_RE.match(t) and any(c.islower() for c in t) for t in flat):
+                # Source omits the "AYES / POUR - n" header; V&P always lists Ayes first.
+                side = "ayes"
+                current.notes.append("Ayes header missing in source; first name list taken as Ayes")
+            if flat and side is not None and all(NAME_LIKE_RE.match(t) and not t.endswith((".", ":")) and any(c.islower() for c in t)
+                            for t in flat):
+                getattr(current, side).extend(flat)
+                continue
+        english = next((td for td in tds if _text(td)), tds[0])
+        for txt in _cell_texts(english):
+            im = LEGACY_INLINE_RE.match(txt)
+            if im and current is not None:
+                current.ayes_total, current.nays_total = int(im.group(1)), int(im.group(2))
+                current.names_listed = False
+                side = None
+                continue
+            hm = LEGACY_HEADER_RE.match(txt)
+            if hm:
+                if current is not None:
+                    side = "ayes" if hm.group(1).upper() == "AYES" else "nays"
+                    if hm.group(2).isdigit():
+                        setattr(current, f"{side}_total", int(hm.group(2)))
+                continue
+            side = None
+            if DIVISION_RE.search(txt):
+                current = VPDivision(
+                    date=date, index=len(divisions) + 1, paragraphs=recent[-40:],
+                    result_line=txt, ayes=[], nays=[], ayes_total=-1, nays_total=-1, source=source,
+                )
+                m = INLINE_TOTALS_RE.search(txt) or INLINE_TOTALS_REV_RE.search(txt)
+                if m:
+                    current.ayes_total, current.nays_total = int(m.group(1)), int(m.group(2))
+                    current.names_listed = False
+                divisions.append(current)
+                recent = []
+            else:
+                recent.append(txt)
+    for d in divisions:
+        for side in ("ayes", "nays"):
+            names, total = getattr(d, side), getattr(d, f"{side}_total")
+            uniq = list(dict.fromkeys(names))
+            if len(uniq) < len(names) and (len(uniq) == total or total < 0):
+                setattr(d, side, uniq)
+                d.notes.append(f"{side} list printed with duplicates in source; de-duplicated")
+            if total < 0 and d.names_listed and names:
+                setattr(d, f"{side}_total", len(getattr(d, side)))
+                d.notes.append(f"{side} total not printed; taken as the number of names listed")
+    return divisions

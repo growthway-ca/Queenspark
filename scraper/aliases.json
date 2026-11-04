@@ -1,6 +1,14 @@
 {
   "_comment": "Per parliament: surname as printed in Votes and Proceedings -> member slug. Only add entries verified on the member's page.",
-  "42": {},
-  "43": {},
+  "42": {
+    "_Kusendova": "Natalia Kusendova sat as Kusendova in the 42nd; directory now lists Kusendova-Bashta",
+    "Kusendova": "natalia-kusendova-bashta",
+    "_Cuzzeto": "V&P misspelling of Rudy Cuzzetto (Mississauga—Lakeshore), the only member with a similar surname",
+    "Cuzzeto": "rudy-cuzzetto"
+  },
+  "43": {
+    "_Kusendova": "Natalia Kusendova sat as Kusendova early in the 43rd; directory now lists Kusendova-Bashta",
+    "Kusendova": "natalia-kusendova-bashta"
+  },
   "44": {}
 }

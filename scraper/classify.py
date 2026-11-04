@@ -19,7 +19,14 @@ READING_RE = re.compile(r"^(First|Second|Third) Reading of Bill\s+((?:Pr)?\d+)",
 BILL_NUM_RE = re.compile(r"\bBill\s+((?:Pr)?\d+)\b", re.I)
 MOVED_RE = re.compile(r"^(?:Hon\.\s+)?[A-Z][\w.'’ -]+?(?:\s*\([^)]*\))?\s+moved\b", re.U)
 
+LEAVE_RE = re.compile(r"moved,? that leave be given to introduce a Bill entitled (.+?) and that the same be now read the first time", re.I)
+AMEND_HEADING_RE = re.compile(r"^Amendment to the (amendment to the )?(.+)$", re.I)
+
+ON_MOTION_FIRST_RE = re.compile(r"^On motion by .*?\bBill\s+((?:Pr)?\d+),\s*(.*?),? was introduced and read the first time", re.I)
+
 HEADINGS = [
+    ("leave", LEAVE_RE),
+    ("first_on_motion", ON_MOTION_FIRST_RE),
     ("reading", READING_RE),
     ("time_allocation", re.compile(r"^Motion for allocation of time\b", re.I)),
     ("closure", re.compile(r"^Motion for closure\b", re.I)),
@@ -42,6 +49,7 @@ class Item:
     kind: str
     paragraphs: list[str]
     heading: str
+    amendment: bool = False
 
     def bills(self) -> list[str]:
         nums = []
@@ -54,7 +62,23 @@ class Item:
 
 def _find_item(paragraphs: list[str]) -> Item | None:
     heads: list[tuple[int, str]] = []
+    amended: set[int] = set()
     for i, p in enumerate(paragraphs):
+        am = AMEND_HEADING_RE.match(p)
+        if am:
+            # "Amendment to the motion for allocation of time on Bill 5":
+            # classify the motion being amended, flag it as an amendment.
+            rest = am.group(2)
+            rest = rest[:1].upper() + rest[1:]
+            for kind, rx in HEADINGS:
+                if kind != "moved" and rx.search(rest):
+                    heads.append((i, kind))
+                    amended.add(i)
+                    paragraphs = paragraphs[:i] + [rest] + paragraphs[i + 1:]
+                    break
+            else:
+                heads.append((i, "amendment_heading"))
+            continue
         for kind, rx in HEADINGS:
             if rx.search(p):
                 heads.append((i, kind))
@@ -71,7 +95,11 @@ def _find_item(paragraphs: list[str]) -> Item | None:
         if i + 1 >= len(paragraphs):
             return None
         i, kind = i + 1, "moved"
-    return Item(kind=kind, paragraphs=paragraphs[i:], heading=paragraphs[i])
+    if kind == "amendment_heading":
+        kind = "moved" if i + 1 < len(paragraphs) and MOVED_RE.match(paragraphs[i + 1]) else "other"
+        return Item(kind=kind, paragraphs=paragraphs[i + 1:] if kind == "moved" else paragraphs[i:],
+                    heading=paragraphs[i + 1] if kind == "moved" else paragraphs[i], amendment=True)
+    return Item(kind=kind, paragraphs=paragraphs[i:], heading=paragraphs[i], amendment=i in amended)
 
 
 def _motion_text(item: Item) -> str:
@@ -99,23 +127,35 @@ def _motion_text(item: Item) -> str:
 
 def classify(div: VPDivision, prev: Item | None, bill_titles: dict[str, str]) -> tuple[str, str, str, Item | None]:
     """Return (bill, title, stage, item) for one division."""
-    item = _find_item(div.paragraphs) or prev
+    paras = list(div.paragraphs)
+    if len(div.result_line) > 80:      # 42nd: motion and result in one paragraph
+        paras.append(div.result_line)
+    item = _find_item(paras) or prev
     # After an adjournment division the House returns to the item it interrupted.
     carry = item
     if item is not None and item.kind in ("adjourn_house", "adjourn_debate"):
-        idx = div.paragraphs.index(item.heading) if item.heading in div.paragraphs else 0
-        carry = _find_item(div.paragraphs[:idx]) or (prev if prev is not item else None)
+        idx = paras.index(item.heading) if item.heading in paras else 0
+        carry = _find_item(paras[:idx]) or (prev if prev is not item else None)
     if item is None:
         return "Motion", (div.paragraphs[-1] if div.paragraphs else div.result_line), "Motion", None
 
-    trailing = " ".join(div.paragraphs)
-    amendment = bool(AMENDMENT_RE.search(trailing)) and item.kind not in ("adjourn_house", "adjourn_debate")
+    trailing = " ".join(paras)
+    amendment = (item.amendment or bool(AMENDMENT_RE.search(trailing))) and item.kind not in ("adjourn_house", "adjourn_debate")
 
     def short(num: str) -> str:
         return bill_titles.get(num.lower(), "")
 
     k = item.kind
-    if k == "reading":
+    if k == "leave":
+        m = LEAVE_RE.search(item.heading)
+        mover = re.match(r"^(.*?)\s+moved\b", item.heading)
+        bill = "Motion for leave to introduce a bill"
+        title = m.group(1) + (f" (moved by {mover.group(1)})" if mover else "")
+        stage = "First reading"
+    elif k == "first_on_motion":
+        m = ON_MOTION_FIRST_RE.search(item.heading)
+        bill, title, stage = f"Bill {m.group(1)}", short(m.group(1)) or m.group(2), "First reading"
+    elif k == "reading":
         m = READING_RE.search(item.heading)
         num = m.group(2)
         long_title = item.heading.split(",", 1)[1].strip() if "," in item.heading else ""
@@ -137,11 +177,11 @@ def classify(div: VPDivision, prev: Item | None, bill_titles: dict[str, str]) ->
         bill = "Opposition Day motion" + (f" No. {num.group(1)}" if num else "")
         bill, title, stage = bill, _motion_text(item) or item.heading, "Motion"
     elif k == "pmm":
-        num = HEADINGS[6][1].search(item.heading).group(1)
+        num = dict(HEADINGS)["pmm"].search(item.heading).group(1)
         bill, title, stage = f"Private Members' Motion No. {num}", _motion_text(item) or item.heading, "Motion"
     elif k == "report":
-        idx = div.paragraphs.index(item.heading) if item.heading in div.paragraphs else len(div.paragraphs)
-        nums = [n for p in div.paragraphs[:idx + 1] for n in BILL_NUM_RE.findall(p)]
+        idx = paras.index(item.heading) if item.heading in paras else len(paras)
+        nums = [n for p in paras[:idx + 1] for n in BILL_NUM_RE.findall(p)]
         if nums:
             bill, title = f"Bill {nums[-1]}", short(nums[-1]) or item.heading
         else:
@@ -151,8 +191,19 @@ def classify(div: VPDivision, prev: Item | None, bill_titles: dict[str, str]) ->
         bill, title, stage = "Adjournment of the House", item.heading, "Adjournment motion"
     elif k == "adjourn_debate":
         bill, title, stage = "Adjournment of the debate", item.heading, "Adjournment motion"
+    elif k == "other":
+        bill, title, stage = "Motion", item.heading, "Motion"
     else:  # "moved": a government or other motion introduced by its mover
-        bill, title, stage = "Government motion" if item.heading.startswith("Hon.") else "Motion", _motion_text(item), "Motion"
+        title = _motion_text(item)
+        body = title.split(": ", 1)[-1]
+        if re.search(r"That this question be now put", body, re.I):
+            bill, stage = "Closure", "Closure motion"
+        elif re.match(r"that the House do now adjourn", body, re.I):
+            bill, stage = "Adjournment of the House", "Adjournment motion"
+        else:
+            bill, stage = "Government motion" if item.heading.startswith("Hon.") else "Motion", "Motion"
+            if re.match(r"That the (?:motion|amendment) be amended", body, re.I):
+                amendment = True
 
     if amendment:
         stage = f"Amendment ({stage[0].lower() + stage[1:]})"

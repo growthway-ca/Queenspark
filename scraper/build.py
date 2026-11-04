@@ -127,6 +127,8 @@ class Build:
 
         for d in divisions:
             dv = d["div"]
+            for note in dv.notes:
+                self.problems.append(f"source irregularity {dv.source} #{dv.index}: {note}")
             if dv.ayes_total < 0 or dv.nays_total < 0:
                 self.problems.append(f"V&P division without totals: {dv.source} #{dv.index}")
             elif dv.names_listed and (len(dv.ayes), len(dv.nays)) != (dv.ayes_total, dv.nays_total):
@@ -185,10 +187,15 @@ class Build:
                     roll.append(row)
                 unmatched_n = 0
             else:
-                if not dv.names_listed:
+                incomplete = dv.names_listed and (len(dv.ayes), len(dv.nays)) != (dv.ayes_total, dv.nays_total)
+                if not dv.names_listed or incomplete:
                     totals_only.append({
                         "date": dv.date, "bill": d["bill"], "title": d["title"], "stage": d["stage"],
-                        "ayes": dv.ayes_total, "nays": dv.nays_total, "result": dv.result_line, "source": dv.source,
+                        "ayes": dv.ayes_total, "nays": dv.nays_total, "result": dv.result_line,
+                        "reason": (f"names list in source incomplete ({len(dv.ayes)} of {dv.ayes_total} Ayes, "
+                                   f"{len(dv.nays)} of {dv.nays_total} Nays)") if incomplete
+                                  else "source prints totals only",
+                        "source": dv.source,
                     })
                     continue
                 bill, title, stage, source = d["bill"], d["title"], d["stage"], dv.source
