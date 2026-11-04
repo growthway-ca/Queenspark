@@ -97,32 +97,44 @@ def scrape(parliament: int, fetcher: Fetcher) -> dict:
         pages.append(page)
 
     # -- reconcile with V&P ------------------------------------------------
-    by_key = defaultdict(list)
     for d in divisions:
-        by_key[(d.date, (d.bill_number or "").lower())].append(d)
-    matched_divs = set()
+        if d.ayes_total < 0 or d.nays_total < 0:
+            problems.append(f"V&P division without totals: {d.source} #{d.index}: {d.result_line!r}")
+        elif d.names_listed and (len(d.ayes), len(d.nays)) != (d.ayes_total, d.nays_total):
+            problems.append(
+                f"V&P list/total mismatch {d.source} #{d.index}: lists {len(d.ayes)}-{len(d.nays)}, "
+                f"printed {d.ayes_total}-{d.nays_total}"
+            )
+
+    matched_divs: set[int] = set()
     vp_index = {}
+
+    def free(cands):
+        return [d for d in cands if id(d) not in matched_divs]
+
     for page in pages:
-        cands = [
-            d for d in by_key.get((page.date, bill_number_from_label(page.bill)), [])
-            if (d.ayes_total, d.nays_total) == (page.ayes_total, page.nays_total)
-            and id(d) not in matched_divs
+        same_day = [
+            d for d in divisions
+            if d.date == page.date and (d.ayes_total, d.nays_total) == (page.ayes_total, page.nays_total)
         ]
+        # Prefer a division whose subject names the same bill; otherwise accept
+        # a division that is the only one that day with exactly these totals.
+        cands = free([d for d in same_day if (d.bill_number or "").lower() == bill_number_from_label(page.bill)])
+        if not cands and len(free(same_day)) == 1:
+            cands = free(same_day)
         if not cands:
             problems.append(f"no V&P division matches vote page {page.url} ({page.date}, {page.ayes_total}-{page.nays_total})")
             continue
         d = cands[0]
         matched_divs.add(id(d))
         vp_index[page.url] = (d.date, d.index)
-        vp_lists = (len(d.ayes), len(d.nays))
-        if vp_lists != (d.ayes_total, d.nays_total):
-            problems.append(f"V&P list/total mismatch {d.source} #{d.index}: lists {vp_lists}, printed {d.ayes_total}-{d.nays_total}")
 
     uncovered = [
         {
             "date": d.date, "index": d.index, "bill": d.bill_number, "stage": d.stage,
-            "context": d.context, "result": d.result_line,
-            "ayes_total": d.ayes_total, "nays_total": d.nays_total, "source": d.source,
+            "subject": d.subject, "result": d.result_line,
+            "ayes_total": d.ayes_total, "nays_total": d.nays_total,
+            "names_listed": d.names_listed, "source": d.source,
         }
         for d in divisions if id(d) not in matched_divs
     ]

@@ -116,80 +116,114 @@ def parse_vote_page(html: str, url: str) -> VotePage:
 # ---------------------------------------------------------------------------
 
 DIVISION_RE = re.compile(r"\b(Carried|Lost|Agreed to|Negatived)\b.*\bon the following division", re.I)
+INLINE_TOTALS_RE = re.compile(r"Ayes\s+(\d+)\s*,\s*Nays\s+(\d+)", re.I)
 COUNT_RE = re.compile(r"\((\d+)\)")
 VP_BILL_RE = re.compile(r"\bBill\s+((?:Pr)?\d+)\b", re.I)
 VP_STAGE_RE = re.compile(r"\b(First|Second|Third) Reading of", re.I)
+# Paragraphs that open a new item of business (as opposed to "Debate arose...").
+SUBJECT_RE = re.compile(
+    r"Reading of|^Motion\b|Notice of Motion|\bmoved\b|allocation of time|closure|"
+    r"Address in Reply|question on the adoption|Budgetary Policy|Opposition Day",
+    re.I,
+)
+DIV_HEADER_CLASSES = {"divisionHeader", "votesProceedingsDocdivisionHeader"}
 
 
 @dataclass
 class VPDivision:
     date: str
     index: int               # 1-based order within the day
-    context: str             # English text of the motion/question
+    paragraphs: list[str]    # English paragraphs since the previous division
     result_line: str         # "Carried on the following division:"
     ayes: list[str]
     nays: list[str]
     ayes_total: int
     nays_total: int
     source: str
+    names_listed: bool = True  # False for "... division – Ayes 44, Nays 73" (totals only)
+
+    @property
+    def subject(self) -> str:
+        """The paragraph that introduced the question being voted on."""
+        for p in self.paragraphs:
+            if SUBJECT_RE.search(p):
+                return p
+        return self.paragraphs[0] if self.paragraphs else ""
+
+    @property
+    def context(self) -> str:
+        return " ".join(self.paragraphs)
 
     @property
     def bill_number(self) -> str | None:
-        m = VP_BILL_RE.search(self.context)
+        m = VP_BILL_RE.search(self.subject)
         return m.group(1) if m else None
 
     @property
     def stage(self) -> str | None:
-        m = VP_STAGE_RE.search(self.context)
+        m = VP_STAGE_RE.search(self.subject)
         return f"{m.group(1).capitalize()} reading" if m else None
 
 
+def _vp_names(header: Tag) -> list[str]:
+    """Surnames listed in the table that follows a division header."""
+    table = header.find_next("table")
+    if table is None:
+        return []
+    els = table.find_all("div", attrs={"lang": "en"}) or [
+        p for p in table.find_all("p") if "MsoFooter" in (p.get("class") or [])
+    ]
+    return [n for n in (_text(e) for e in els) if n]
+
+
 def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
+    """Recorded divisions on one Votes and Proceedings page.
+
+    Handles both layouts ola.org uses (h5.divisionHeader + table.votesList,
+    and the Word-derived p.votesProceedingsDocdivisionHeader + p.MsoFooter),
+    plus the one-line "on the following division – Ayes N, Nays M" form.
+    """
     s = soup_of(html)
     root = s.select_one("main") or s
-    # Walk English paragraphs and division headers/lists in document order.
-    items: list[tuple[str, Tag]] = []
-    for el in root.find_all(["p", "h4", "h5", "table"]):
-        if el.name == "h5" and "divisionHeader" in (el.get("class") or []):
-            items.append(("count", el))
-        elif el.name == "table" and "votesList" in (el.get("class") or []):
-            items.append(("list", el))
-        elif el.name in ("p", "h4"):
-            td = el.find_parent("td")
-            if td is not None and td.get("lang") == "en":
-                items.append(("text", el))
-
     divisions: list[VPDivision] = []
-    recent: list[str] = []          # English paragraphs since the last division
+    recent: list[str] = []
     current: VPDivision | None = None
-    side: str | None = None
-    for kind, el in items:
-        if kind == "text":
-            txt = _text(el)
-            if DIVISION_RE.search(txt):
-                current = VPDivision(
-                    date=date, index=len(divisions) + 1,
-                    context=" ".join(recent[-3:]), result_line=txt,
-                    ayes=[], nays=[], ayes_total=-1, nays_total=-1, source=source,
-                )
-                divisions.append(current)
-                recent = []
-                side = None
-            else:
-                recent.append(txt)
-                if el.name == "h4":
-                    recent = [txt]
-        elif kind == "count" and current is not None:
-            en = _text(el.find("span", attrs={"lang": "en"})) or _text(el)
+    for el in root.find_all(["p", "h4", "h5"]):
+        classes = set(el.get("class") or [])
+        if classes & DIV_HEADER_CLASSES:
+            if current is None:
+                continue
+            en = _text(el.find("span", attrs={"lang": re.compile("^en$", re.I)})) or _text(el)
             m = COUNT_RE.search(_text(el))
             n = int(m.group(1)) if m else -1
-            side = "ayes" if en.lower().startswith("aye") else "nays" if en.lower().startswith("nay") else None
-            if side == "ayes":
-                current.ayes_total = n
-            elif side == "nays":
-                current.nays_total = n
-        elif kind == "list" and current is not None and side is not None:
-            names = [_text(d) for d in el.find_all("div", attrs={"lang": "en"})]
-            getattr(current, side).extend(n for n in names if n)
-            side = None
+            names = _vp_names(el)
+            if en.lower().startswith("aye"):
+                current.ayes_total, current.ayes = n, names
+            elif en.lower().startswith("nay"):
+                current.nays_total, current.nays = n, names
+            continue
+        td = el.find_parent("td")
+        if td is None or td.get("lang") != "en":
+            continue
+        if el.name == "p" and el.find_parent("p") is not None:
+            continue
+        txt = _text(el)
+        if not txt:
+            continue
+        if DIVISION_RE.search(txt):
+            current = VPDivision(
+                date=date, index=len(divisions) + 1, paragraphs=recent[-8:],
+                result_line=txt, ayes=[], nays=[], ayes_total=-1, nays_total=-1,
+                source=source,
+            )
+            m = INLINE_TOTALS_RE.search(txt)
+            if m:
+                current.ayes_total, current.nays_total = int(m.group(1)), int(m.group(2))
+                current.names_listed = False
+            divisions.append(current)
+            recent = []
+        elif el.name == "h4":
+            recent = [txt]
+        else:
+            recent.append(txt)
     return divisions
