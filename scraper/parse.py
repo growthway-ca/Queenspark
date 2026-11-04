@@ -176,6 +176,29 @@ def _vp_names(header: Tag) -> list[str]:
     return [n for n in (_text(e) for e in els) if n]
 
 
+NAME_CELL_CLASSES = {"MsoFooter", "votesProceedingsDocdocHide"} | DIV_HEADER_CLASSES
+
+
+def _is_english_text(el: Tag) -> bool:
+    """English paragraph of the running record (not a name cell, not French)."""
+    td = el.find_parent("td")
+    if td is None:
+        return False
+    if td.get("lang") == "en":
+        return True
+    if td.get("lang"):
+        return False
+    # Word-derived layout: English-only text sits in a one-cell row.
+    if set(el.get("class") or []) & NAME_CELL_CLASSES:
+        return False
+    tr = td.find_parent("tr")
+    if tr is None or len(tr.find_all("td", recursive=False)) != 1:
+        return False
+    if el.find(attrs={"lang": re.compile("^fr", re.I)}) is not None:
+        return False
+    return True
+
+
 def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
     """Recorded divisions on one Votes and Proceedings page.
 
@@ -188,8 +211,17 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
     divisions: list[VPDivision] = []
     recent: list[str] = []
     current: VPDivision | None = None
-    for el in root.find_all(["p", "h4", "h5"]):
+    for el in root.find_all(["p", "h4", "h5", "div"]):
         classes = set(el.get("class") or [])
+        if el.name == "div":
+            # English-only blocks (motion texts, some subjects) sit in
+            # td[colspan=2] > div.datawrapper; skip the ones holding a division list.
+            if "datawrapper" not in classes or el.find(["h5", "table", "p"]) is not None:
+                continue
+            txt = _text(el)
+            if txt:
+                recent.append(txt)
+            continue
         if classes & DIV_HEADER_CLASSES:
             if current is None:
                 continue
@@ -202,8 +234,7 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
             elif en.lower().startswith("nay"):
                 current.nays_total, current.nays = n, names
             continue
-        td = el.find_parent("td")
-        if td is None or td.get("lang") != "en":
+        if not _is_english_text(el):
             continue
         if el.name == "p" and el.find_parent("p") is not None:
             continue
@@ -212,7 +243,7 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
             continue
         if DIVISION_RE.search(txt):
             current = VPDivision(
-                date=date, index=len(divisions) + 1, paragraphs=recent[-8:],
+                date=date, index=len(divisions) + 1, paragraphs=recent[-40:],
                 result_line=txt, ayes=[], nays=[], ayes_total=-1, nays_total=-1,
                 source=source,
             )
@@ -227,3 +258,50 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
         else:
             recent.append(txt)
     return divisions
+
+
+# ---------------------------------------------------------------------------
+# Bill pages
+# ---------------------------------------------------------------------------
+
+def _us_date(text: str) -> str | None:
+    from datetime import datetime
+    try:
+        return datetime.strptime(clean(text), "%B %d, %Y").date().isoformat()
+    except ValueError:
+        return None
+
+
+def parse_bill_page(html: str, url: str) -> dict:
+    """Number, title, sponsors and status history of one bill."""
+    s = soup_of(html)
+    h1 = _text(s.select_one("h1.bill-title") or s.select_one("h1"))
+    m = BILL_RE.match(h1)
+    sponsors = []
+    for a in s.select('.bill-sponsors a[href*="/members/all/"]'):
+        name = _text(a)
+        surname, _, given = name.partition(",")
+        given = re.sub(r"^Hon\.?\s+", "", clean(given))
+        sponsors.append({"slug": a["href"].rsplit("/", 1)[-1], "name": clean(f"{given} {surname}")})
+    status = []
+    for tr in s.select("table tr"):
+        tds = tr.find_all("td", recursive=False)
+        if len(tds) < 4:
+            continue
+        day = _us_date(_text(tds[0]))
+        if not day:
+            continue
+        status.append({
+            "date": day, "stage": _text(tds[1]), "activity": _text(tds[2]),
+            "outcome": _text(tds[3]), "committee": _text(tds[4]) if len(tds) > 4 else "",
+        })
+    status.sort(key=lambda r: r["date"])
+    return {
+        "bill": clean(m.group(1)) if m else h1,
+        "number": (clean(m.group(1)).split()[-1] if m else ""),
+        "title": clean(m.group(2)) if m else h1,
+        "sponsors": sponsors,
+        "status": status,
+        "votes": vote_links(html),
+        "source": url,
+    }

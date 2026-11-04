@@ -8,6 +8,7 @@ from __future__ import annotations
 import csv
 import json
 import sys
+from collections import Counter
 
 from .fetch import ROOT
 
@@ -47,6 +48,52 @@ def check_bill76(failures: list[str]) -> None:
         failures.append("Bill 76 check")
 
 
+def check_bill245(failures: list[str]) -> None:
+    votes = load(42)
+    meta_path = DATA / "meta-p42.json"
+    if votes is None or not meta_path.exists():
+        failures.append("Bill 245: data/votes-p42.json missing")
+        return
+    meta = json.loads(meta_path.read_text())
+    v = next((v for v in votes if v["id"] == "bill-245-third-reading-2021-04-15"), None)
+    if v is None:
+        failures.append("Bill 245: third reading of 2021-04-15 not found")
+        print("[FAIL] Bill 245 third reading 2021-04-15 not found")
+        return
+    t, m = tally(v), meta[v["id"]]
+    ok = list(t) == m["printed"] and m["unmatched"] == 0
+    print(f"[{'PASS' if ok else 'FAIL'}] Bill 245 third reading 2021-04-15: roll {t[0]}-{t[1]}, "
+          f"V&P printed {m['printed'][0]}-{m['printed'][1]} ({m['vp_source']}); Downey={voted(v, 'Doug Downey')}")
+    if not ok:
+        failures.append("Bill 245 check")
+
+
+def check_totals(failures: list[str]) -> None:
+    """Roll counts (plus any unmatched names) equal the printed totals."""
+    for p in (42, 43, 44):
+        votes, mp = load(p), DATA / f"meta-p{p}.json"
+        if votes is None or not mp.exists():
+            continue
+        meta = json.loads(mp.read_text())
+        exact = with_unmatched = 0
+        bad = []
+        for v in votes:
+            m = meta[v["id"]]
+            t = tally(v)
+            if list(t) == m["printed"]:
+                exact += 1
+            elif t[0] + t[1] + m["unmatched"] == sum(m["printed"]):
+                with_unmatched += 1
+            else:
+                bad.append(f"{v['id']}: roll {t[0]}-{t[1]} (+{m['unmatched']} unmatched) vs printed {m['printed']}")
+        print(f"[{'PASS' if not bad else 'FAIL'}] totals p{p}: {exact} exact, "
+              f"{with_unmatched} short only by unmatched names, {len(bad)} wrong")
+        for b in bad[:10]:
+            print("    ", b)
+        if bad:
+            failures.append(f"totals p{p}")
+
+
 def check_schema(failures: list[str]) -> None:
     parties = {"PC", "NDP", "Liberal", "Green", "Ind"}
     for p in (42, 43, 44):
@@ -78,9 +125,13 @@ def summary() -> None:
             print(f"  p{p}: not built yet")
             continue
         print(f"  p{p}: {len(votes)} votes, {path.stat().st_size:,} bytes")
-        unc = DATA / f"uncovered-p{p}.json"
-        if unc.exists():
-            print(f"        {len(json.loads(unc.read_text()))} V&P divisions without a vote-search page")
+        mp = DATA / f"meta-p{p}.json"
+        if mp.exists():
+            src = Counter(m["from"] for m in json.loads(mp.read_text()).values())
+            print(f"        {src['vote-search']} from vote search, {src['votes-proceedings']} from Votes and Proceedings")
+        to = DATA / f"totals-only-p{p}.json"
+        if to.exists():
+            print(f"        {len(json.loads(to.read_text()))} divisions printed with totals only (no names; not in the file)")
     um = DATA / "unmatched.csv"
     if um.exists():
         with um.open() as f:
@@ -96,6 +147,8 @@ def summary() -> None:
 def main() -> int:
     failures: list[str] = []
     check_bill76(failures)
+    check_bill245(failures)
+    check_totals(failures)
     check_schema(failures)
     summary()
     return 1 if failures else 0

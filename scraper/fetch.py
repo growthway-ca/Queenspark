@@ -10,7 +10,9 @@
 
 from __future__ import annotations
 
+import fcntl
 import hashlib
+import os
 import re
 import sys
 import time
@@ -87,7 +89,6 @@ class Fetcher:
         self.verbose = verbose
         self.session = requests.Session()
         self.session.headers["User-Agent"] = USER_AGENT
-        self._last = 0.0
         self._robots: Robots | None = None
         self.live_requests = 0
 
@@ -108,10 +109,27 @@ class Fetcher:
 
     # -- network -----------------------------------------------------------
     def _throttle(self) -> None:
-        wait = self._last + MIN_INTERVAL - time.monotonic()
-        if wait > 0:
-            time.sleep(wait)
-        self._last = time.monotonic()
+        """Wait until MIN_INTERVAL has passed since the last request made by
+        *any* scraper process sharing this cache (lock file + timestamp)."""
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        with open(self.cache_dir / ".ratelimit", "a+") as fh:
+            fcntl.flock(fh, fcntl.LOCK_EX)
+            try:
+                fh.seek(0)
+                try:
+                    last = float(fh.read().strip() or 0)
+                except ValueError:
+                    last = 0.0
+                wait = last + MIN_INTERVAL - time.time()
+                if wait > 0:
+                    time.sleep(wait)
+                fh.seek(0)
+                fh.truncate()
+                fh.write(repr(time.time()))
+                fh.flush()
+                os.fsync(fh.fileno())
+            finally:
+                fcntl.flock(fh, fcntl.LOCK_UN)
 
     def _live_get(self, url: str) -> requests.Response:
         delay = 2.0
