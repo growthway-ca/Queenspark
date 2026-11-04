@@ -15,6 +15,11 @@ PARTY_CODES = {
     "green party of ontario": "Green",
     "green": "Green",
     "independent": "Ind",
+    # Parties without recognized status in the House: their members sat as
+    # independents (Belinda Karahalios, New Blue, 2020-22; Rick Nicholls,
+    # Ontario Party, 2021-22).
+    "new blue party of ontario": "Ind",
+    "ontario party": "Ind",
     "independent member": "Ind",
 }
 

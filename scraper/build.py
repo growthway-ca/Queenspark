@@ -150,7 +150,7 @@ class Build:
                         if d["div"].date == page.date and id(d) not in page_for
                         and (d["div"].ayes_total, d["div"].nays_total) == (page.ayes_total, page.nays_total)]
                 num = page.bill.split()[-1].lower()
-                cands = [d for d in same if (d["div"].bill_number or "").lower() == num] or (same if len(same) == 1 else [])
+                cands = [d for d in same if bill_nums_of(d["bill"]) == [num]] or (same if len(same) == 1 else [])
                 if not cands:
                     self.problems.append(f"no V&P division matches vote page {page.url}")
                     continue
@@ -165,17 +165,24 @@ class Build:
             page = page_for.get(id(d))
             if page is not None:
                 bill, title, stage, source = page.bill, page.title, page.stage, page.url
+                # Vote-search pages show each member's *current* party and
+                # styling, so party and the minister flag come from the roster
+                # on the vote date. Page values are kept only if the member
+                # isn't in the roster (reported as a problem).
                 roll = []
                 for row, mslug in zip(page.roll, page.member_slugs):
+                    row = list(row)
                     mem = matcher.by_slug.get(mslug)
-                    if mem is not None:
-                        party = mem.party_on(dv.date)
-                        if party and party_code(party) != row[1]:
+                    party = mem.party_on(dv.date) if mem else None
+                    if mem is None or party is None:
+                        self.problems.append(f"{row[0]} ({mslug}) on {page.url} not in roster on {dv.date}; page values kept")
+                    else:
+                        if party_code(party) != row[1]:
                             disagreements["party"] += 1
-                            self.problems.append(f"party differs on {page.url}: {row[0]} page={row[1]} roster={party_code(party)}")
                         if mem.minister_on(dv.date) != row[4]:
                             disagreements["hon"] += 1
-                    roll.append(list(row))
+                        row[1], row[2], row[4] = party_code(party), mem.riding_on(dv.date) or row[2], mem.minister_on(dv.date)
+                    roll.append(row)
                 unmatched_n = 0
             else:
                 if not dv.names_listed:
@@ -211,7 +218,8 @@ class Build:
             self.all_votes.append((p, d["session"], votes[-1]))
 
         if p >= 43:
-            print(f"  vote-search vs roster: {disagreements['party']} party and {disagreements['hon']} Hon. differences",
+            print(f"  vote-search rows corrected to party/minister status on the vote date: "
+                  f"{disagreements['party']} party, {disagreements['hon']} minister flag",
                   file=sys.stderr)
         self.all_bills.extend(bills.values())
 

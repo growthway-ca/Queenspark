@@ -32,7 +32,8 @@ FAR_FUTURE = "9999-12-31"
 # Parliamentary assistants, critics, whips and committee posts do not count.
 CABINET_RE = re.compile(
     r"^(Premier\b|Deputy Premier\b|Minister\b|Associate Minister\b|Attorney General\b|"
-    r"Solicitor General\b|President of the Treasury Board\b|Chair of (the )?Cabinet\b)",
+    r"Solicitor General\b|Associate (?:Attorney|Solicitor) General\b|President of the Treasury Board\b|"
+    r"Chair of (the )?Cabinet\b|Government House Leader\b)",
     re.I,
 )
 
@@ -87,12 +88,29 @@ def _iso(t) -> str:
     return (t.get("datetime") or "")[:10] if t else ""
 
 
-def _intervals_from_p(p, value: str) -> Interval | None:
-    times = p.find_all("time")
+def _row_interval(row, value: str | None = None) -> Interval | None:
+    """Dates (and, unless given, the label) of one .views-row.
+
+    Two layouts exist: "<p>Label<br><time/> – <time/></p>" and rows where the
+    start and end <time> elements sit in separate spans with no <p>.
+    """
+    times = row.find_all("time")
     if not times:
         return None
+    if value is None:
+        value = ""
+        for t in row.find_all(string=True):
+            txt = clean(t)
+            if txt and txt not in ("–", "-") and t.find_parent("time") is None:
+                value = txt
+                break
     start = _iso(times[0])
-    end = _iso(times[1]) if len(times) > 1 else FAR_FUTURE
+    if len(times) > 1:
+        end = _iso(times[1])
+    elif "present" in row.get_text():
+        end = FAR_FUTURE
+    else:
+        return None
     return Interval(value=value, start=start, end=end)
 
 
@@ -117,24 +135,21 @@ def parse_member(html: str, slug: str, listed_name: str) -> Member:
             if el.name == "h4":
                 riding = clean(el.get_text())
             elif "views-row" in (el.get("class") or []) and riding:
-                p = el.find("p")
-                iv = _intervals_from_p(p, riding) if p else None
+                iv = _row_interval(el, riding)
                 if iv:
                     m.ridings.append(iv)
 
     box = _accordion(s, "party affiliation")
     if box is not None:
-        for p in box.select(".views-row p"):
-            label = clean(p.find(string=True))
-            iv = _intervals_from_p(p, label)
+        for row in box.select(".views-row"):
+            iv = _row_interval(row)
             if iv:
                 m.parties.append(iv)
 
     box = _accordion(s, "career details")
     if box is not None:
-        for p in box.select(".views-row p"):
-            label = clean(p.find(string=True))
-            iv = _intervals_from_p(p, label)
+        for row in box.select(".views-row"):
+            iv = _row_interval(row)
             if iv:
                 m.roles.append(iv)
     return m
