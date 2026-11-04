@@ -5,6 +5,20 @@ Assembly of Ontario from the start of the 42nd Parliament (July 2018) to
 today, plus every bill Doug Downey sponsored. It feeds the Queen's Park
 Watch page, which imports votes as JSON on its Desk.
 
+## Current dataset (built 2026-11-04)
+
+| Parliament | Votes | From vote search | From V&P | Totals-only (excluded) |
+| --- | --- | --- | --- | --- |
+| 42nd | 384 | 0 | 384 | 19 |
+| 43rd | 205 | 132 | 73 | 22 |
+| 44th | 116 | 77 | 39 | 4 |
+
+- Unmatched names: **0**.
+- Every roll equals the totals printed in its source.
+- `curated.json` has 24 votes (114 KB); `downey-bills.json` has 10 bills.
+- Today's (4 Nov 2026) Votes and Proceedings page wasn't published yet; the
+  next run will pick it up.
+
 ## Quick start
 
 ```sh
@@ -178,9 +192,14 @@ can't have a roll. They are kept out of the vote files and listed in
   rail), both the HTML and the official PDF list only 12 of the 22 Ayes and
   26 of the 51 Nays, each printed twice.
 
-Two other source irregularities are handled and reported when the build
-runs:
+Other source irregularities are handled and reported when the build runs:
 
+- 28 Nov 2022: the Bill 4 result reads "Lost **of** the following
+  division"; the parser accepts "of" as well as "on".
+- Bill 35, third reading, 14 Nov 2022: the vote-search page shows 102–0, but
+  V&P shows 100–0. The page's list includes the Speaker, Ted Arnott, who
+  only votes to break a tie, and Kaleed Rasheed. The roll is taken from V&P,
+  the official record.
 - Name lists printed twice are de-duplicated, but only when the unique
   count then equals the printed total.
 - On 4 April 2022 the "AYES" header is missing. The first names list is

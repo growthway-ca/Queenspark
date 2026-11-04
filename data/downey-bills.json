@@ -1,0 +1,1172 @@
+[
+ {
+  "bill": "Bill 88",
+  "number": "88",
+  "title": "Planning Amendment Act, 2019",
+  "long_title": "",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2019-03-25",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2019-05-30",
+    "last_date": "2019-05-30",
+    "events": [
+     {
+      "date": "2019-05-30",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on Finance and Economic Affairs"
+     },
+     {
+      "date": "2019-05-30",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2019-05-30",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": null,
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-88"
+ },
+ {
+  "bill": "Bill 161",
+  "number": "161",
+  "title": "Smarter and Stronger Justice Act, 2020",
+  "long_title": "An Act to enact the Legal Aid Services Act, 2019 and to make various amendments to other Acts dealing with the courts and other justice matters.",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2019-12-09",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2020-02-19",
+    "last_date": "2020-06-23",
+    "events": [
+     {
+      "date": "2020-02-19",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-02-19",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-02-27",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-03-03",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-03-05",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-03-05",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2020-03-05",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-03-12",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-06-02",
+      "activity": "Motion to arrange proceedings",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-06-10",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-06-11",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-06-12",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-06-17",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-06-23",
+      "activity": "Ordered for Third Reading pursuant to the Order of the House",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-06-23",
+      "activity": "Reported as amended",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2020-06-24",
+    "last_date": "2020-07-07",
+    "events": [
+     {
+      "date": "2020-06-24",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-06-24",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-07-06",
+      "activity": "Deferred vote",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-07-06",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-07-07",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2020-07-08",
+    "last_date": "2020-07-08",
+    "events": [
+     {
+      "date": "2020-07-08",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2020-07-08",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-161"
+ },
+ {
+  "bill": "Bill 207",
+  "number": "207",
+  "title": "Moving Ontario Family Law Forward Act, 2020",
+  "long_title": "An Act to amend the Children’s Law Reform Act, the Courts of Justice Act, the Family Law Act and other Acts respecting various family law matters.",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2020-09-24",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2020-09-30",
+    "last_date": "2020-10-19",
+    "events": [
+     {
+      "date": "2020-09-30",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-01",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-05",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-10-05",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-05",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-07",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-10-13",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-10-14",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-10-19",
+      "activity": "Ordered for Third Reading",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-19",
+      "activity": "Reported as amended",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-19",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2020-11-03",
+    "last_date": "2020-11-16",
+    "events": [
+     {
+      "date": "2020-11-03",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-04",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-04",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-05",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-16",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-16",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2020-11-20",
+    "last_date": "2020-11-20",
+    "events": [
+     {
+      "date": "2020-11-20",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2020-11-20",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-207"
+ },
+ {
+  "bill": "Bill 218",
+  "number": "218",
+  "title": "Supporting Ontario's Recovery and Municipal Elections Act, 2020",
+  "long_title": "An Act to enact the Supporting Ontario’s Recovery Act, 2020 respecting certain proceedings relating to the coronavirus (COVID-19), to amend the Municipal Elections Act, 1996 and to revoke a regulation.",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2020-10-20",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2020-10-22",
+    "last_date": "2020-11-16",
+    "events": [
+     {
+      "date": "2020-10-22",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-22",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-26",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-27",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-10-27",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2020-10-28",
+      "activity": "Time allocated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-04",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-11-09",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2020-11-16",
+      "activity": "Ordered for Third Reading pursuant to the Order of the House",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-16",
+      "activity": "Reported as amended",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2020-11-16",
+    "last_date": "2020-11-16",
+    "events": [
+     {
+      "date": "2020-11-16",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2020-11-16",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2020-11-20",
+    "last_date": "2020-11-20",
+    "events": [
+     {
+      "date": "2020-11-20",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2020-11-20",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-218"
+ },
+ {
+  "bill": "Bill 245",
+  "number": "245",
+  "title": "Accelerating Access to Justice Act, 2021",
+  "long_title": "An Act to amend and repeal various statutes, to revoke various regulations and to enact the Ontario Land Tribunal Act, 2021.",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2021-02-16",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2021-02-22",
+    "last_date": "2021-03-22",
+    "events": [
+     {
+      "date": "2021-02-22",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-02-23",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-02-24",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-02-25",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-01",
+      "activity": "Deferred vote",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-01",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-02",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-03-02",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-11",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-03-12",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-03-19",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-03-22",
+      "activity": "Ordered for Third Reading",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-22",
+      "activity": "Reported as amended",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2021-03-23",
+    "last_date": "2021-04-15",
+    "events": [
+     {
+      "date": "2021-03-23",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-25",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-15",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-15",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2021-04-19",
+    "last_date": "2021-04-19",
+    "events": [
+     {
+      "date": "2021-04-19",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2021-04-19",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-245"
+ },
+ {
+  "bill": "Bill 254",
+  "number": "254",
+  "title": "Protecting Ontario Elections Act, 2021",
+  "long_title": "An Act to amend various Acts with respect to elections and members of the Assembly.",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2021-02-25",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2021-03-03",
+    "last_date": "2021-04-12",
+    "events": [
+     {
+      "date": "2021-03-03",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-03",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-04",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-08",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-08",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-11",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-22",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-03-22",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2021-03-29",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-03-30",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-04-08",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on the Legislative Assembly"
+     },
+     {
+      "date": "2021-04-12",
+      "activity": "Ordered for Third Reading",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-12",
+      "activity": "Reported as amended",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2021-04-13",
+    "last_date": "2021-04-15",
+    "events": [
+     {
+      "date": "2021-04-13",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-13",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-14",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-14",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-04-15",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2021-04-19",
+    "last_date": "2021-04-19",
+    "events": [
+     {
+      "date": "2021-04-19",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2021-04-19",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-254"
+ },
+ {
+  "bill": "Bill 307",
+  "number": "307",
+  "title": "Protecting Elections and Defending Democracy Act, 2021",
+  "long_title": "An Act to amend the Election Finances Act.",
+  "parliament": 42,
+  "session": 1,
+  "first_reading": "2021-06-10",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2021-06-12",
+    "last_date": "2021-06-14",
+    "events": [
+     {
+      "date": "2021-06-12",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-06-14",
+      "activity": "Ordered for Third Reading pursuant to the Order of the House",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-06-14",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2021-06-14",
+      "activity": "Question put",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2021-06-14",
+      "activity": "Time allocated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2021-06-14",
+    "last_date": "2021-06-14",
+    "events": [
+     {
+      "date": "2021-06-14",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2021-06-14",
+    "last_date": "2021-06-14",
+    "events": [
+     {
+      "date": "2021-06-14",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2021-06-14",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2021-06-14",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-307"
+ },
+ {
+  "bill": "Bill 157",
+  "number": "157",
+  "title": "Enhancing Access to Justice Act, 2024",
+  "long_title": "",
+  "parliament": 43,
+  "session": 1,
+  "first_reading": "2023-11-30",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2023-12-04",
+    "last_date": "2024-02-28",
+    "events": [
+     {
+      "date": "2023-12-04",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2023-12-05",
+      "activity": "Ordered referred to Standing Committee",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2023-12-05",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2023-12-05",
+      "activity": "Question put",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2023-12-05",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2023-12-05",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2024-02-21",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2024-02-22",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2024-02-28",
+      "activity": "Ordered for Third Reading",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-02-28",
+      "activity": "Report adopted",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-02-28",
+      "activity": "Reported as amended",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     },
+     {
+      "date": "2024-02-28",
+      "activity": "Consideration of a Bill",
+      "outcome": "-",
+      "committee": "Standing Committee on Justice Policy"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2024-03-04",
+    "last_date": "2024-03-05",
+    "events": [
+     {
+      "date": "2024-03-04",
+      "activity": "Question put",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-04",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-04",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-05",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-05",
+      "activity": "Closure",
+      "outcome": "Carried on division",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-05",
+      "activity": "Moved closure",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-05",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-03-05",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2024-03-06",
+    "last_date": "2024-03-06",
+    "events": [
+     {
+      "date": "2024-03-06",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2024-03-06",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-157"
+ },
+ {
+  "bill": "Bill 220",
+  "number": "220",
+  "title": "Election Finances Amendment Act (Quarterly Allowances), 2024",
+  "long_title": "",
+  "parliament": 43,
+  "session": 1,
+  "first_reading": "2024-11-06",
+  "stages": [
+   {
+    "stage": "Third Reading",
+    "first_date": "2024-11-07",
+    "last_date": "2024-11-07",
+    "events": [
+     {
+      "date": "2024-11-07",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2024-11-07",
+      "activity": "Question put",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Second Reading",
+    "first_date": "2024-11-07",
+    "last_date": "2024-11-07",
+    "events": [
+     {
+      "date": "2024-11-07",
+      "activity": "Ordered for Third Reading pursuant to the Order of the House",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-11-07",
+      "activity": "Vote",
+      "outcome": "Carried",
+      "committee": "-"
+     },
+     {
+      "date": "2024-11-07",
+      "activity": "Question put",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2024-11-07",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2024-11-19",
+    "last_date": "2024-11-19",
+    "events": [
+     {
+      "date": "2024-11-19",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2024-11-19",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-220"
+ },
+ {
+  "bill": "Bill 10",
+  "number": "10",
+  "title": "Protect Ontario Through Safer Streets and Stronger Communities Act, 2025",
+  "long_title": "An Act to enact the Measures Respecting Premises with Illegal Drug Activity Act, 2025 and to amend various Acts with respect to public safety and the justice system.",
+  "parliament": 44,
+  "session": 1,
+  "first_reading": "2025-05-01",
+  "stages": [
+   {
+    "stage": "Second Reading",
+    "first_date": "2025-05-06",
+    "last_date": "2025-06-02",
+    "events": [
+     {
+      "date": "2025-05-06",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2025-05-07",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2025-05-08",
+      "activity": "Debated",
+      "outcome": "Debate adjourned",
+      "committee": "-"
+     },
+     {
+      "date": "2025-05-29",
+      "activity": "Question put",
+      "outcome": "Vote deferred",
+      "committee": "-"
+     },
+     {
+      "date": "2025-05-29",
+      "activity": "Time allocated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2025-06-02",
+      "activity": "Ordered for Third Reading pursuant to the Order of the House",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2025-06-02",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Third Reading",
+    "first_date": "2025-06-03",
+    "last_date": "2025-06-04",
+    "events": [
+     {
+      "date": "2025-06-03",
+      "activity": "Question put",
+      "outcome": "Vote deferred",
+      "committee": "-"
+     },
+     {
+      "date": "2025-06-03",
+      "activity": "Debated",
+      "outcome": "-",
+      "committee": "-"
+     },
+     {
+      "date": "2025-06-04",
+      "activity": "Vote",
+      "outcome": "Carried on division",
+      "committee": "-"
+     }
+    ]
+   },
+   {
+    "stage": "Royal Assent",
+    "first_date": "2025-06-05",
+    "last_date": "2025-06-05",
+    "events": [
+     {
+      "date": "2025-06-05",
+      "activity": "Royal Assent received",
+      "outcome": "-",
+      "committee": "-"
+     }
+    ]
+   }
+  ],
+  "royal_assent": "2025-06-05",
+  "co_sponsors": [],
+  "source": "https://www.ola.org/en/legislative-business/bills/parliament-44/session-1/bill-10"
+ }
+]

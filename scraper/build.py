@@ -122,8 +122,10 @@ class Build:
                 for d in parse_vp_divisions(html, day, BASE + vp_url(p, s, day)):
                     bill, title, stage, prev = classify(d, prev, titles)
                     divisions.append({"session": s, "div": d, "bill": bill, "title": title, "stage": stage})
-                    if d.stage and d.bill_number and (s, d.bill_number.lower()) in bills and "," in d.subject:
-                        bills[(s, d.bill_number.lower())]["long_title"] = d.subject.split(",", 1)[1].strip()
+                    for para in d.paragraphs:
+                        m = re.match(r"^(?:First|Second|Third) Reading of Bill\s+((?:Pr)?\d+)\s*,\s*(.+)$", para, re.I)
+                        if m and (s, m.group(1).lower()) in bills:
+                            bills[(s, m.group(1).lower())]["long_title"] = m.group(2).strip()
 
         for d in divisions:
             dv = d["div"]
