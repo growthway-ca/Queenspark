@@ -267,6 +267,11 @@ python -m scraper.site_data    # writes site/data.json and site/dist/
   Claude artifact.
 - `site/dist/` is a standalone copy for static hosting. On Netlify, set the
   publish directory to `site/dist`; there is no build command.
+- `data/record.json` holds the sourced Government record items (court
+  rulings, reversals, opposition-proposal pairings). Each has a timeline,
+  the government's stated position and source links; bills are referenced
+  as `parliament-session-number` because numbers repeat across sessions.
+  Dates were cross-checked against the scraped bill pages.
 - The editorial content (commitments, metrics, money, bill notes) lives in
   `data/editorial.json`. It was copied from the original Queen's Park Watch
   page; edit it there and rerun `site_data`.

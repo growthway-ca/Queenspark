@@ -1,0 +1,517 @@
+[
+ {
+  "id": "bill-124-wage-restraint",
+  "kind": "court",
+  "date": "2024-02-12",
+  "title": "Public-sector wage cap (Bill 124) ruled unconstitutional, then repealed",
+  "bills": [
+   "42-1-124"
+  ],
+  "summary": "Bill 124 capped compensation increases for broader public-sector workers at 1% a year for three years. The Superior Court found it violated the Charter’s freedom of association and declared it void. The Court of Appeal upheld that ruling for unionized employees. The government did not appeal further and repealed the act. News reports cited a Financial Accountability Office estimate of about $13.7 billion in retroactive compensation.",
+  "government_position": "On February 12, 2024 the government said it would not appeal and would repeal Bill 124 in its entirety, with regulations in the meantime to exempt non-unionized workers.",
+  "timeline": [
+   [
+    "2019-11-07",
+    "Royal assent"
+   ],
+   [
+    "2022-11-29",
+    "Superior Court declares the act void (2022 ONSC 6658)"
+   ],
+   [
+    "2024-02-12",
+    "Court of Appeal upholds the ruling for unionized employees (2024 ONCA 101); government says it will not appeal"
+   ],
+   [
+    "2024-02-23",
+    "Act repealed in full by Order in Council"
+   ]
+  ],
+  "sources": [
+   [
+    "Emond Harnden: Superior Court decision",
+    "https://ehlaw.ca/?p=20552"
+   ],
+   [
+    "Emond Harnden: Court of Appeal and repeal",
+    "https://ehlaw.ca/bill-124-unconstitutional-for-unionized-employees-only-ontario-court-of-appeal-holds/"
+   ],
+   [
+    "Global News: FAO cost estimate",
+    "https://globalnews.ca/news/10291339/bill-124-cost-compensation-doug-ford/"
+   ],
+   [
+    "Cavalluzzo: repeal",
+    "https://www.cavalluzzo.com/resources/news/news-item/Government-Officially-Repeals-Unconstitutional-Wage-Restraint-Legislation"
+   ],
+   [
+    "Government statement (reproduced by MPP office)",
+    "https://bobbaileympp.com/government-of-ontario-will-not-appeal-bill-124-decision/"
+   ]
+  ]
+ },
+ {
+  "id": "third-party-spending",
+  "kind": "court",
+  "date": "2025-03-07",
+  "title": "Third-party election advertising limits (Bills 254 and 307) struck down by the Supreme Court",
+  "bills": [
+   "42-1-254",
+   "42-1-307"
+  ],
+  "summary": "Bill 254 doubled the pre-election period in which third-party political advertising spending is limited, from 6 to 12 months. After the Superior Court found that change unconstitutional, the government re-enacted it in Bill 307 using the notwithstanding clause, making it the first Ontario law to use the clause. (Bill 31 had invoked it in 2018 but never passed.) The Court of Appeal found the clause was validly used but that the limits breached the right to vote, which the clause cannot override. The Supreme Court of Canada upheld that ruling 5–4.",
+  "government_position": "In 2021 the government said the notwithstanding clause was needed to preserve the limits. In 2023 the Attorney General’s office said it was disappointed and would appeal. After the 2025 ruling, the province said it would review the decision.",
+  "timeline": [
+   [
+    "2021-04-19",
+    "Bill 254 royal assent"
+   ],
+   [
+    "2021-06-08",
+    "Superior Court strikes down the 12-month period (2021 ONSC 4076)"
+   ],
+   [
+    "2021-06-14",
+    "Bill 307 passes and receives royal assent, invoking the notwithstanding clause, four days after first reading"
+   ],
+   [
+    "2023-03-06",
+    "Court of Appeal finds the limits breach the right to vote (2023 ONCA 139)"
+   ],
+   [
+    "2025-03-07",
+    "Supreme Court of Canada dismisses Ontario’s appeal, 5–4 (2025 SCC 5)"
+   ]
+  ],
+  "sources": [
+   [
+    "Bill 307 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-307"
+   ],
+   [
+    "McCarthy Tétrault: 2021 ruling",
+    "https://www.mccarthy.ca/en/insights/articles/ontario-invokes-notwithstanding-clause-over-charter-challenge-pre-election-spending-limits-working-families-ontario-v-ontario-2021-onsc-4076"
+   ],
+   [
+    "Blakes: Court of Appeal",
+    "https://www.blakes.com/insights/court-of-appeal-strikes-down-12-month-limit-on-thi/"
+   ],
+   [
+    "CP24: Supreme Court ruling",
+    "https://www.cp24.com/politics/2025/03/07/top-court-finds-ontario-spending-limits-on-third-party-election-ads-unconstitutional/"
+   ],
+   [
+    "Torys: 2025 SCC 5",
+    "https://www.torys.com/our-latest-thinking/publications/2025/03/spending-limits-on-third-party-political-advertising-violate-the-charter"
+   ]
+  ]
+ },
+ {
+  "id": "toronto-council",
+  "kind": "court",
+  "date": "2021-10-01",
+  "title": "Toronto council cut to 25 wards (Bill 5): government won at the Supreme Court",
+  "bills": [
+   "42-1-5",
+   "42-1-31"
+  ],
+  "summary": "Bill 5 cut Toronto’s council from 47 to 25 wards during the 2018 municipal campaign. The Superior Court found it unconstitutional, and the government introduced Bill 31 to re-enact it with the notwithstanding clause. The Court of Appeal stayed the ruling, the election went ahead with 25 wards, and Bill 31 was never voted on. The Court of Appeal and then the Supreme Court of Canada (5–4) ruled for the province.",
+  "government_position": "After the stay, the province said it would not bring Bill 31 to a vote while the stay was in effect. It said it was pleased with the 2019 Court of Appeal ruling.",
+  "timeline": [
+   [
+    "2018-08-14",
+    "Bill 5 royal assent"
+   ],
+   [
+    "2018-09-10",
+    "Superior Court finds a Charter breach (2018 ONSC 5151)"
+   ],
+   [
+    "2018-09-12",
+    "Bill 31 introduced with the notwithstanding clause"
+   ],
+   [
+    "2018-09-19",
+    "Court of Appeal stays the ruling"
+   ],
+   [
+    "2018-10-22",
+    "Election held with 25 wards"
+   ],
+   [
+    "2019-09-19",
+    "Court of Appeal rules 3–2 for Ontario"
+   ],
+   [
+    "2021-10-01",
+    "Supreme Court of Canada dismisses Toronto’s appeal, 5–4 (2021 SCC 34)"
+   ]
+  ],
+  "sources": [
+   [
+    "Supreme Court: case in brief",
+    "https://scc-csc.gc.ca/pdf/cb/2021/38921-eng.pdf"
+   ],
+   [
+    "Bill 5 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-5"
+   ],
+   [
+    "Bill 31 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-31"
+   ],
+   [
+    "Canadian Lawyer: stay",
+    "https://www.canadianlawyermag.com/practice-areas/litigation/court-of-appeal-in-ontario-grants-stay-on-previous-decision-on-25-ward-toronto-election/275474"
+   ],
+   [
+    "Global News: 2019 ruling",
+    "https://globalnews.ca/news/5923717/ontario-appeal-court-toronto-council-cut"
+   ]
+  ]
+ },
+ {
+  "id": "bike-lanes",
+  "kind": "court",
+  "date": "2026-08-14",
+  "title": "Toronto bike lane removal (Bill 212): struck down, then upheld on appeal",
+  "bills": [
+   "43-1-212"
+  ],
+  "summary": "Bill 212 required the removal of bike lanes on Bloor Street, Yonge Street and University Avenue in Toronto. The Superior Court found the requirement breached the Charter’s right to life, liberty and security of the person. The Court of Appeal unanimously overturned that ruling. Cycle Toronto has said it will seek leave to appeal to the Supreme Court; whether leave has been granted could not be confirmed.",
+  "government_position": "The government appealed the 2025 ruling. After the 2026 decision, the transportation minister said bike lanes belong on secondary roads, not in vehicle lanes on the busiest streets.",
+  "timeline": [
+   [
+    "2024-11-25",
+    "Bill 212 royal assent"
+   ],
+   [
+    "2025-07-30",
+    "Superior Court finds a Charter breach (2025 ONSC 4397)"
+   ],
+   [
+    "2026-08-14",
+    "Court of Appeal overturns the ruling (2026 ONCA 582)"
+   ]
+  ],
+  "sources": [
+   [
+    "Bill 212 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-212"
+   ],
+   [
+    "CP24: 2025 ruling",
+    "https://www.cp24.com/politics/queens-park/2025/07/30/ontario-court-strikes-down-ford-governments-plan-to-tear-up-toronto-bike-lanes-as-unconstitutional/"
+   ],
+   [
+    "Globe and Mail: 2026 ruling",
+    "https://www.theglobeandmail.com/canada/toronto/article-ontarios-top-court-clears-way-for-toronto-bike-lane-approval/"
+   ],
+   [
+    "Torys: 2026 ONCA 582",
+    "https://www.torys.com/our-latest-thinking/publications/2026/08/no-constitutional-guarantee-for-bike-lanes"
+   ]
+  ]
+ },
+ {
+  "id": "greenbelt",
+  "kind": "reversal",
+  "date": "2023-09-21",
+  "title": "Greenbelt land removed, then restored (Bill 136)",
+  "bills": [
+   "43-1-136"
+  ],
+  "summary": "In December 2022 the province removed about 7,400 acres from 15 Greenbelt areas and added about 9,400 acres elsewhere. The Auditor General found the site selection was biased and favoured certain developers, and that the landowners could see more than $8.3 billion in increased property value. The Integrity Commissioner found the housing minister contravened the Members’ Integrity Act. The Premier reversed the decision, and Bill 136 restored the lands. The RCMP opened an investigation in October 2023; its last public update, in October 2025, said it was ongoing with no charges.",
+  "government_position": "The original rationale was to enable at least 50,000 homes with a net Greenbelt expansion. Announcing the reversal, the Premier said: “It was a mistake to open the Greenbelt.”",
+  "timeline": [
+   [
+    "2022-11-04",
+    "Removal proposed"
+   ],
+   [
+    "2022-12-14",
+    "Removals take effect"
+   ],
+   [
+    "2023-08-09",
+    "Auditor General’s special report"
+   ],
+   [
+    "2023-08-30",
+    "Integrity Commissioner’s report on the housing minister"
+   ],
+   [
+    "2023-09-21",
+    "Premier announces the reversal"
+   ],
+   [
+    "2023-10-10",
+    "RCMP announces an investigation"
+   ],
+   [
+    "2023-12-06",
+    "Bill 136 receives royal assent, restoring the lands"
+   ]
+  ],
+  "sources": [
+   [
+    "Auditor General news release",
+    "https://www.auditor.on.ca/en/content/news/specials_newsreleases/newsrelease_Greenbelt_EN.pdf"
+   ],
+   [
+    "Environmental Registry 019-6216",
+    "https://ero.ontario.ca/node/9638"
+   ],
+   [
+    "Bill 136 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-136"
+   ],
+   [
+    "Global News: Integrity Commissioner",
+    "https://globalnews.ca/news/9928760/greenbelt-steve-clark-integrity-report/"
+   ],
+   [
+    "Sarnia News Today: reversal",
+    "https://sarnianewstoday.ca/sarnia/news/2023/09/21/premier-ford-announces-reversal-of-greenbelt-land-swaps"
+   ],
+   [
+    "Global News: RCMP update",
+    "https://globalnews.ca/news/11472355/rcmp-greenbelt-update"
+   ]
+  ]
+ },
+ {
+  "id": "official-plans",
+  "kind": "reversal",
+  "date": "2023-12-06",
+  "title": "Provincial changes to 12 municipal official plans reversed (Bill 150)",
+  "bills": [
+   "43-1-150"
+  ],
+  "summary": "In 2022 and 2023 the province changed the official plans of 12 municipalities, including Barrie, Hamilton, Ottawa, Peel and York, many of them to expand urban boundaries. In October 2023 the government announced it would reverse those changes. Bill 150 deemed the decisions never made and limited claims for compensation.",
+  "government_position": "The housing minister said the decisions failed to support housing goals and earn public confidence, that the former minister’s office had been too involved, and that the province would cover municipalities’ costs for work already done.",
+  "timeline": [
+   [
+    "2023-10-23",
+    "Reversal announced"
+   ],
+   [
+    "2023-11-16",
+    "Bill 150 first reading"
+   ],
+   [
+    "2023-12-06",
+    "Royal assent"
+   ]
+  ],
+  "sources": [
+   [
+    "Bill 150 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-150"
+   ],
+   [
+    "Global News: reversal",
+    "https://globalnews.ca/news/10042687/ontario-urban-boundaries-reversal"
+   ]
+  ]
+ },
+ {
+  "id": "peel",
+  "kind": "reversal",
+  "date": "2023-12-13",
+  "title": "Peel Region dissolution passed, then cancelled (Bills 112 and 185)",
+  "bills": [
+   "43-1-112",
+   "43-1-185"
+  ],
+  "summary": "Bill 112 would have dissolved the Region of Peel on January 1, 2025, making Mississauga, Brampton and Caledon single-tier cities. Six months after it became law, the government announced it would not proceed. Bill 185 repealed the dissolution.",
+  "government_position": "The housing minister said municipal leaders had warned that full dissolution would lead to significant tax increases and disruption to services.",
+  "timeline": [
+   [
+    "2023-06-08",
+    "Bill 112 royal assent"
+   ],
+   [
+    "2023-12-13",
+    "Government announces it will not dissolve Peel"
+   ],
+   [
+    "2024-06-06",
+    "Bill 185 royal assent, repealing the dissolution"
+   ]
+  ],
+  "sources": [
+   [
+    "Bill 112 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-112"
+   ],
+   [
+    "Bill 185 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-185"
+   ],
+   [
+    "Canadian Press via National Newswatch",
+    "https://nationalnewswatch.com/2023/12/13/ontario-reversing-course-on-region-of-peel-dissolution-cites-tax-hike-concerns"
+   ],
+   [
+    "Region of Peel",
+    "https://peelregion.ca/press-releases/bill-185-confirms-peel-region-will-not-be-dissolved"
+   ]
+  ]
+ },
+ {
+  "id": "bill-28",
+  "kind": "reversal",
+  "date": "2022-11-14",
+  "title": "Education workers’ back-to-work law (Bill 28) repealed 11 days after passing",
+  "bills": [
+   "43-1-28",
+   "43-1-35"
+  ],
+  "summary": "Bill 28 imposed contracts on CUPE school-board education workers and banned strikes, and used the notwithstanding clause pre-emptively. It passed three days after it was introduced. After CUPE agreed to end its walkout, the government repealed it with Bill 35, which passed in a single day and deemed Bill 28 never to have been in force.",
+  "government_position": "The Premier said the government was willing to rescind the law “as a gesture of good faith” if CUPE ended its walkout. The education minister said the government would revoke Bill 28 in its entirety and return to the bargaining table.",
+  "timeline": [
+   [
+    "2022-10-31",
+    "Bill 28 introduced"
+   ],
+   [
+    "2022-11-03",
+    "Bill 28 passes and receives royal assent"
+   ],
+   [
+    "2022-11-07",
+    "Government commits to repeal; CUPE ends walkout"
+   ],
+   [
+    "2022-11-14",
+    "Bill 35 passes all readings and receives royal assent"
+   ]
+  ],
+  "sources": [
+   [
+    "Bill 28 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-28"
+   ],
+   [
+    "Bill 35 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-35"
+   ],
+   [
+    "Global News: repeal",
+    "https://globalnews.ca/news/9257574/ontario-doug-ford-repeal-education-law-cupe-strike/"
+   ]
+  ]
+ },
+ {
+  "id": "paid-sick-days",
+  "kind": "pairing",
+  "date": "2021-04-29",
+  "title": "Paid sick days: three NDP bills defeated; government passed a temporary program",
+  "bills": [
+   "42-1-239",
+   "42-2-8",
+   "43-1-4",
+   "42-1-284"
+  ],
+  "summary": "The NDP’s Stay Home If You Are Sick Act was defeated at second reading three times. The first version proposed 7 paid personal emergency leave days plus 14 paid days during an infectious disease emergency; the later versions proposed 10 paid days and 14 during an emergency. Eight weeks after the first defeat, the government passed Bill 284, which provided up to 3 paid days of COVID-19 leave at up to $200 a day, reimbursed through the WSIB. That program ended on March 31, 2023.",
+  "government_position": "When the program ended, the province said it had served its purpose and pointed to Ontario’s high vaccination rate.",
+  "timeline": [
+   [
+    "2021-03-01",
+    "NDP Bill 239 defeated, 35–50"
+   ],
+   [
+    "2021-04-29",
+    "Government Bill 284 passes in one day: up to 3 paid days"
+   ],
+   [
+    "2021-11-24",
+    "NDP Bill 8 defeated, 30–46"
+   ],
+   [
+    "2022-11-28",
+    "NDP Bill 4 defeated, 31–74"
+   ],
+   [
+    "2023-03-31",
+    "Temporary paid COVID-19 leave ends"
+   ]
+  ],
+  "sources": [
+   [
+    "Emond Harnden: Bill 284",
+    "https://ehlaw.ca/ontario-passes-legislation-to-provide-paid-leave-for-covid-19-absences/"
+   ],
+   [
+    "HR Reporter: program ends",
+    "https://www.hrreporter.com/focus-areas/compensation-and-benefits/ontario-announces-end-to-sick-leave-program/374745"
+   ],
+   [
+    "Bill 239 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-239"
+   ],
+   [
+    "Bill 8 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-8"
+   ],
+   [
+    "Bill 4 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-4"
+   ]
+  ]
+ },
+ {
+  "id": "ltc-four-hours",
+  "kind": "pairing",
+  "date": "2021-12-09",
+  "title": "Four hours of daily care in long-term care: NDP bills stalled; government set a target",
+  "bills": [
+   "42-1-13",
+   "42-2-14",
+   "42-2-37"
+  ],
+  "summary": "The NDP’s Time to Care Act would have required an average of at least 4 hours of direct care per long-term care resident per day. It passed second reading twice with no votes against (80–0 and 73–0) and stalled in committee both times. The government’s Bill 37 set a provincewide average target of 4 hours by March 31, 2025. The ministry reported 3 hours 49 minutes (95.5% of the target) at that deadline; the government later said the target was surpassed in spring 2025.",
+  "government_position": "The ministry cited recruitment and retention challenges, especially in rural and remote communities. A later government release said the province averaged 4 hours 5 minutes in the first quarter of 2025–26.",
+  "timeline": [
+   [
+    "2020-10-29",
+    "NDP Bill 13 passes second reading 80–0; referred to committee"
+   ],
+   [
+    "2021-11-24",
+    "NDP Bill 14 passes second reading 73–0; referred to committee"
+   ],
+   [
+    "2021-12-09",
+    "Government Bill 37 royal assent, setting the 4-hour target"
+   ],
+   [
+    "2025-03-31",
+    "Target deadline: 3 hours 49 minutes reported"
+   ]
+  ],
+  "sources": [
+   [
+    "Bill 13 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-13"
+   ],
+   [
+    "Bill 14 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-14"
+   ],
+   [
+    "Bill 37 on ola.org",
+    "https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-37"
+   ],
+   [
+    "Global News / CP: target missed",
+    "https://globalnews.ca/news/11332631/ontario-ltc-residents-target"
+   ],
+   [
+    "Ontario long-term care staffing plan",
+    "https://www.ontario.ca/page/better-place-live-better-place-work-ontarios-long-term-care-staffing-plan"
+   ]
+  ]
+ }
+]

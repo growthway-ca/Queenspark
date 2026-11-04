@@ -148,7 +148,7 @@ td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .timeline{list-style:none;margin:0;padding:0 0 0 1rem;border-left:2px solid var(--rule);display:flex;flex-direction:column;gap:.7rem}
 .timeline li{position:relative;font-size:.93rem}
 .timeline li::before{content:"";position:absolute;left:-1.42rem;top:.45rem;width:.65rem;height:.65rem;border-radius:50%;background:var(--sheet);border:2px solid var(--c,var(--accent))}
-.timeline .d{font-weight:600;font-variant-numeric:tabular-nums;margin-right:.4rem}
+.timeline .d{font-weight:600;margin-right:.4rem}
 .note{border-left:3px solid var(--accent);padding:.15rem 0 .15rem .9rem;max-width:46rem}
 .callout{display:flex;flex-direction:column;gap:.6rem}
 .callout .big{font-size:2.2rem}
@@ -547,9 +547,12 @@ function vRecord(){
   page('record',h);
 }
 function recordCard(r){
-  var links=(r.bills||[]).map(function(n){var hit=D.allBills.filter(function(b){return b.n===n&&(!r.parliament||b.p===r.parliament);})[0];if(!hit)return esc(n);return bills[hit.k]?'<a href="#b-'+hit.k+'">'+esc(n)+'</a>':'<a href="'+esc(hit.url)+'" target="_blank" rel="noopener">'+esc(n)+'</a>';});
+  var hits=(r.bills||[]).map(function(k){return D.allBills.filter(function(b){return b.k===k;})[0];}).filter(Boolean);
+  var links=hits.map(function(b){return bills[b.k]?'<a href="#b-'+b.k+'">'+esc(b.n)+'</a>':'<a href="'+esc(b.url)+'" target="_blank" rel="noopener">'+esc(b.n)+'</a>';});
+  var rv=[];hits.forEach(function(b){(billVotes[b.k]||[]).forEach(function(v){if(v.bill===b.n&&rv.indexOf(v)<0)rv.push(v);});});rv.sort(function(a,b){return a.date.localeCompare(b.date);});
   return '<article class="card"><div class="top"><span class="eyebrow">'+esc(fmt(r.date))+(links.length?' · '+links.join(', '):'')+'</span></div><h3>'+esc(r.title)+'</h3><p>'+esc(r.summary)+'</p>'+
    (r.timeline&&r.timeline.length?'<ol class="timeline">'+r.timeline.map(function(t){return '<li><span class="d">'+esc(fmt(t[0]))+'</span>'+esc(t[1])+'</li>';}).join('')+'</ol>':'')+
+   (rv.length?'<h4 class="eyebrow" style="margin:0">Recorded votes</h4><ul class="rank">'+rv.map(function(v){var pcb=v.by.PC||{y:0,n:0};return '<li><a href="#v-'+v.id+'">'+esc(v.bill+' · '+v.stage)+'<small>'+esc(fmt(v.date))+' · PC '+pcb.y+' for, '+pcb.n+' against</small></a><span class="num '+(v.carried?'res-c':'res-l')+'">'+v.yes+'–'+v.no+'</span></li>';}).join('')+'</ul>':'')+
    (r.government_position?'<p class="side"><b>Government’s position:</b> '+esc(r.government_position)+'</p>':'')+
    '<p class="srcs">Sources: '+(r.sources||[]).map(function(x){return '<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+esc(x[0])+'</a>';}).join(', ')+'</p></article>';
 }
