@@ -276,6 +276,24 @@ python -m scraper.site_data    # writes site/data.json and site/dist/
   `data/editorial.json`. It was copied from the original Queen's Park Watch
   page; edit it there and rerun `site_data`.
 
+## Hansard analysis and riding scorecard
+
+```sh
+# download the structured Hansard files listed on
+# https://www.ola.org/en/office-assembly/library-research/data-resources
+# into cache/hansard/ (one request every 1.5 s), then:
+python -m scraper.hansard      # writes data/hansard-summary.json
+```
+
+`data/hansard-summary.json` counts, per member: paragraphs and words spoken,
+members' statements, petitions read aloud, and paragraphs naming places in
+their riding (Simcoe-area MPPs). Petitions are better counted from Votes and
+Proceedings, which records petitions tabled without being read.
+
+`site/scorecard.html` is the riding scorecard artifact. Its measures,
+readings, promises and announcements live in the artifact's shared database
+(`metrics`, `promises`, `announcements` collections), not in the page.
+
 ## Checks
 
 `python -m scraper.checks` runs:

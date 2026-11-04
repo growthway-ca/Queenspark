@@ -1,0 +1,184 @@
+<title>Barrie Riding Scorecard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a riding ledger — one card per measure (latest value, change since the
+   first reading, a sparkline), then promises and money; same palette as Queen's Park Watch. */
+:root{
+  --ground:#EEF1EE;--sheet:#FBFCFB;--ink:#14201B;--muted:#5A6862;--rule:#C8D3CD;--soft:#E1E8E4;--accent:#1D5A44;
+  --good:#1C7A52;--bad:#B5401F;--warn:#A57A12;--prog:#1D4E9E;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;--sans:"Schibsted Grotesk","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#0F1512;--sheet:#161E1A;--ink:#E5ECE8;--muted:#98A69F;--rule:#2E3A35;--soft:#1E2823;--accent:#7FC3A4;--good:#5FCB98;--bad:#F08A6A;--warn:#E3B651;--prog:#7EA8F0;color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#0F1512;--sheet:#161E1A;--ink:#E5ECE8;--muted:#98A69F;--rule:#2E3A35;--soft:#1E2823;--accent:#7FC3A4;--good:#5FCB98;--bad:#F08A6A;--warn:#E3B651;--prog:#7EA8F0;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}
+a{color:inherit;text-underline-offset:3px}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:72rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:1.6rem 5rem;display:flex;flex-direction:column;gap:2.2rem}
+h1,h2,h3{font-family:var(--serif);margin:0;text-wrap:balance}
+h1{font-size:clamp(1.9rem,5.5vw,2.9rem);line-height:1.05}
+h2{font-size:1.5rem}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{display:flex;flex-direction:column;gap:.6rem;max-width:46rem}
+.dek{font-family:var(--serif);font-size:1.12rem;color:var(--muted)}
+.status{font-size:.88rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.8rem}
+.stat{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.1rem}
+.stat b{font-family:var(--serif);font-size:1.9rem;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat span{font-size:.85rem;color:var(--muted)}
+.sec{display:flex;flex-direction:column;gap:.9rem}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.4rem 1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:1rem}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:14px;padding:1.1rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.card .top{display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}
+.big{font-family:var(--serif);font-size:2rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.delta{font-size:.88rem;font-weight:600}
+.worse{color:var(--bad)}.better{color:var(--good)}.flat{color:var(--muted)}
+.spark{display:block;width:100%;height:56px}
+.meta{font-size:.82rem;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;font-size:.76rem;font-weight:600;padding:.1rem .55rem;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap}
+.chip.bad{color:var(--bad)}.chip.good{color:var(--good)}.chip.warn{color:var(--warn)}.chip.prog{color:var(--prog)}.chip.k{color:var(--muted);border-color:var(--rule)}
+.row{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.3rem;border:1.5px solid var(--ink);border-radius:999px;padding:.32rem .8rem;font-weight:600;font-size:.86rem;background:none;cursor:pointer}
+.btn.solid{background:var(--ink);color:var(--sheet)}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font-weight:600;font-size:.86rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.linkbtn.danger{color:var(--bad)}
+form.inline{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,8rem),1fr));gap:.5rem;background:var(--soft);border-radius:10px;padding:.7rem}
+form.inline .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;gap:.15rem;font-size:.78rem;color:var(--muted)}
+.in{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:.4rem .55rem;font-size:.92rem;color:var(--ink);min-width:0;width:100%}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{text-align:left;padding:.35rem .4rem;border-bottom:1px solid var(--rule)}
+th{color:var(--muted);font-weight:600;font-size:.76rem}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+.tw{overflow-x:auto}
+.list{display:flex;flex-direction:column;gap:.8rem}
+.prom{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:1rem;display:flex;flex-direction:column;gap:.5rem;border-top:4px solid var(--sc,var(--muted))}
+.prom .said{font-family:var(--serif);font-size:1.08rem}
+.track{height:.45rem;border-radius:999px;background:var(--soft);overflow:hidden}
+.track span{display:block;height:100%;background:var(--sc,var(--accent))}
+.ev{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem;font-size:.9rem}
+.ev b{font-variant-numeric:tabular-nums;margin-right:.35rem}
+.money{display:flex;flex-direction:column;gap:.5rem}
+.mrow{display:grid;grid-template-columns:5.5rem minmax(0,1fr) auto;gap:.2rem .8rem;align-items:baseline;padding:.55rem 0;border-top:1px solid var(--rule)}
+.mrow:first-child{border-top:0}
+.amt{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.notice{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:1rem;color:var(--muted)}
+.foot{font-size:.84rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:1rem}
+</style>
+
+<main class="wrap" id="app">
+  <section class="lede"><span class="eyebrow">Barrie–Springwater–Oro-Medonte</span><h1>Riding Scorecard</h1><p class="dek">What has changed for residents since Doug Downey became MPP in 2018, tracked quarter by quarter to the next election.</p><p class="status" id="status">Loading the scorecard…</p></section>
+</main>
+
+<script>
+(function(){
+'use strict';
+var app=document.getElementById('app');
+var S={metrics:[],promises:[],money:[]},db=null,canWrite=false,loaded={m:false,p:false,a:false},open={};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+function fmtDate(d){if(!d)return '';var a=String(d).split('-').map(Number);var dt=new Date(a[0],(a[1]||1)-1,a[2]||1);return dt.toLocaleDateString('en-CA',a.length>2?{month:'short',day:'numeric',year:'numeric'}:a.length>1?{month:'short',year:'numeric'}:{year:'numeric'});}
+function fmtVal(m,v){if(v==null||isNaN(v))return '—';if(m.unit==='$')return '$'+Number(v).toLocaleString('en-CA');if(m.unit==='%')return Number(v).toLocaleString('en-CA')+'%';if(m.unit==='hours')return Number(v).toLocaleString('en-CA')+' h';if(m.unit==='days')return Number(v).toLocaleString('en-CA')+' days';return Number(v).toLocaleString('en-CA');}
+function money(n){return n>=1e6?'$'+(n/1e6).toFixed(1).replace(/\.0$/,'')+'M':'$'+Math.round(n).toLocaleString('en-CA');}
+function pts(m){return (m.points||[]).slice().sort(function(a,b){return String(a.d).localeCompare(String(b.d));});}
+function trend(m){var p=pts(m);if(p.length<2)return null;var a=p[0].v,b=p[p.length-1].v;if(!a)return null;var ch=(b-a)/Math.abs(a)*100;var worse=m.better==='down'?ch>0:ch<0;return {ch:ch,worse:Math.abs(ch)<0.5?null:worse,first:p[0],last:p[p.length-1]};}
+var STATUS={off:['Off track','bad','--bad'],progress:['In progress','prog','--prog'],done:['Delivered','good','--good'],early:['Too early','k','--muted'],check:['Not checked yet','warn','--warn']};
+
+function spark(m){
+  var p=pts(m);if(p.length<2)return '';
+  var W=320,H=56,pad=6,vs=p.map(function(x){return +x.v;}),lo=Math.min.apply(null,vs),hi=Math.max.apply(null,vs);if(hi===lo){hi+=1;lo-=1;}
+  var t0=+new Date(p[0].d+(p[0].d.length===7?'-01':p[0].d.length===4?'-01-01':'')),t1=+new Date(p[p.length-1].d+(p[p.length-1].d.length===7?'-01':p[p.length-1].d.length===4?'-01-01':''));if(t1===t0)t1=t0+1;
+  var X=function(d){var t=+new Date(d+(d.length===7?'-01':d.length===4?'-01-01':''));return pad+(t-t0)/(t1-t0)*(W-2*pad);},Y=function(v){return H-pad-(v-lo)/(hi-lo)*(H-2*pad);};
+  var tr=trend(m),col=tr&&tr.worse===true?'var(--bad)':tr&&tr.worse===false?'var(--good)':'var(--muted)';
+  var line=p.map(function(x,i){return (i?'L':'M')+X(x.d).toFixed(1)+' '+Y(+x.v).toFixed(1);}).join(' ');
+  var area=line+' L'+X(p[p.length-1].d).toFixed(1)+' '+(H-pad)+' L'+X(p[0].d).toFixed(1)+' '+(H-pad)+' Z';
+  return '<svg class="spark" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" role="img" aria-label="'+esc(m.label+': '+p.map(function(x){return fmtDate(x.d)+' '+fmtVal(m,x.v);}).join(', '))+'"><path d="'+area+'" fill="'+col+'" fill-opacity=".12"/><path d="'+line+'" fill="none" stroke="'+col+'" stroke-width="2" vector-effect="non-scaling-stroke"/>'+p.map(function(x){return '<circle cx="'+X(x.d).toFixed(1)+'" cy="'+Y(+x.v).toFixed(1)+'" r="3" fill="'+col+'"><title>'+esc(fmtDate(x.d)+': '+fmtVal(m,x.v))+'</title></circle>';}).join('')+'</svg>';
+}
+
+function render(){
+  var keep={};document.querySelectorAll('form input,form select,form textarea').forEach(function(el){if(el.id)keep[el.id]=el.value;});
+  var ms=S.metrics.slice().sort(function(a,b){return (a.order||99)-(b.order||99);});
+  var worse=0,better=0;ms.forEach(function(m){var t=trend(m);if(t&&t.worse===true)worse++;else if(t&&t.worse===false)better++;});
+  var announced=S.money.reduce(function(s,a){return s+(+a.amount||0);},0),confirmed=S.money.filter(function(a){return a.spent;}).reduce(function(s,a){return s+(+a.amount||0);},0);
+  var offTrack=S.promises.filter(function(p){return p.status==='off';}).length;
+  var h='<section class="lede"><span class="eyebrow">Barrie–Springwater–Oro-Medonte</span><h1>Riding Scorecard</h1><p class="dek">What has changed for residents since Doug Downey became MPP in 2018, tracked quarter by quarter to the next election.</p><p class="status" id="status">'+statusLine()+'</p></section>';
+  h+='<section class="stats">'+stat(worse+' of '+ms.length,'measures worse than their earliest reading')+stat(better,'measures better than their earliest reading')+stat(offTrack+' of '+S.promises.length,'riding promises off track')+stat(money(announced),'announced in the riding; '+money(confirmed)+' confirmed spent')+'</section>';
+  h+='<section class="sec"><div class="sec-head"><h2>Measures</h2>'+(canWrite?'<button class="btn" data-act="toggle" data-k="newmetric">Add a measure</button>':'')+'</div><p class="muted">Red means the change is bad for residents, green means good. Each card shows its earliest and latest readings and links to its source.</p>'+
+   (open.newmetric&&canWrite?metricForm():'')+'<div class="cards">'+(ms.length?ms.map(card).join(''):'<p class="notice">No measures yet. '+(canWrite?'Add the first one with “Add a measure”.':'')+'</p>')+'</div></section>';
+  h+='<section class="sec"><div class="sec-head"><h2>Promises in the riding</h2>'+(canWrite?'<button class="btn" data-act="toggle" data-k="newpromise">Add a promise</button>':'')+'</div>'+(open.newpromise&&canWrite?promiseForm():'')+'<div class="list">'+(S.promises.length?S.promises.slice().sort(function(a,b){return String(b.saidDate).localeCompare(String(a.saidDate));}).map(promise).join(''):'<p class="notice">No promises logged yet.</p>')+'</div></section>';
+  h+='<section class="sec"><div class="sec-head"><h2>Money announced</h2>'+(canWrite?'<button class="btn" data-act="toggle" data-k="newmoney">Log an announcement</button>':'')+'</div><p class="muted">Announcements Downey made or shared. “Up to” amounts may not all flow; mark one confirmed once Public Accounts or the recipient shows the money arrived.</p>'+(open.newmoney&&canWrite?moneyForm():'')+
+   '<div class="card money">'+(S.money.length?S.money.slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));}).map(function(a){return '<div class="mrow"><span class="meta">'+esc(fmtDate(a.date))+'</span><span>'+(a.src?'<a href="'+esc(a.src)+'" target="_blank" rel="noopener">'+esc(a.what)+'</a>':esc(a.what))+(a.upTo?' <span class="chip k">up to</span>':'')+' '+(a.spent?'<span class="chip good">Confirmed spent</span>':'<span class="chip warn">Not confirmed</span>')+(canWrite?' <button class="linkbtn" data-act="spent" data-id="'+esc(a.id)+'">'+(a.spent?'Mark not confirmed':'Mark confirmed')+'</button>':'')+'</span><span class="amt">'+money(+a.amount||0)+'</span></div>';}).join(''):'<p class="muted">No announcements logged yet.</p>')+'</div></section>';
+  h+='<footer class="foot">Data entered here is shared with everyone who can open this page. Sources for the starting figures are on each card; the full sourced brief is “The Case for Change in Barrie–Springwater–Oro-Medonte”. Votes come from <a href="https://claude.ai/artifact/BBdne236GwqsHaKcBQUcoX" target="_blank" rel="noopener">Queen’s Park Watch</a>.</footer>';
+  app.innerHTML=h;
+  Object.keys(keep).forEach(function(id){var el=document.getElementById(id);if(el&&!el.value)el.value=keep[id];});
+}
+function stat(b,s){return '<div class="stat"><b>'+esc(b)+'</b><span>'+esc(s)+'</span></div>';}
+function statusLine(){if(!db)return dbMsg;if(!(loaded.m&&loaded.p&&loaded.a))return 'Loading the scorecard…';return canWrite?'You can add readings, promises and announcements.':'You can view this scorecard. Ask the owner for Contributor access to add readings.';}
+function card(m){
+  var t=trend(m),p=pts(m),last=p[p.length-1];
+  var d=t?'<span class="delta '+(t.worse===true?'worse':t.worse===false?'better':'flat')+'">'+(t.ch>0?'+':'')+t.ch.toFixed(0)+'% since '+esc(fmtDate(t.first.d))+'</span>':'<span class="delta flat">One reading so far</span>';
+  var h='<article class="card"><div class="top"><span class="eyebrow">'+esc(m.issue||'')+'</span>'+(m.file?'<span class="chip k">Attorney General’s file</span>':'')+'</div><h3>'+esc(m.label)+'</h3>'+
+   '<div class="row" style="justify-content:space-between"><span class="big">'+(last?fmtVal(m,last.v):'—')+'</span>'+d+'</div>'+spark(m)+
+   '<p class="meta">'+(last?'Latest: '+esc(fmtDate(last.d))+(last.note?' · '+esc(last.note):''):'No readings yet')+(m.geo?' · '+esc(m.geo):'')+'</p>'+
+   (m.note?'<p class="meta">'+esc(m.note)+'</p>':'')+
+   '<p class="meta">Source: '+(m.srcUrl?'<a href="'+esc(m.srcUrl)+'" target="_blank" rel="noopener">'+esc(m.srcLabel||'link')+'</a>':esc(m.srcLabel||'not set'))+(m.cadence?' · update '+esc(m.cadence):'')+'</p>'+
+   '<div class="row"><button class="linkbtn" data-act="toggle" data-k="h-'+esc(m.id)+'">'+(open['h-'+m.id]?'Hide readings':'All readings ('+p.length+')')+'</button>'+(canWrite?'<button class="linkbtn" data-act="toggle" data-k="r-'+esc(m.id)+'">Add a reading</button>':'')+'</div>';
+  if(open['h-'+m.id])h+='<div class="tw"><table><thead><tr><th>Date</th><th class="r">Value</th><th>Note</th>'+(canWrite?'<th></th>':'')+'</tr></thead><tbody>'+p.slice().reverse().map(function(x){return '<tr><td>'+esc(fmtDate(x.d))+'</td><td class="r">'+fmtVal(m,x.v)+'</td><td>'+(x.src?'<a href="'+esc(x.src)+'" target="_blank" rel="noopener">'+esc(x.note||'source')+'</a>':esc(x.note||''))+'</td>'+(canWrite?'<td><button class="linkbtn danger" data-act="delpt" data-id="'+esc(m.id)+'" data-d="'+esc(x.d)+'" data-v="'+esc(x.v)+'">Remove</button></td>':'')+'</tr>';}).join('')+'</tbody></table></div>';
+  if(open['r-'+m.id]&&canWrite)h+='<form class="inline" data-form="reading" data-id="'+esc(m.id)+'"><label class="f">Date (YYYY-MM)<input class="in" id="rd-'+esc(m.id)+'" name="d" required pattern="\\d{4}(-\\d{2}){0,2}" placeholder="2026-12"></label><label class="f">Value'+(m.unit?' ('+esc(m.unit)+')':'')+'<input class="in" id="rv-'+esc(m.id)+'" name="v" type="number" step="any" required></label><label class="f full">Source link<input class="in" id="rs-'+esc(m.id)+'" name="src" type="url" placeholder="https://"></label><label class="f full">Note<input class="in" id="rn-'+esc(m.id)+'" name="note" placeholder="e.g. October survey"></label><div class="row full"><button class="btn solid" type="submit">Save reading</button></div></form>';
+  return h+'</article>';
+}
+function promise(p){
+  var s=STATUS[p.status]||STATUS.check,track='';
+  if(p.deadline&&p.saidDate){var a=+new Date(p.saidDate),b=+new Date(p.deadline),pc=Math.max(0,Math.min(100,(Date.now()-a)/(b-a)*100));track='<div class="track"><span style="width:'+pc.toFixed(0)+'%"></span></div><p class="meta">Promised '+esc(fmtDate(p.saidDate))+' · due '+esc(fmtDate(p.deadline))+' · '+pc.toFixed(0)+'% of the time used</p>';}
+  return '<article class="prom" style="--sc:var('+s[2]+')"><div class="row" style="justify-content:space-between"><span class="eyebrow">'+esc(p.area||'')+'</span><span class="chip '+s[1]+'">'+s[0]+'</span></div><p class="said">'+esc(p.said)+'</p><p class="meta">'+esc(fmtDate(p.saidDate))+(p.src?' · <a href="'+esc(p.src)+'" target="_blank" rel="noopener">source</a>':'')+(p.measure?' · Measured by: '+esc(p.measure):'')+'</p>'+track+
+   ((p.updates||[]).length?'<ul class="ev">'+p.updates.slice().sort(function(a,b){return String(b.d).localeCompare(String(a.d));}).map(function(u){return '<li><b>'+esc(fmtDate(u.d))+'</b>'+esc(u.text)+(u.src?' <a href="'+esc(u.src)+'" target="_blank" rel="noopener">source</a>':'')+'</li>';}).join('')+'</ul>':'')+
+   (canWrite?'<div class="row"><label class="f" style="flex-direction:row;align-items:center;gap:.4rem">Status <select class="in" style="width:auto" data-act="status" data-id="'+esc(p.id)+'">'+Object.keys(STATUS).map(function(k){return '<option value="'+k+'"'+(p.status===k?' selected':'')+'>'+STATUS[k][0]+'</option>';}).join('')+'</select></label><button class="linkbtn" data-act="toggle" data-k="u-'+esc(p.id)+'">Add an update</button></div>':'')+
+   (open['u-'+p.id]&&canWrite?'<form class="inline" data-form="update" data-id="'+esc(p.id)+'"><label class="f">Date<input class="in" id="ud-'+esc(p.id)+'" name="d" required placeholder="2026-12"></label><label class="f full">What the record shows<input class="in" id="ut-'+esc(p.id)+'" name="text" required></label><label class="f full">Source link<input class="in" id="us-'+esc(p.id)+'" name="src" type="url" placeholder="https://"></label><div class="row full"><button class="btn solid" type="submit">Save update</button></div></form>':'')+'</article>';
+}
+function metricForm(){return '<form class="inline" data-form="metric"><label class="f full">Measure<input class="in" id="nm-label" name="label" required placeholder="e.g. Portables at Simcoe County District School Board schools"></label><label class="f">Issue<input class="in" id="nm-issue" name="issue" placeholder="Schools"></label><label class="f">Unit<select class="in" id="nm-unit" name="unit"><option value="">Count</option><option value="$">Dollars</option><option value="%">Percent</option><option value="days">Days</option><option value="hours">Hours</option></select></label><label class="f">Better when<select class="in" id="nm-better" name="better"><option value="down">It goes down</option><option value="up">It goes up</option></select></label><label class="f">Area<input class="in" id="nm-geo" name="geo" placeholder="Barrie"></label><label class="f">Source name<input class="in" id="nm-srcl" name="srcLabel"></label><label class="f full">Source link<input class="in" id="nm-srcu" name="srcUrl" type="url" placeholder="https://"></label><div class="row full"><button class="btn solid" type="submit">Add measure</button></div></form>';}
+function promiseForm(){return '<form class="inline" data-form="promise"><label class="f full">What he promised<input class="in" id="np-said" name="said" required></label><label class="f">Area<input class="in" id="np-area" name="area" placeholder="Riding"></label><label class="f">Said on<input class="in" id="np-date" name="saidDate" type="date" required></label><label class="f">Due by (optional)<input class="in" id="np-due" name="deadline" type="date"></label><label class="f full">Measured by<input class="in" id="np-measure" name="measure"></label><label class="f full">Source link<input class="in" id="np-src" name="src" type="url" placeholder="https://"></label><div class="row full"><button class="btn solid" type="submit">Add promise</button></div></form>';}
+function moneyForm(){return '<form class="inline" data-form="money"><label class="f full">What it’s for<input class="in" id="na-what" name="what" required></label><label class="f">Date<input class="in" id="na-date" name="date" type="date" required></label><label class="f">Amount ($)<input class="in" id="na-amt" name="amount" type="number" min="0" required></label><label class="f">“Up to” amount<select class="in" id="na-upto" name="upTo"><option value="">No</option><option value="1">Yes</option></select></label><label class="f full">Source link<input class="in" id="na-src" name="src" type="url" placeholder="https://"></label><div class="row full"><button class="btn solid" type="submit">Log announcement</button></div></form>';}
+
+/* ---------- writes ---------- */
+function setStatus(t){var el=document.getElementById('status');if(el)el.textContent=t;}
+function fail(e){setStatus(e&&e.code==='invalid_argument'?'You don’t have permission to change this scorecard.':e&&e.code==='quota_exceeded'?'The scorecard is full. Remove old readings before adding more.':'That didn’t save. Try again in a moment.');if(e&&e.code==='invalid_argument'){canWrite=false;render();}}
+function slugify(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)||('m'+Date.now());}
+app.addEventListener('submit',function(e){
+  var f=e.target.closest('form');if(!f||!db)return;e.preventDefault();var fd=new FormData(f),kind=f.dataset.form,id=f.dataset.id;
+  var val=function(k){return String(fd.get(k)||'').trim();};
+  var p;
+  if(kind==='reading'){var m=S.metrics.filter(function(x){return x.id===id;})[0];if(!m)return;var pts2=(m.points||[]).filter(function(x){return x.d!==val('d');}).concat([{d:val('d'),v:+val('v'),src:val('src')||undefined,note:val('note')||undefined}]);p=db.doc('metrics/'+id).update({points:JSON.parse(JSON.stringify(pts2))}).then(function(){open['r-'+id]=false;setStatus('Reading saved.');});}
+  else if(kind==='update'){var pr=S.promises.filter(function(x){return x.id===id;})[0];if(!pr)return;var ups=(pr.updates||[]).concat([{d:val('d'),text:val('text'),src:val('src')||undefined}]);p=db.doc('promises/'+id).update({updates:JSON.parse(JSON.stringify(ups))}).then(function(){open['u-'+id]=false;setStatus('Update saved.');});}
+  else if(kind==='metric'){var nid=slugify(val('label'));p=db.doc('metrics/'+nid).set({label:val('label'),issue:val('issue'),unit:val('unit'),better:val('better')||'down',geo:val('geo'),srcLabel:val('srcLabel'),srcUrl:val('srcUrl'),order:100+S.metrics.length,points:[]}).then(function(){open.newmetric=false;setStatus('Measure added.');});}
+  else if(kind==='promise'){p=db.collection('promises').add({said:val('said'),area:val('area')||'Riding',saidDate:val('saidDate'),deadline:val('deadline')||null,measure:val('measure'),src:val('src'),status:'check',updates:[]}).then(function(){open.newpromise=false;setStatus('Promise added.');});}
+  else if(kind==='money'){p=db.collection('announcements').add({what:val('what'),date:val('date'),amount:+val('amount'),upTo:!!val('upTo'),src:val('src'),spent:false}).then(function(){open.newmoney=false;setStatus('Announcement logged.');});}
+  if(p){f.querySelectorAll('input,select').forEach(function(el){el.value='';});p.catch(fail);}
+});
+app.addEventListener('click',function(e){var b=e.target.closest('[data-act]');if(!b||b.tagName==='SELECT')return;
+  var a=b.dataset.act;
+  if(a==='toggle'){open[b.dataset.k]=!open[b.dataset.k];render();}
+  else if(a==='delpt'&&db){var m=S.metrics.filter(function(x){return x.id===b.dataset.id;})[0];if(!m)return;var rest=(m.points||[]).filter(function(x){return !(x.d===b.dataset.d&&String(x.v)===b.dataset.v);});db.doc('metrics/'+m.id).update({points:JSON.parse(JSON.stringify(rest))}).then(function(){setStatus('Reading removed.');}).catch(fail);}
+  else if(a==='spent'&&db){var x=S.money.filter(function(y){return y.id===b.dataset.id;})[0];if(!x)return;db.doc('announcements/'+x.id).update({spent:!x.spent}).catch(fail);}
+});
+app.addEventListener('change',function(e){var s=e.target;if(s.dataset&&s.dataset.act==='status'&&db){db.doc('promises/'+s.dataset.id).update({status:s.value}).then(function(){setStatus('Status updated.');}).catch(fail);}});
+
+/* ---------- load ---------- */
+var dbMsg='Loading the scorecard…';
+render();
+if(!(window.claude&&typeof window.claude.use==='function')){dbMsg='Open this page on claude.ai to see the shared scorecard.';render();return;}
+claude.use('user').then(function(u){if(!u)return;var c=u.can?u.can('data.write'):null;Promise.resolve(c).then(function(v){canWrite=v===null||v===undefined?true:!!v;render();});}).catch(function(){});
+claude.use('db').then(function(d){
+  if(!d){dbMsg='Sign in to claude.ai to see the shared scorecard.';render();return;}
+  db=d;var timer=setTimeout(function(){setStatus('The scorecard data can’t be reached yet. It will appear when the connection returns.');},10000);
+  function sub(col,key,target){db.collection(col).onSnapshot(function(q){if(!q.metadata.fromCache)clearTimeout(timer);S[target]=q.docs.map(function(x){return Object.assign({id:x.id},x.data());});loaded[key]=true;render();},function(err){clearTimeout(timer);loaded[key]=true;setStatus(err&&err.code==='revoked'?'This scorecard is no longer available to you.':'The scorecard couldn’t load. Reload the page to try again.');});}
+  sub('metrics','m','metrics');sub('promises','p','promises');sub('announcements','a','money');
+}).catch(function(){dbMsg='The scorecard couldn’t load. Reload the page to try again.';render();});
+})();
+</script>

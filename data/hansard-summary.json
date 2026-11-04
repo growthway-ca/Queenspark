@@ -1,0 +1,7249 @@
+{
+ "period": [
+  "2018-07-11",
+  "2026-06-02"
+ ],
+ "orders": [
+  [
+   "Orders of the Day",
+   291434
+  ],
+  [
+   "Question Period/Oral Questions",
+   71896
+  ],
+  [
+   "Question Period",
+   61115
+  ],
+  [
+   "Petitions",
+   45646
+  ],
+  [
+   "Private Members’ Public Business",
+   35735
+  ],
+  [
+   "Members’ Statements",
+   27068
+  ],
+  [
+   "Opposition Day",
+   15195
+  ],
+  [
+   "Introduction of Visitors",
+   12627
+  ],
+  [
+   "",
+   10525
+  ],
+  [
+   "Statements by the Ministry and Responses",
+   6932
+  ],
+  [
+   "Deferred Votes",
+   4377
+  ],
+  [
+   "Adjournment Debate",
+   4305
+  ],
+  [
+   "Introduction of Bills",
+   3579
+  ],
+  [
+   "Motions",
+   3434
+  ],
+  [
+   "Reports by Committees",
+   2110
+  ],
+  [
+   "Private Members? Public Business",
+   1828
+  ],
+  [
+   "Members? Statements",
+   1652
+  ],
+  [
+   "Introduction of Government Bills",
+   407
+  ],
+  [
+   "House sittings",
+   3
+  ]
+ ],
+ "members": {
+  "7189": {
+   "id": "7189",
+   "name": "Todd Smith",
+   "paras": 3223,
+   "words": 182648,
+   "days": 259,
+   "statements": 3,
+   "petitions": 1,
+   "by_year": {
+    "2018": {
+     "paras": 925,
+     "petitions": 1,
+     "statements": 2
+    },
+    "2019": {
+     "paras": 565
+    },
+    "2020": {
+     "paras": 216
+    },
+    "2021": {
+     "paras": 196,
+     "statements": 1
+    },
+    "2022": {
+     "paras": 224
+    },
+    "2023": {
+     "paras": 393
+    },
+    "2024": {
+     "paras": 704
+    }
+   }
+  },
+  "7245": {
+   "id": "7245",
+   "name": "Gila Martow",
+   "paras": 2121,
+   "words": 115516,
+   "days": 108,
+   "statements": 134,
+   "petitions": 550,
+   "by_year": {
+    "2018": {
+     "paras": 575,
+     "statements": 44,
+     "petitions": 95
+    },
+    "2019": {
+     "paras": 924,
+     "petitions": 264,
+     "statements": 46
+    },
+    "2020": {
+     "paras": 622,
+     "petitions": 191,
+     "statements": 44
+    }
+   }
+  },
+  "2": {
+   "id": "2",
+   "name": "Ted Arnott",
+   "paras": 43670,
+   "words": 463154,
+   "days": 505,
+   "statements": 899,
+   "petitions": 352,
+   "by_year": {
+    "2018": {
+     "paras": 5062,
+     "statements": 80,
+     "petitions": 16
+    },
+    "2019": {
+     "paras": 5981,
+     "statements": 116,
+     "petitions": 25
+    },
+    "2020": {
+     "paras": 5848,
+     "statements": 194,
+     "petitions": 19
+    },
+    "2021": {
+     "paras": 6594,
+     "statements": 131,
+     "petitions": 24
+    },
+    "2022": {
+     "paras": 6857,
+     "petitions": 48,
+     "statements": 184
+    },
+    "2023": {
+     "paras": 6601,
+     "statements": 118,
+     "petitions": 33
+    },
+    "2024": {
+     "paras": 6727,
+     "statements": 76,
+     "petitions": 187
+    }
+   }
+  },
+  "7510": {
+   "id": "7510",
+   "name": "Christina Maria Mitas",
+   "paras": 561,
+   "words": 36180,
+   "days": 45,
+   "statements": 76,
+   "petitions": 11,
+   "by_year": {
+    "2018": {
+     "paras": 118,
+     "statements": 14
+    },
+    "2019": {
+     "paras": 46,
+     "statements": 15
+    },
+    "2020": {
+     "paras": 315,
+     "statements": 31,
+     "petitions": 11
+    },
+    "2021": {
+     "paras": 62,
+     "statements": 16
+    },
+    "2022": {
+     "paras": 20
+    }
+   }
+  },
+  "7091": {
+   "id": "7091",
+   "name": "Randy Hillier",
+   "paras": 525,
+   "words": 25653,
+   "days": 57,
+   "statements": 56,
+   "petitions": 39,
+   "by_year": {
+    "2018": {
+     "paras": 60,
+     "petitions": 4
+    },
+    "2019": {
+     "paras": 112,
+     "statements": 26,
+     "petitions": 12
+    },
+    "2020": {
+     "paras": 353,
+     "statements": 30,
+     "petitions": 23
+    }
+   }
+  },
+  "7470": {
+   "id": "7470",
+   "name": "Donna Skelly",
+   "paras": 12832,
+   "words": 276520,
+   "days": 316,
+   "statements": 455,
+   "petitions": 296,
+   "by_year": {
+    "2018": {
+     "paras": 283,
+     "statements": 15,
+     "petitions": 10
+    },
+    "2019": {
+     "paras": 517,
+     "statements": 50,
+     "petitions": 15
+    },
+    "2020": {
+     "paras": 801,
+     "statements": 40,
+     "petitions": 90
+    },
+    "2021": {
+     "paras": 924,
+     "petitions": 124,
+     "statements": 44
+    },
+    "2022": {
+     "paras": 1067,
+     "statements": 37,
+     "petitions": 4
+    },
+    "2023": {
+     "paras": 2176,
+     "petitions": 18,
+     "statements": 61
+    },
+    "2024": {
+     "paras": 1899,
+     "statements": 49,
+     "petitions": 20
+    },
+    "2025": {
+     "paras": 3999,
+     "statements": 149,
+     "petitions": 15
+    },
+    "2026": {
+     "paras": 1166,
+     "statements": 10
+    }
+   }
+  },
+  "7168": {
+   "id": "7168",
+   "name": "Jane McKenna",
+   "paras": 2089,
+   "words": 114447,
+   "days": 147,
+   "statements": 142,
+   "petitions": 48,
+   "by_year": {
+    "2018": {
+     "paras": 250,
+     "statements": 33
+    },
+    "2019": {
+     "paras": 517,
+     "statements": 27,
+     "petitions": 23
+    },
+    "2020": {
+     "paras": 485,
+     "statements": 47,
+     "petitions": 25
+    },
+    "2021": {
+     "paras": 742,
+     "statements": 35
+    },
+    "2022": {
+     "paras": 95
+    }
+   }
+  },
+  "7458": {
+   "id": "7458",
+   "name": "Belinda C. Karahalios",
+   "paras": 1720,
+   "words": 93044,
+   "days": 138,
+   "statements": 135,
+   "petitions": 206,
+   "by_year": {
+    "2018": {
+     "paras": 284,
+     "statements": 46,
+     "petitions": 28
+    },
+    "2019": {
+     "paras": 545,
+     "statements": 36,
+     "petitions": 63
+    },
+    "2020": {
+     "paras": 338,
+     "petitions": 58,
+     "statements": 18
+    },
+    "2021": {
+     "paras": 415,
+     "statements": 26,
+     "petitions": 21
+    },
+    "2022": {
+     "paras": 138,
+     "petitions": 36,
+     "statements": 9
+    }
+   }
+  },
+  "7171": {
+   "id": "7171",
+   "name": "Rick Nicholls",
+   "paras": 6520,
+   "words": 136754,
+   "days": 199,
+   "statements": 168,
+   "petitions": 262,
+   "by_year": {
+    "2018": {
+     "paras": 1571,
+     "statements": 29,
+     "petitions": 15
+    },
+    "2019": {
+     "paras": 1448,
+     "petitions": 52,
+     "statements": 24
+    },
+    "2020": {
+     "paras": 1773,
+     "petitions": 42,
+     "statements": 50
+    },
+    "2021": {
+     "paras": 1553,
+     "statements": 50,
+     "petitions": 127
+    },
+    "2022": {
+     "paras": 175,
+     "petitions": 26,
+     "statements": 15
+    }
+   }
+  },
+  "7": {
+   "id": "7",
+   "name": "Gilles Bisson",
+   "paras": 4973,
+   "words": 371311,
+   "days": 188,
+   "statements": 133,
+   "petitions": 49,
+   "by_year": {
+    "2018": {
+     "paras": 1737,
+     "statements": 32
+    },
+    "2019": {
+     "paras": 1469,
+     "statements": 43,
+     "petitions": 1
+    },
+    "2020": {
+     "paras": 1271,
+     "statements": 36,
+     "petitions": 20
+    },
+    "2021": {
+     "paras": 228,
+     "statements": 22,
+     "petitions": 19
+    },
+    "2022": {
+     "paras": 268,
+     "petitions": 9
+    }
+   }
+  },
+  "7468": {
+   "id": "7468",
+   "name": "Doug Ford",
+   "paras": 4051,
+   "words": 181894,
+   "days": 303,
+   "statements": 11,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 882
+    },
+    "2019": {
+     "paras": 1028
+    },
+    "2020": {
+     "paras": 607,
+     "statements": 5
+    },
+    "2021": {
+     "paras": 382
+    },
+    "2022": {
+     "paras": 184,
+     "statements": 6
+    },
+    "2023": {
+     "paras": 417
+    },
+    "2024": {
+     "paras": 278
+    },
+    "2025": {
+     "paras": 221
+    },
+    "2026": {
+     "paras": 52
+    }
+   }
+  },
+  "7042": {
+   "id": "7042",
+   "name": "Lisa MacLeod",
+   "paras": 2503,
+   "words": 142451,
+   "days": 184,
+   "statements": 58,
+   "petitions": 4,
+   "by_year": {
+    "2018": {
+     "paras": 703
+    },
+    "2019": {
+     "paras": 966,
+     "statements": 3,
+     "petitions": 2
+    },
+    "2020": {
+     "paras": 265
+    },
+    "2021": {
+     "paras": 218,
+     "statements": 1
+    },
+    "2022": {
+     "paras": 134,
+     "statements": 1
+    },
+    "2024": {
+     "paras": 217,
+     "statements": 53,
+     "petitions": 2
+    }
+   }
+  },
+  "2170": {
+   "id": "2170",
+   "name": "Andrea Horwath",
+   "paras": 6441,
+   "words": 335755,
+   "days": 260,
+   "statements": 12,
+   "petitions": 29,
+   "by_year": {
+    "2018": {
+     "paras": 1399
+    },
+    "2019": {
+     "paras": 1460
+    },
+    "2020": {
+     "paras": 1415,
+     "statements": 1
+    },
+    "2021": {
+     "paras": 1732,
+     "statements": 1,
+     "petitions": 29
+    },
+    "2022": {
+     "paras": 435,
+     "statements": 10
+    }
+   }
+  },
+  "2139": {
+   "id": "2139",
+   "name": "John Yakabuski",
+   "paras": 2533,
+   "words": 147260,
+   "days": 207,
+   "statements": 109,
+   "petitions": 24,
+   "by_year": {
+    "2018": {
+     "paras": 302
+    },
+    "2019": {
+     "paras": 224
+    },
+    "2020": {
+     "paras": 128
+    },
+    "2021": {
+     "paras": 234,
+     "petitions": 1,
+     "statements": 14
+    },
+    "2022": {
+     "paras": 496,
+     "statements": 27,
+     "petitions": 12
+    },
+    "2023": {
+     "paras": 625,
+     "statements": 38,
+     "petitions": 10
+    },
+    "2024": {
+     "paras": 524,
+     "statements": 30,
+     "petitions": 1
+    }
+   }
+  },
+  "7519": {
+   "id": "7519",
+   "name": "Michael A. Tibollo",
+   "paras": 1884,
+   "words": 110184,
+   "days": 201,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 420
+    },
+    "2019": {
+     "paras": 332
+    },
+    "2020": {
+     "paras": 116
+    },
+    "2021": {
+     "paras": 218
+    },
+    "2022": {
+     "paras": 325
+    },
+    "2023": {
+     "paras": 195
+    },
+    "2024": {
+     "paras": 139
+    },
+    "2025": {
+     "paras": 51
+    },
+    "2026": {
+     "paras": 88
+    }
+   }
+  },
+  "7523": {
+   "id": "7523",
+   "name": "Caroline Mulroney",
+   "paras": 2792,
+   "words": 146620,
+   "days": 240,
+   "statements": 1,
+   "petitions": 37,
+   "by_year": {
+    "2018": {
+     "paras": 329
+    },
+    "2019": {
+     "paras": 415
+    },
+    "2020": {
+     "paras": 769
+    },
+    "2021": {
+     "paras": 295
+    },
+    "2022": {
+     "paras": 326,
+     "petitions": 37
+    },
+    "2023": {
+     "paras": 348
+    },
+    "2024": {
+     "paras": 131
+    },
+    "2025": {
+     "paras": 145,
+     "statements": 1
+    },
+    "2026": {
+     "paras": 34
+    }
+   },
+   "riding": "York—Simcoe",
+   "mentions": 45,
+   "mention_days": 23,
+   "mentions_by_year": {
+    "2019": 2,
+    "2020": 1,
+    "2021": 7,
+    "2022": 26,
+    "2023": 1,
+    "2024": 6,
+    "2025": 2
+   },
+   "statement_mentions": 0,
+   "examples": [
+    [
+     "2024-04-10",
+     "orders of the day",
+     "Now, this work is supported by a network of 14 research centres located across the province. One of them is an important centre located right in my riding. It’s visible from the 400 as you’re making your way up to Bradfo"
+    ],
+    [
+     "2024-04-25",
+     "introduction of visitors",
+     "I’m so happy to welcome, for the first time, my constituency staff, Paul de Roos, Marisa Patricelli and Melody Watson, as well as East Gwillimbury town councillor Susan Lahey. Welcome to Queen’s Park."
+    ],
+    [
+     "2024-05-15",
+     "orders of the day",
+     "It calls for significant investments in infrastructure without raising taxes. It includes investments in new highways and roads like the Bradford Bypass, which the great people of my riding of York–Simcoe have been askin"
+    ],
+    [
+     "2024-05-15",
+     "orders of the day",
+     "Gridlock costs this province every single day of the year. People need to spend more time at their destinations and less time in their cars. That’s why the government is making significant investments in projects like th"
+    ],
+    [
+     "2025-05-28",
+     "introduction of visitors",
+     "I’m pleased to welcome to the Legislature today, from my riding of York–Simcoe, my friend Grant Peckford, the host of the popular Rogers television program Georgina Life."
+    ],
+    [
+     "2025-12-02",
+     "introduction of visitors",
+     "I’d like to welcome, from my riding of York–Simcoe, community leader Tariq Marwan, of Bradford, as well as Karol Kwiek, who worked as a summer student in my constit office. He’s visiting Queen’s Park today with his mothe"
+    ]
+   ]
+  },
+  "7187": {
+   "id": "7187",
+   "name": "Randy Pettapiece",
+   "paras": 1353,
+   "words": 62612,
+   "days": 126,
+   "statements": 161,
+   "petitions": 75,
+   "by_year": {
+    "2018": {
+     "paras": 298,
+     "statements": 17
+    },
+    "2019": {
+     "paras": 257,
+     "statements": 28,
+     "petitions": 39
+    },
+    "2020": {
+     "paras": 237,
+     "petitions": 19,
+     "statements": 26
+    },
+    "2021": {
+     "paras": 283,
+     "statements": 77,
+     "petitions": 6
+    },
+    "2022": {
+     "paras": 278,
+     "statements": 13,
+     "petitions": 11
+    }
+   }
+  },
+  "7041": {
+   "id": "7041",
+   "name": "Peter Tabuns",
+   "paras": 4466,
+   "words": 278375,
+   "days": 281,
+   "statements": 201,
+   "petitions": 191,
+   "by_year": {
+    "2018": {
+     "paras": 1034,
+     "statements": 10
+    },
+    "2019": {
+     "paras": 560,
+     "statements": 24,
+     "petitions": 8
+    },
+    "2020": {
+     "paras": 354,
+     "statements": 31,
+     "petitions": 34
+    },
+    "2021": {
+     "paras": 366,
+     "statements": 31,
+     "petitions": 59
+    },
+    "2022": {
+     "paras": 603,
+     "statements": 10,
+     "petitions": 6
+    },
+    "2023": {
+     "paras": 333,
+     "statements": 26,
+     "petitions": 26
+    },
+    "2024": {
+     "paras": 584,
+     "statements": 36,
+     "petitions": 16
+    },
+    "2025": {
+     "paras": 570,
+     "statements": 26,
+     "petitions": 38
+    },
+    "2026": {
+     "paras": 62,
+     "statements": 7,
+     "petitions": 4
+    }
+   }
+  },
+  "7476": {
+   "id": "7476",
+   "name": "Greg Rickford",
+   "paras": 1845,
+   "words": 101761,
+   "days": 204,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 522
+    },
+    "2019": {
+     "paras": 413
+    },
+    "2020": {
+     "paras": 93
+    },
+    "2021": {
+     "paras": 7
+    },
+    "2022": {
+     "paras": 154
+    },
+    "2023": {
+     "paras": 317
+    },
+    "2024": {
+     "paras": 186
+    },
+    "2025": {
+     "paras": 115
+    },
+    "2026": {
+     "paras": 38
+    }
+   }
+  },
+  "7455": {
+   "id": "7455",
+   "name": "Prabmeet Singh Sarkaria",
+   "paras": 3210,
+   "words": 189330,
+   "days": 250,
+   "statements": 32,
+   "petitions": 7,
+   "by_year": {
+    "2018": {
+     "paras": 240,
+     "statements": 19
+    },
+    "2019": {
+     "paras": 462,
+     "statements": 13,
+     "petitions": 7
+    },
+    "2020": {
+     "paras": 259
+    },
+    "2021": {
+     "paras": 275
+    },
+    "2022": {
+     "paras": 314
+    },
+    "2023": {
+     "paras": 247
+    },
+    "2024": {
+     "paras": 730
+    },
+    "2025": {
+     "paras": 377
+    },
+    "2026": {
+     "paras": 306
+    }
+   }
+  },
+  "7043": {
+   "id": "7043",
+   "name": "Christine Elliott",
+   "paras": 4647,
+   "words": 281418,
+   "days": 266,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 517
+    },
+    "2019": {
+     "paras": 992
+    },
+    "2020": {
+     "paras": 1170
+    },
+    "2021": {
+     "paras": 1672
+    },
+    "2022": {
+     "paras": 296
+    }
+   }
+  },
+  "7477": {
+   "id": "7477",
+   "name": "Sol Mamakwa",
+   "paras": 3986,
+   "words": 187962,
+   "days": 305,
+   "statements": 339,
+   "petitions": 107,
+   "by_year": {
+    "2018": {
+     "paras": 240,
+     "statements": 28
+    },
+    "2019": {
+     "paras": 334,
+     "statements": 46
+    },
+    "2020": {
+     "paras": 326,
+     "statements": 45
+    },
+    "2021": {
+     "paras": 622,
+     "statements": 37,
+     "petitions": 29
+    },
+    "2022": {
+     "paras": 466,
+     "petitions": 9,
+     "statements": 52
+    },
+    "2023": {
+     "paras": 647,
+     "statements": 57,
+     "petitions": 38
+    },
+    "2024": {
+     "paras": 869,
+     "statements": 30,
+     "petitions": 8
+    },
+    "2025": {
+     "paras": 353,
+     "statements": 25,
+     "petitions": 6
+    },
+    "2026": {
+     "paras": 129,
+     "petitions": 17,
+     "statements": 19
+    }
+   }
+  },
+  "7226": {
+   "id": "7226",
+   "name": "John Fraser",
+   "paras": 8486,
+   "words": 457951,
+   "days": 441,
+   "statements": 332,
+   "petitions": 194,
+   "by_year": {
+    "2018": {
+     "paras": 414,
+     "statements": 32,
+     "petitions": 7
+    },
+    "2019": {
+     "paras": 673,
+     "statements": 50,
+     "petitions": 20
+    },
+    "2020": {
+     "paras": 1221,
+     "statements": 53,
+     "petitions": 57
+    },
+    "2021": {
+     "paras": 1207,
+     "statements": 55,
+     "petitions": 47
+    },
+    "2022": {
+     "paras": 951,
+     "petitions": 10,
+     "statements": 86
+    },
+    "2023": {
+     "paras": 752,
+     "statements": 27,
+     "petitions": 20
+    },
+    "2024": {
+     "paras": 903,
+     "petitions": 26,
+     "statements": 28
+    },
+    "2025": {
+     "paras": 1863,
+     "statements": 1
+    },
+    "2026": {
+     "paras": 502,
+     "petitions": 7
+    }
+   }
+  },
+  "7471": {
+   "id": "7471",
+   "name": "Mlle Amanda Simard",
+   "paras": 602,
+   "words": 27190,
+   "days": 75,
+   "statements": 74,
+   "petitions": 47,
+   "by_year": {
+    "2018": {
+     "paras": 125,
+     "statements": 15,
+     "petitions": 11
+    },
+    "2019": {
+     "paras": 40,
+     "statements": 13
+    },
+    "2020": {
+     "paras": 180,
+     "statements": 18,
+     "petitions": 9
+    },
+    "2021": {
+     "paras": 168,
+     "statements": 17,
+     "petitions": 17
+    },
+    "2022": {
+     "paras": 89,
+     "petitions": 10,
+     "statements": 11
+    }
+   }
+  },
+  "100": {
+   "id": "100",
+   "name": "Jim Wilson",
+   "paras": 489,
+   "words": 25865,
+   "days": 53,
+   "statements": 58,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 254
+    },
+    "2019": {
+     "paras": 50,
+     "statements": 7
+    },
+    "2020": {
+     "paras": 144,
+     "statements": 34
+    },
+    "2021": {
+     "paras": 37,
+     "statements": 13
+    },
+    "2022": {
+     "paras": 4,
+     "statements": 4
+    }
+   }
+  },
+  "7283": {
+   "id": "7283",
+   "name": "Jennifer K. French",
+   "paras": 15693,
+   "words": 562831,
+   "days": 371,
+   "statements": 420,
+   "petitions": 949,
+   "by_year": {
+    "2018": {
+     "paras": 1743,
+     "statements": 46,
+     "petitions": 63
+    },
+    "2019": {
+     "paras": 2501,
+     "petitions": 74,
+     "statements": 51
+    },
+    "2020": {
+     "paras": 1903,
+     "statements": 60,
+     "petitions": 61
+    },
+    "2021": {
+     "paras": 2856,
+     "statements": 54,
+     "petitions": 244
+    },
+    "2022": {
+     "paras": 1531,
+     "statements": 49,
+     "petitions": 209
+    },
+    "2023": {
+     "paras": 1767,
+     "petitions": 183,
+     "statements": 49
+    },
+    "2024": {
+     "paras": 1588,
+     "petitions": 73,
+     "statements": 63
+    },
+    "2025": {
+     "paras": 1413,
+     "statements": 45,
+     "petitions": 31
+    },
+    "2026": {
+     "paras": 391,
+     "statements": 3,
+     "petitions": 11
+    }
+   }
+  },
+  "7464": {
+   "id": "7464",
+   "name": "Lindsey Park",
+   "paras": 1679,
+   "words": 107757,
+   "days": 121,
+   "statements": 121,
+   "petitions": 62,
+   "by_year": {
+    "2018": {
+     "paras": 222,
+     "statements": 33
+    },
+    "2019": {
+     "paras": 305,
+     "statements": 27,
+     "petitions": 30
+    },
+    "2020": {
+     "paras": 693,
+     "statements": 30,
+     "petitions": 21
+    },
+    "2021": {
+     "paras": 401,
+     "statements": 27,
+     "petitions": 11
+    },
+    "2022": {
+     "paras": 58,
+     "statements": 4
+    }
+   }
+  },
+  "7225": {
+   "id": "7225",
+   "name": "Peggy Sattler",
+   "paras": 8237,
+   "words": 519152,
+   "days": 413,
+   "statements": 258,
+   "petitions": 1514,
+   "by_year": {
+    "2018": {
+     "paras": 443,
+     "petitions": 42,
+     "statements": 20
+    },
+    "2019": {
+     "paras": 650,
+     "petitions": 87,
+     "statements": 25
+    },
+    "2020": {
+     "paras": 1208,
+     "statements": 34,
+     "petitions": 188
+    },
+    "2021": {
+     "paras": 1536,
+     "petitions": 243,
+     "statements": 18
+    },
+    "2022": {
+     "paras": 1797,
+     "petitions": 402,
+     "statements": 37
+    },
+    "2023": {
+     "paras": 1113,
+     "petitions": 241,
+     "statements": 43
+    },
+    "2024": {
+     "paras": 801,
+     "petitions": 233,
+     "statements": 46
+    },
+    "2025": {
+     "paras": 550,
+     "petitions": 57,
+     "statements": 24
+    },
+    "2026": {
+     "paras": 139,
+     "statements": 11,
+     "petitions": 21
+    }
+   }
+  },
+  "7179": {
+   "id": "7179",
+   "name": "Lisa M. Thompson",
+   "paras": 2949,
+   "words": 174206,
+   "days": 230,
+   "statements": 0,
+   "petitions": 2,
+   "by_year": {
+    "2018": {
+     "paras": 440
+    },
+    "2019": {
+     "paras": 1008
+    },
+    "2020": {
+     "paras": 548
+    },
+    "2021": {
+     "paras": 84
+    },
+    "2022": {
+     "paras": 208
+    },
+    "2023": {
+     "paras": 264
+    },
+    "2024": {
+     "paras": 397,
+     "petitions": 2
+    }
+   }
+  },
+  "7344": {
+   "id": "7344",
+   "name": "Lorne Coe",
+   "paras": 4196,
+   "words": 217035,
+   "days": 347,
+   "statements": 413,
+   "petitions": 162,
+   "by_year": {
+    "2018": {
+     "paras": 389,
+     "petitions": 18,
+     "statements": 42
+    },
+    "2019": {
+     "paras": 461,
+     "statements": 54,
+     "petitions": 10
+    },
+    "2020": {
+     "paras": 624,
+     "statements": 49,
+     "petitions": 42
+    },
+    "2021": {
+     "paras": 609,
+     "statements": 50,
+     "petitions": 30
+    },
+    "2022": {
+     "paras": 447,
+     "statements": 59,
+     "petitions": 15
+    },
+    "2023": {
+     "paras": 736,
+     "statements": 42,
+     "petitions": 31
+    },
+    "2024": {
+     "paras": 429,
+     "statements": 64,
+     "petitions": 16
+    },
+    "2025": {
+     "paras": 351,
+     "statements": 41
+    },
+    "2026": {
+     "paras": 150,
+     "statements": 12
+    }
+   }
+  },
+  "7090": {
+   "id": "7090",
+   "name": "France Gélinas",
+   "paras": 13661,
+   "words": 674594,
+   "days": 427,
+   "statements": 473,
+   "petitions": 5771,
+   "by_year": {
+    "2018": {
+     "paras": 1384,
+     "statements": 70,
+     "petitions": 583
+    },
+    "2019": {
+     "paras": 1207,
+     "petitions": 465,
+     "statements": 41
+    },
+    "2020": {
+     "paras": 1957,
+     "petitions": 965,
+     "statements": 71
+    },
+    "2021": {
+     "paras": 1979,
+     "petitions": 1021,
+     "statements": 67
+    },
+    "2022": {
+     "paras": 1674,
+     "petitions": 747,
+     "statements": 66
+    },
+    "2023": {
+     "paras": 2104,
+     "petitions": 833,
+     "statements": 52
+    },
+    "2024": {
+     "paras": 1720,
+     "petitions": 588,
+     "statements": 64
+    },
+    "2025": {
+     "paras": 1406,
+     "statements": 31,
+     "petitions": 503
+    },
+    "2026": {
+     "paras": 230,
+     "petitions": 66,
+     "statements": 11
+    }
+   }
+  },
+  "7424": {
+   "id": "7424",
+   "name": "Ross Romano",
+   "paras": 1500,
+   "words": 93817,
+   "days": 153,
+   "statements": 125,
+   "petitions": 16,
+   "by_year": {
+    "2018": {
+     "paras": 249,
+     "statements": 21
+    },
+    "2019": {
+     "paras": 220,
+     "petitions": 14,
+     "statements": 12
+    },
+    "2020": {
+     "paras": 191
+    },
+    "2021": {
+     "paras": 51
+    },
+    "2022": {
+     "paras": 377,
+     "statements": 16
+    },
+    "2023": {
+     "paras": 223,
+     "statements": 38
+    },
+    "2024": {
+     "paras": 189,
+     "statements": 38,
+     "petitions": 2
+    }
+   }
+  },
+  "7174": {
+   "id": "7174",
+   "name": "Jeff Yurek",
+   "paras": 999,
+   "words": 51010,
+   "days": 97,
+   "statements": 6,
+   "petitions": 7,
+   "by_year": {
+    "2018": {
+     "paras": 203
+    },
+    "2019": {
+     "paras": 503
+    },
+    "2020": {
+     "paras": 189
+    },
+    "2021": {
+     "paras": 104,
+     "petitions": 7,
+     "statements": 6
+    }
+   }
+  },
+  "7204": {
+   "id": "7204",
+   "name": "Catherine Fife",
+   "paras": 12332,
+   "words": 713786,
+   "days": 374,
+   "statements": 376,
+   "petitions": 1300,
+   "by_year": {
+    "2018": {
+     "paras": 665,
+     "statements": 50,
+     "petitions": 101
+    },
+    "2019": {
+     "paras": 1645,
+     "statements": 45,
+     "petitions": 231
+    },
+    "2020": {
+     "paras": 1971,
+     "petitions": 173,
+     "statements": 29
+    },
+    "2021": {
+     "paras": 1903,
+     "statements": 50,
+     "petitions": 129
+    },
+    "2022": {
+     "paras": 1372,
+     "statements": 26,
+     "petitions": 173
+    },
+    "2023": {
+     "paras": 2045,
+     "statements": 57,
+     "petitions": 264
+    },
+    "2024": {
+     "paras": 1299,
+     "statements": 51,
+     "petitions": 135
+    },
+    "2025": {
+     "paras": 1074,
+     "petitions": 73,
+     "statements": 63
+    },
+    "2026": {
+     "paras": 358,
+     "petitions": 21,
+     "statements": 5
+    }
+   }
+  },
+  "7505": {
+   "id": "7505",
+   "name": "Peter Bethlenfalvy",
+   "paras": 4510,
+   "words": 171920,
+   "days": 208,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 405
+    },
+    "2019": {
+     "paras": 279
+    },
+    "2020": {
+     "paras": 88
+    },
+    "2021": {
+     "paras": 688
+    },
+    "2022": {
+     "paras": 828
+    },
+    "2023": {
+     "paras": 748
+    },
+    "2024": {
+     "paras": 656
+    },
+    "2025": {
+     "paras": 615
+    },
+    "2026": {
+     "paras": 203
+    }
+   }
+  },
+  "7167": {
+   "id": "7167",
+   "name": "Bill Walker",
+   "paras": 3856,
+   "words": 151030,
+   "days": 170,
+   "statements": 88,
+   "petitions": 72,
+   "by_year": {
+    "2018": {
+     "paras": 778,
+     "statements": 26
+    },
+    "2019": {
+     "paras": 436,
+     "statements": 1
+    },
+    "2020": {
+     "paras": 264
+    },
+    "2021": {
+     "paras": 1340,
+     "statements": 33,
+     "petitions": 25
+    },
+    "2022": {
+     "paras": 1038,
+     "statements": 28,
+     "petitions": 47
+    }
+   }
+  },
+  "7479": {
+   "id": "7479",
+   "name": "Stephen Lecce",
+   "paras": 5540,
+   "words": 345397,
+   "days": 399,
+   "statements": 46,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 708,
+     "statements": 28
+    },
+    "2019": {
+     "paras": 681,
+     "statements": 18
+    },
+    "2020": {
+     "paras": 1136
+    },
+    "2021": {
+     "paras": 765
+    },
+    "2022": {
+     "paras": 668
+    },
+    "2023": {
+     "paras": 607
+    },
+    "2024": {
+     "paras": 495
+    },
+    "2025": {
+     "paras": 338
+    },
+    "2026": {
+     "paras": 142
+    }
+   }
+  },
+  "7164": {
+   "id": "7164",
+   "name": "Michael Mantha",
+   "paras": 4195,
+   "words": 229114,
+   "days": 237,
+   "statements": 230,
+   "petitions": 1083,
+   "by_year": {
+    "2018": {
+     "paras": 676,
+     "statements": 32,
+     "petitions": 248
+    },
+    "2019": {
+     "paras": 717,
+     "petitions": 255,
+     "statements": 50
+    },
+    "2020": {
+     "paras": 381,
+     "petitions": 232,
+     "statements": 25
+    },
+    "2021": {
+     "paras": 1034,
+     "statements": 36,
+     "petitions": 241
+    },
+    "2022": {
+     "paras": 967,
+     "statements": 38,
+     "petitions": 76
+    },
+    "2023": {
+     "paras": 214,
+     "petitions": 22,
+     "statements": 30
+    },
+    "2024": {
+     "paras": 206,
+     "statements": 19,
+     "petitions": 9
+    }
+   }
+  },
+  "7192": {
+   "id": "7192",
+   "name": "John Vanthof",
+   "paras": 7796,
+   "words": 487057,
+   "days": 363,
+   "statements": 232,
+   "petitions": 234,
+   "by_year": {
+    "2018": {
+     "paras": 744,
+     "statements": 30,
+     "petitions": 10
+    },
+    "2019": {
+     "paras": 640,
+     "statements": 27,
+     "petitions": 59
+    },
+    "2020": {
+     "paras": 762,
+     "statements": 36,
+     "petitions": 14
+    },
+    "2021": {
+     "paras": 961,
+     "statements": 11,
+     "petitions": 73
+    },
+    "2022": {
+     "paras": 980,
+     "statements": 29,
+     "petitions": 5
+    },
+    "2023": {
+     "paras": 1284,
+     "petitions": 46,
+     "statements": 40
+    },
+    "2024": {
+     "paras": 1410,
+     "statements": 27,
+     "petitions": 18
+    },
+    "2025": {
+     "paras": 754,
+     "statements": 24,
+     "petitions": 9
+    },
+    "2026": {
+     "paras": 261,
+     "statements": 8
+    }
+   }
+  },
+  "7512": {
+   "id": "7512",
+   "name": "Jill Dunlop",
+   "paras": 2918,
+   "words": 159882,
+   "days": 249,
+   "statements": 104,
+   "petitions": 55,
+   "by_year": {
+    "2018": {
+     "paras": 383,
+     "statements": 47,
+     "petitions": 33
+    },
+    "2019": {
+     "paras": 507,
+     "statements": 56,
+     "petitions": 22
+    },
+    "2020": {
+     "paras": 440,
+     "statements": 1
+    },
+    "2021": {
+     "paras": 362
+    },
+    "2022": {
+     "paras": 428
+    },
+    "2023": {
+     "paras": 268
+    },
+    "2024": {
+     "paras": 363
+    },
+    "2025": {
+     "paras": 152
+    },
+    "2026": {
+     "paras": 15
+    }
+   },
+   "riding": "Simcoe North",
+   "mentions": 175,
+   "mention_days": 73,
+   "mentions_by_year": {
+    "2018": 70,
+    "2019": 62,
+    "2020": 8,
+    "2021": 2,
+    "2022": 8,
+    "2023": 6,
+    "2024": 11,
+    "2025": 7,
+    "2026": 1
+   },
+   "statement_mentions": 40,
+   "examples": [
+    [
+     "2025-10-23",
+     "orders of the day",
+     "I also toured some of the other areas. I remember, when we were leaving Orillia, we were coming through Beaverton and that was the first place that had power. We were like, “Great; let’s stop for a Tim Hortons coffee.” T"
+    ],
+    [
+     "2025-10-23",
+     "orders of the day",
+     "We also had Georgian Bay search and rescue, another one of our Ontario Corps partners, doing door-to-door wellness checks. I was with those folks at one point. We were knocking on people’s doors and letting them know tha"
+    ],
+    [
+     "2025-10-23",
+     "orders of the day",
+     "Camp Molly also came to my area in October, which was very fortunate. The Premier was also in the area too, so we had a stop-by to visit with the girls, and they were supported by our Orillia Fire Department, Oro-Medonte"
+    ],
+    [
+     "2025-12-03",
+     "orders of the day",
+     "Today we rise to remember and honour Allan McLean, a man whose presence in this chamber and in the communities of Simcoe county was as unmistakable as his voice echoing down these very hallways. As you’ve said earlier, A"
+    ],
+    [
+     "2025-12-09",
+     "introduction of visitors",
+     "Today, I’m pleased to welcome two constituents from Simcoe North: Tim Kastelic, who will be joining me for lunch, and I saw Paul Maurice up in the crowd, who is an executive member with the OFA."
+    ],
+    [
+     "2026-05-12",
+     "introduction of visitors",
+     "I’d like to welcome three members from my constituency of Simcoe North: Krista Prankard, Marty Prankard and Robyn Seidenberg."
+    ]
+   ]
+  },
+  "7502": {
+   "id": "7502",
+   "name": "Bhutila Karpoche",
+   "paras": 7768,
+   "words": 232219,
+   "days": 306,
+   "statements": 388,
+   "petitions": 2490,
+   "by_year": {
+    "2018": {
+     "paras": 839,
+     "petitions": 569,
+     "statements": 71
+    },
+    "2019": {
+     "paras": 953,
+     "petitions": 486,
+     "statements": 55
+    },
+    "2020": {
+     "paras": 575,
+     "petitions": 258,
+     "statements": 40
+    },
+    "2021": {
+     "paras": 691,
+     "statements": 54,
+     "petitions": 200
+    },
+    "2022": {
+     "paras": 656,
+     "statements": 38,
+     "petitions": 276
+    },
+    "2023": {
+     "paras": 2405,
+     "petitions": 493,
+     "statements": 53
+    },
+    "2024": {
+     "paras": 1649,
+     "statements": 77,
+     "petitions": 208
+    }
+   }
+  },
+  "7450": {
+   "id": "7450",
+   "name": "Doug Downey",
+   "paras": 4139,
+   "words": 277696,
+   "days": 237,
+   "statements": 79,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 434,
+     "statements": 43
+    },
+    "2019": {
+     "paras": 601,
+     "statements": 20
+    },
+    "2020": {
+     "paras": 799
+    },
+    "2021": {
+     "paras": 851
+    },
+    "2022": {
+     "paras": 122,
+     "statements": 16
+    },
+    "2023": {
+     "paras": 302
+    },
+    "2024": {
+     "paras": 488
+    },
+    "2025": {
+     "paras": 467
+    },
+    "2026": {
+     "paras": 75
+    }
+   },
+   "riding": "Barrie—Springwater—Oro-Medonte",
+   "mentions": 96,
+   "mention_days": 36,
+   "mentions_by_year": {
+    "2018": 31,
+    "2019": 27,
+    "2020": 3,
+    "2021": 3,
+    "2022": 8,
+    "2023": 4,
+    "2024": 3,
+    "2025": 17
+   },
+   "statement_mentions": 23,
+   "examples": [
+    [
+     "2025-11-26",
+     "orders of the day",
+     "We worked together, my colleague the Minister of Red Tape Reduction, the MPP for Barrie–Innisfil, and I. We’re not really good with boundaries. This is the irony. We’re not good with boundaries at all. We work as a team."
+    ],
+    [
+     "2025-11-26",
+     "orders of the day",
+     "My colleague from Richmond Hill tells me that the Barrie area has the third-largest Persian community in the country. It actually makes sense. When my colleague from Barrie–Innisfil and I are at events and out doing thin"
+    ],
+    [
+     "2025-11-26",
+     "orders of the day",
+     "We also have a significant Chinese community, families of Chinese through Horseshoe Valley and through other areas, and there are different reasons for that, but primarily it’s because it’s such a great place to live."
+    ],
+    [
+     "2025-11-26",
+     "orders of the day",
+     "I’m coming, I’m coming. Georgian College has fostered—when people train somewhere, they often stay—a phenomenal Indian community in Barrie. Holi is—I actually have specific white shirts that I wear to Holi because I can’"
+    ],
+    [
+     "2025-11-26",
+     "orders of the day",
+     "It’s really a remarkable opportunity. We’re seeing some movement that we want to keep up with. Lakehead has now set up a master’s program in STEM in Barrie to complement its fantastic university in Orillia."
+    ],
+    [
+     "2025-11-26",
+     "orders of the day",
+     "Then, when you get past that, we have Bayfield, the famous Bayfield. It’s going to be tricky. But I have faith that MTO will get this done. Beyond that, everything else is done. Sunnidale, Anne Street, Duckworth, Lines 3"
+    ]
+   ]
+  },
+  "7459": {
+   "id": "7459",
+   "name": "Goldie Ghamari",
+   "paras": 3664,
+   "words": 191741,
+   "days": 236,
+   "statements": 345,
+   "petitions": 539,
+   "by_year": {
+    "2018": {
+     "paras": 421,
+     "statements": 44,
+     "petitions": 34
+    },
+    "2019": {
+     "paras": 730,
+     "statements": 57,
+     "petitions": 78
+    },
+    "2020": {
+     "paras": 822,
+     "statements": 53,
+     "petitions": 195
+    },
+    "2021": {
+     "paras": 345,
+     "statements": 43,
+     "petitions": 26
+    },
+    "2022": {
+     "paras": 410,
+     "statements": 59,
+     "petitions": 60
+    },
+    "2023": {
+     "paras": 723,
+     "statements": 55,
+     "petitions": 133
+    },
+    "2024": {
+     "paras": 213,
+     "statements": 34,
+     "petitions": 13
+    }
+   }
+  },
+  "7488": {
+   "id": "7488",
+   "name": "Parm Gill",
+   "paras": 1963,
+   "words": 116538,
+   "days": 139,
+   "statements": 153,
+   "petitions": 17,
+   "by_year": {
+    "2018": {
+     "paras": 264,
+     "statements": 19
+    },
+    "2019": {
+     "paras": 386,
+     "statements": 44,
+     "petitions": 7
+    },
+    "2020": {
+     "paras": 394,
+     "statements": 47,
+     "petitions": 10
+    },
+    "2021": {
+     "paras": 407,
+     "statements": 30
+    },
+    "2022": {
+     "paras": 161,
+     "statements": 13
+    },
+    "2023": {
+     "paras": 351
+    }
+   }
+  },
+  "7457": {
+   "id": "7457",
+   "name": "Will Bouma",
+   "paras": 4584,
+   "words": 244041,
+   "days": 300,
+   "statements": 409,
+   "petitions": 313,
+   "by_year": {
+    "2018": {
+     "paras": 419,
+     "statements": 31,
+     "petitions": 21
+    },
+    "2019": {
+     "paras": 655,
+     "statements": 47,
+     "petitions": 171
+    },
+    "2020": {
+     "paras": 572,
+     "petitions": 65,
+     "statements": 49
+    },
+    "2021": {
+     "paras": 662,
+     "statements": 54,
+     "petitions": 32
+    },
+    "2022": {
+     "paras": 604,
+     "statements": 52,
+     "petitions": 8
+    },
+    "2023": {
+     "paras": 987,
+     "statements": 76,
+     "petitions": 13
+    },
+    "2024": {
+     "paras": 447,
+     "statements": 54
+    },
+    "2025": {
+     "paras": 163,
+     "statements": 37,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 75,
+     "statements": 9
+    }
+   }
+  },
+  "7178": {
+   "id": "7178",
+   "name": "Monique Taylor",
+   "paras": 5555,
+   "words": 294733,
+   "days": 339,
+   "statements": 280,
+   "petitions": 1029,
+   "by_year": {
+    "2018": {
+     "paras": 436,
+     "statements": 20,
+     "petitions": 110
+    },
+    "2019": {
+     "paras": 604,
+     "petitions": 148,
+     "statements": 28
+    },
+    "2020": {
+     "paras": 927,
+     "petitions": 130,
+     "statements": 36
+    },
+    "2021": {
+     "paras": 730,
+     "statements": 41,
+     "petitions": 162
+    },
+    "2022": {
+     "paras": 812,
+     "petitions": 176,
+     "statements": 42
+    },
+    "2023": {
+     "paras": 1088,
+     "petitions": 183,
+     "statements": 63
+    },
+    "2024": {
+     "paras": 958,
+     "petitions": 120,
+     "statements": 50
+    }
+   }
+  },
+  "7453": {
+   "id": "7453",
+   "name": "Gurratan Singh",
+   "paras": 2233,
+   "words": 171617,
+   "days": 141,
+   "statements": 124,
+   "petitions": 9,
+   "by_year": {
+    "2018": {
+     "paras": 197,
+     "statements": 18
+    },
+    "2019": {
+     "paras": 336,
+     "statements": 28,
+     "petitions": 9
+    },
+    "2020": {
+     "paras": 666,
+     "statements": 41
+    },
+    "2021": {
+     "paras": 814,
+     "statements": 30
+    },
+    "2022": {
+     "paras": 220,
+     "statements": 7
+    }
+   }
+  },
+  "7501": {
+   "id": "7501",
+   "name": "Jeremy Roberts",
+   "paras": 1736,
+   "words": 113774,
+   "days": 121,
+   "statements": 129,
+   "petitions": 51,
+   "by_year": {
+    "2018": {
+     "paras": 344,
+     "statements": 20,
+     "petitions": 31
+    },
+    "2019": {
+     "paras": 226,
+     "statements": 17
+    },
+    "2020": {
+     "paras": 632,
+     "statements": 38,
+     "petitions": 20
+    },
+    "2021": {
+     "paras": 442,
+     "statements": 47
+    },
+    "2022": {
+     "paras": 92,
+     "statements": 7
+    }
+   }
+  },
+  "7498": {
+   "id": "7498",
+   "name": "Stephen Crawford",
+   "paras": 3815,
+   "words": 210934,
+   "days": 261,
+   "statements": 297,
+   "petitions": 132,
+   "by_year": {
+    "2018": {
+     "paras": 301,
+     "statements": 20,
+     "petitions": 34
+    },
+    "2019": {
+     "paras": 485,
+     "petitions": 70,
+     "statements": 31
+    },
+    "2020": {
+     "paras": 454,
+     "statements": 56,
+     "petitions": 7
+    },
+    "2021": {
+     "paras": 648,
+     "statements": 50,
+     "petitions": 20
+    },
+    "2022": {
+     "paras": 391,
+     "statements": 49
+    },
+    "2023": {
+     "paras": 688,
+     "statements": 67
+    },
+    "2024": {
+     "paras": 430,
+     "statements": 24,
+     "petitions": 1
+    },
+    "2025": {
+     "paras": 316
+    },
+    "2026": {
+     "paras": 102
+    }
+   }
+  },
+  "7183": {
+   "id": "7183",
+   "name": "Teresa J. Armstrong",
+   "paras": 4789,
+   "words": 252250,
+   "days": 300,
+   "statements": 284,
+   "petitions": 1150,
+   "by_year": {
+    "2018": {
+     "paras": 605,
+     "statements": 38,
+     "petitions": 166
+    },
+    "2019": {
+     "paras": 942,
+     "statements": 52,
+     "petitions": 326
+    },
+    "2020": {
+     "paras": 1069,
+     "petitions": 261,
+     "statements": 39
+    },
+    "2021": {
+     "paras": 441,
+     "statements": 45,
+     "petitions": 54
+    },
+    "2022": {
+     "paras": 400,
+     "petitions": 115,
+     "statements": 36
+    },
+    "2023": {
+     "paras": 850,
+     "petitions": 158,
+     "statements": 41
+    },
+    "2024": {
+     "paras": 482,
+     "statements": 33,
+     "petitions": 70
+    }
+   }
+  },
+  "7525": {
+   "id": "7525",
+   "name": "Dave Smith",
+   "paras": 5848,
+   "words": 304373,
+   "days": 316,
+   "statements": 347,
+   "petitions": 1447,
+   "by_year": {
+    "2018": {
+     "paras": 624,
+     "petitions": 94,
+     "statements": 20
+    },
+    "2019": {
+     "paras": 928,
+     "petitions": 274,
+     "statements": 43
+    },
+    "2020": {
+     "paras": 738,
+     "petitions": 289,
+     "statements": 34
+    },
+    "2021": {
+     "paras": 734,
+     "petitions": 139,
+     "statements": 55
+    },
+    "2022": {
+     "paras": 689,
+     "statements": 44,
+     "petitions": 204
+    },
+    "2023": {
+     "paras": 772,
+     "petitions": 165,
+     "statements": 51
+    },
+    "2024": {
+     "paras": 767,
+     "statements": 54,
+     "petitions": 282
+    },
+    "2025": {
+     "paras": 520,
+     "statements": 42
+    },
+    "2026": {
+     "paras": 76,
+     "statements": 4
+    }
+   }
+  },
+  "7480": {
+   "id": "7480",
+   "name": "Laura Mae Lindo",
+   "paras": 1922,
+   "words": 114623,
+   "days": 111,
+   "statements": 152,
+   "petitions": 408,
+   "by_year": {
+    "2018": {
+     "paras": 567,
+     "statements": 56,
+     "petitions": 183
+    },
+    "2019": {
+     "paras": 400,
+     "petitions": 59,
+     "statements": 51
+    },
+    "2020": {
+     "paras": 493,
+     "statements": 23,
+     "petitions": 54
+    },
+    "2021": {
+     "paras": 367,
+     "statements": 13,
+     "petitions": 100
+    },
+    "2022": {
+     "paras": 95,
+     "statements": 9,
+     "petitions": 12
+    }
+   }
+  },
+  "7095": {
+   "id": "7095",
+   "name": "Paul Miller",
+   "paras": 696,
+   "words": 40429,
+   "days": 76,
+   "statements": 62,
+   "petitions": 58,
+   "by_year": {
+    "2018": {
+     "paras": 75,
+     "statements": 4
+    },
+    "2019": {
+     "paras": 204,
+     "statements": 34,
+     "petitions": 17
+    },
+    "2020": {
+     "paras": 99,
+     "statements": 8,
+     "petitions": 12
+    },
+    "2021": {
+     "paras": 282,
+     "statements": 12,
+     "petitions": 29
+    },
+    "2022": {
+     "paras": 36,
+     "statements": 4
+    }
+   }
+  },
+  "7086": {
+   "id": "7086",
+   "name": "Robert Bailey",
+   "paras": 2818,
+   "words": 161533,
+   "days": 218,
+   "statements": 245,
+   "petitions": 134,
+   "by_year": {
+    "2018": {
+     "paras": 222,
+     "petitions": 33
+    },
+    "2019": {
+     "paras": 252,
+     "statements": 10,
+     "petitions": 7
+    },
+    "2020": {
+     "paras": 639,
+     "statements": 38,
+     "petitions": 58
+    },
+    "2021": {
+     "paras": 730,
+     "statements": 51,
+     "petitions": 28
+    },
+    "2022": {
+     "paras": 350,
+     "statements": 38,
+     "petitions": 8
+    },
+    "2023": {
+     "paras": 279,
+     "statements": 44
+    },
+    "2024": {
+     "paras": 149,
+     "statements": 35
+    },
+    "2025": {
+     "paras": 188,
+     "statements": 29
+    },
+    "2026": {
+     "paras": 9
+    }
+   }
+  },
+  "7478": {
+   "id": "7478",
+   "name": "Ian Arthur",
+   "paras": 1509,
+   "words": 90034,
+   "days": 97,
+   "statements": 131,
+   "petitions": 152,
+   "by_year": {
+    "2018": {
+     "paras": 384,
+     "statements": 34,
+     "petitions": 71
+    },
+    "2019": {
+     "paras": 614,
+     "statements": 34,
+     "petitions": 41
+    },
+    "2020": {
+     "paras": 236,
+     "statements": 38,
+     "petitions": 10
+    },
+    "2021": {
+     "paras": 264,
+     "statements": 21,
+     "petitions": 30
+    },
+    "2022": {
+     "paras": 11,
+     "statements": 4
+    }
+   }
+  },
+  "7449": {
+   "id": "7449",
+   "name": "Mike Schreiner",
+   "paras": 6481,
+   "words": 367712,
+   "days": 444,
+   "statements": 287,
+   "petitions": 649,
+   "by_year": {
+    "2018": {
+     "paras": 539,
+     "statements": 25,
+     "petitions": 112
+    },
+    "2019": {
+     "paras": 875,
+     "petitions": 114,
+     "statements": 28
+    },
+    "2020": {
+     "paras": 1189,
+     "statements": 43,
+     "petitions": 68
+    },
+    "2021": {
+     "paras": 1150,
+     "petitions": 121,
+     "statements": 46
+    },
+    "2022": {
+     "paras": 630,
+     "petitions": 80,
+     "statements": 53
+    },
+    "2023": {
+     "paras": 722,
+     "statements": 32,
+     "petitions": 69
+    },
+    "2024": {
+     "paras": 683,
+     "petitions": 45,
+     "statements": 16
+    },
+    "2025": {
+     "paras": 530,
+     "petitions": 36,
+     "statements": 35
+    },
+    "2026": {
+     "paras": 163,
+     "petitions": 4,
+     "statements": 9
+    }
+   }
+  },
+  "7146": {
+   "id": "7146",
+   "name": "Steve Clark",
+   "paras": 5006,
+   "words": 268878,
+   "days": 316,
+   "statements": 150,
+   "petitions": 31,
+   "by_year": {
+    "2018": {
+     "paras": 721,
+     "statements": 1
+    },
+    "2019": {
+     "paras": 439
+    },
+    "2020": {
+     "paras": 677
+    },
+    "2021": {
+     "paras": 251
+    },
+    "2022": {
+     "paras": 930
+    },
+    "2023": {
+     "paras": 524,
+     "statements": 12
+    },
+    "2024": {
+     "paras": 472,
+     "statements": 66,
+     "petitions": 8
+    },
+    "2025": {
+     "paras": 728,
+     "statements": 61,
+     "petitions": 10
+    },
+    "2026": {
+     "paras": 264,
+     "statements": 10,
+     "petitions": 13
+    }
+   }
+  },
+  "4": {
+   "id": "4",
+   "name": "Toby Barrett",
+   "paras": 1260,
+   "words": 65384,
+   "days": 96,
+   "statements": 133,
+   "petitions": 259,
+   "by_year": {
+    "2018": {
+     "paras": 212,
+     "statements": 20,
+     "petitions": 55
+    },
+    "2019": {
+     "paras": 537,
+     "petitions": 154,
+     "statements": 32
+    },
+    "2020": {
+     "paras": 295,
+     "statements": 43,
+     "petitions": 38
+    },
+    "2021": {
+     "paras": 176,
+     "statements": 27,
+     "petitions": 12
+    },
+    "2022": {
+     "paras": 40,
+     "statements": 11
+    }
+   }
+  },
+  "7484": {
+   "id": "7484",
+   "name": "Paul Calandra",
+   "paras": 11478,
+   "words": 715936,
+   "days": 477,
+   "statements": 59,
+   "petitions": 31,
+   "by_year": {
+    "2018": {
+     "paras": 580,
+     "statements": 14
+    },
+    "2019": {
+     "paras": 941,
+     "statements": 15
+    },
+    "2020": {
+     "paras": 2172,
+     "statements": 7,
+     "petitions": 1
+    },
+    "2021": {
+     "paras": 2137,
+     "petitions": 8,
+     "statements": 4
+    },
+    "2022": {
+     "paras": 2057,
+     "petitions": 9,
+     "statements": 18
+    },
+    "2023": {
+     "paras": 2104,
+     "petitions": 5,
+     "statements": 1
+    },
+    "2024": {
+     "paras": 1009,
+     "petitions": 8
+    },
+    "2025": {
+     "paras": 318
+    },
+    "2026": {
+     "paras": 160
+    }
+   }
+  },
+  "7446": {
+   "id": "7446",
+   "name": "Jamie West",
+   "paras": 7849,
+   "words": 451609,
+   "days": 335,
+   "statements": 348,
+   "petitions": 1668,
+   "by_year": {
+    "2018": {
+     "paras": 496,
+     "statements": 20,
+     "petitions": 129
+    },
+    "2019": {
+     "paras": 639,
+     "petitions": 121,
+     "statements": 30
+    },
+    "2020": {
+     "paras": 960,
+     "statements": 35,
+     "petitions": 228
+    },
+    "2021": {
+     "paras": 962,
+     "petitions": 223,
+     "statements": 92
+    },
+    "2022": {
+     "paras": 846,
+     "statements": 44,
+     "petitions": 166
+    },
+    "2023": {
+     "paras": 1541,
+     "statements": 45,
+     "petitions": 384
+    },
+    "2024": {
+     "paras": 1388,
+     "petitions": 226,
+     "statements": 39
+    },
+    "2025": {
+     "paras": 815,
+     "petitions": 163,
+     "statements": 37
+    },
+    "2026": {
+     "paras": 202,
+     "petitions": 28,
+     "statements": 6
+    }
+   }
+  },
+  "7244": {
+   "id": "7244",
+   "name": "Wayne Gates",
+   "paras": 6627,
+   "words": 404287,
+   "days": 331,
+   "statements": 324,
+   "petitions": 117,
+   "by_year": {
+    "2018": {
+     "paras": 555,
+     "statements": 36,
+     "petitions": 8
+    },
+    "2019": {
+     "paras": 580,
+     "statements": 42
+    },
+    "2020": {
+     "paras": 782,
+     "statements": 38
+    },
+    "2021": {
+     "paras": 1244,
+     "statements": 43,
+     "petitions": 56
+    },
+    "2022": {
+     "paras": 754,
+     "statements": 52
+    },
+    "2023": {
+     "paras": 1103,
+     "statements": 34,
+     "petitions": 40
+    },
+    "2024": {
+     "paras": 842,
+     "statements": 46,
+     "petitions": 2
+    },
+    "2025": {
+     "paras": 507,
+     "statements": 26,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 260,
+     "petitions": 8,
+     "statements": 7
+    }
+   }
+  },
+  "7460": {
+   "id": "7460",
+   "name": "Marit Stiles",
+   "paras": 10235,
+   "words": 497408,
+   "days": 434,
+   "statements": 164,
+   "petitions": 1217,
+   "by_year": {
+    "2018": {
+     "paras": 966,
+     "petitions": 265,
+     "statements": 32
+    },
+    "2019": {
+     "paras": 1244,
+     "petitions": 238,
+     "statements": 18
+    },
+    "2020": {
+     "paras": 1035,
+     "petitions": 192,
+     "statements": 32
+    },
+    "2021": {
+     "paras": 1434,
+     "petitions": 380,
+     "statements": 53
+    },
+    "2022": {
+     "paras": 695,
+     "petitions": 91,
+     "statements": 28
+    },
+    "2023": {
+     "paras": 1744,
+     "petitions": 25
+    },
+    "2024": {
+     "paras": 1668,
+     "petitions": 18
+    },
+    "2025": {
+     "paras": 1149,
+     "petitions": 8
+    },
+    "2026": {
+     "paras": 300,
+     "statements": 1
+    }
+   }
+  },
+  "7465": {
+   "id": "7465",
+   "name": "Robin Martin",
+   "paras": 5141,
+   "words": 303201,
+   "days": 268,
+   "statements": 306,
+   "petitions": 243,
+   "by_year": {
+    "2018": {
+     "paras": 360,
+     "petitions": 23,
+     "statements": 15
+    },
+    "2019": {
+     "paras": 710,
+     "statements": 35,
+     "petitions": 38
+    },
+    "2020": {
+     "paras": 1103,
+     "statements": 41,
+     "petitions": 135
+    },
+    "2021": {
+     "paras": 892,
+     "statements": 71,
+     "petitions": 9
+    },
+    "2022": {
+     "paras": 730,
+     "statements": 33,
+     "petitions": 9
+    },
+    "2023": {
+     "paras": 1012,
+     "statements": 52,
+     "petitions": 28
+    },
+    "2024": {
+     "paras": 334,
+     "statements": 59,
+     "petitions": 1
+    }
+   }
+  },
+  "7093": {
+   "id": "7093",
+   "name": "Sylvia Jones",
+   "paras": 4732,
+   "words": 259905,
+   "days": 335,
+   "statements": 1,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 345
+    },
+    "2019": {
+     "paras": 665
+    },
+    "2020": {
+     "paras": 432,
+     "statements": 1
+    },
+    "2021": {
+     "paras": 601
+    },
+    "2022": {
+     "paras": 714
+    },
+    "2023": {
+     "paras": 652
+    },
+    "2024": {
+     "paras": 690
+    },
+    "2025": {
+     "paras": 550
+    },
+    "2026": {
+     "paras": 83
+    }
+   }
+  },
+  "2116": {
+   "id": "2116",
+   "name": "Laurie Scott",
+   "paras": 1887,
+   "words": 89425,
+   "days": 170,
+   "statements": 250,
+   "petitions": 14,
+   "by_year": {
+    "2018": {
+     "paras": 310
+    },
+    "2019": {
+     "paras": 227,
+     "statements": 3
+    },
+    "2020": {
+     "paras": 124
+    },
+    "2021": {
+     "paras": 227,
+     "statements": 14
+    },
+    "2022": {
+     "paras": 284,
+     "statements": 72
+    },
+    "2023": {
+     "paras": 180,
+     "statements": 43,
+     "petitions": 11
+    },
+    "2024": {
+     "paras": 146,
+     "statements": 43,
+     "petitions": 3
+    },
+    "2025": {
+     "paras": 364,
+     "statements": 63
+    },
+    "2026": {
+     "paras": 25,
+     "statements": 12
+    }
+   }
+  },
+  "7524": {
+   "id": "7524",
+   "name": "David Piccini",
+   "paras": 4716,
+   "words": 269296,
+   "days": 284,
+   "statements": 142,
+   "petitions": 94,
+   "by_year": {
+    "2018": {
+     "paras": 518,
+     "statements": 19,
+     "petitions": 51
+    },
+    "2019": {
+     "paras": 367,
+     "statements": 33,
+     "petitions": 23
+    },
+    "2020": {
+     "paras": 372,
+     "statements": 32,
+     "petitions": 12
+    },
+    "2021": {
+     "paras": 901,
+     "statements": 58,
+     "petitions": 8
+    },
+    "2022": {
+     "paras": 174
+    },
+    "2023": {
+     "paras": 460
+    },
+    "2024": {
+     "paras": 622
+    },
+    "2025": {
+     "paras": 1226
+    },
+    "2026": {
+     "paras": 76
+    }
+   }
+  },
+  "7405": {
+   "id": "7405",
+   "name": "Sam Oosterhoff",
+   "paras": 3952,
+   "words": 261381,
+   "days": 277,
+   "statements": 307,
+   "petitions": 181,
+   "by_year": {
+    "2018": {
+     "paras": 460,
+     "statements": 61,
+     "petitions": 37
+    },
+    "2019": {
+     "paras": 510,
+     "petitions": 59,
+     "statements": 36
+    },
+    "2020": {
+     "paras": 659,
+     "statements": 60,
+     "petitions": 12
+    },
+    "2021": {
+     "paras": 297,
+     "statements": 37,
+     "petitions": 7
+    },
+    "2022": {
+     "paras": 483,
+     "statements": 51
+    },
+    "2023": {
+     "paras": 648,
+     "statements": 35,
+     "petitions": 65
+    },
+    "2024": {
+     "paras": 503,
+     "statements": 27,
+     "petitions": 1
+    },
+    "2025": {
+     "paras": 332
+    },
+    "2026": {
+     "paras": 60
+    }
+   }
+  },
+  "7508": {
+   "id": "7508",
+   "name": "Doly Begum",
+   "paras": 4113,
+   "words": 229203,
+   "days": 247,
+   "statements": 280,
+   "petitions": 910,
+   "by_year": {
+    "2018": {
+     "paras": 270,
+     "statements": 45,
+     "petitions": 85
+    },
+    "2019": {
+     "paras": 438,
+     "petitions": 138,
+     "statements": 30
+    },
+    "2020": {
+     "paras": 635,
+     "petitions": 98,
+     "statements": 34
+    },
+    "2021": {
+     "paras": 724,
+     "statements": 55,
+     "petitions": 116
+    },
+    "2022": {
+     "paras": 727,
+     "statements": 32,
+     "petitions": 198
+    },
+    "2023": {
+     "paras": 849,
+     "statements": 45,
+     "petitions": 185
+    },
+    "2024": {
+     "paras": 75,
+     "statements": 13,
+     "petitions": 12
+    },
+    "2025": {
+     "paras": 395,
+     "petitions": 78,
+     "statements": 26
+    }
+   }
+  },
+  "7175": {
+   "id": "7175",
+   "name": "Taras Natyshak",
+   "paras": 1801,
+   "words": 104943,
+   "days": 139,
+   "statements": 103,
+   "petitions": 46,
+   "by_year": {
+    "2018": {
+     "paras": 347,
+     "petitions": 19,
+     "statements": 22
+    },
+    "2019": {
+     "paras": 635,
+     "statements": 29,
+     "petitions": 7
+    },
+    "2020": {
+     "paras": 150,
+     "statements": 13
+    },
+    "2021": {
+     "paras": 594,
+     "statements": 27,
+     "petitions": 20
+    },
+    "2022": {
+     "paras": 75,
+     "statements": 12
+    }
+   }
+  },
+  "7517": {
+   "id": "7517",
+   "name": "Jill Andrew",
+   "paras": 5658,
+   "words": 264662,
+   "days": 263,
+   "statements": 334,
+   "petitions": 1675,
+   "by_year": {
+    "2018": {
+     "paras": 561,
+     "statements": 40,
+     "petitions": 316
+    },
+    "2019": {
+     "paras": 873,
+     "statements": 45,
+     "petitions": 300
+    },
+    "2020": {
+     "paras": 894,
+     "petitions": 269,
+     "statements": 58
+    },
+    "2021": {
+     "paras": 981,
+     "statements": 70,
+     "petitions": 188
+    },
+    "2022": {
+     "paras": 1021,
+     "petitions": 286,
+     "statements": 48
+    },
+    "2023": {
+     "paras": 690,
+     "statements": 25,
+     "petitions": 215
+    },
+    "2024": {
+     "paras": 638,
+     "statements": 48,
+     "petitions": 101
+    }
+   }
+  },
+  "7404": {
+   "id": "7404",
+   "name": "Nathalie Des Rosiers",
+   "paras": 1070,
+   "words": 57161,
+   "days": 65,
+   "statements": 50,
+   "petitions": 141,
+   "by_year": {
+    "2018": {
+     "paras": 598,
+     "statements": 26,
+     "petitions": 59
+    },
+    "2019": {
+     "paras": 472,
+     "statements": 24,
+     "petitions": 82
+    }
+   }
+  },
+  "7473": {
+   "id": "7473",
+   "name": "Daryl Kramp",
+   "paras": 1011,
+   "words": 62044,
+   "days": 79,
+   "statements": 88,
+   "petitions": 48,
+   "by_year": {
+    "2018": {
+     "paras": 286,
+     "statements": 5,
+     "petitions": 8
+    },
+    "2019": {
+     "paras": 160,
+     "statements": 19
+    },
+    "2020": {
+     "paras": 440,
+     "petitions": 28,
+     "statements": 41
+    },
+    "2021": {
+     "paras": 70,
+     "statements": 13,
+     "petitions": 12
+    },
+    "2022": {
+     "paras": 55,
+     "statements": 10
+    }
+   }
+  },
+  "68": {
+   "id": "68",
+   "name": "Norman Miller",
+   "paras": 1501,
+   "words": 82849,
+   "days": 126,
+   "statements": 193,
+   "petitions": 127,
+   "by_year": {
+    "2018": {
+     "paras": 196,
+     "petitions": 63,
+     "statements": 25
+    },
+    "2019": {
+     "paras": 281,
+     "petitions": 37,
+     "statements": 39
+    },
+    "2020": {
+     "paras": 224,
+     "statements": 47,
+     "petitions": 8
+    },
+    "2021": {
+     "paras": 502,
+     "petitions": 19,
+     "statements": 61
+    },
+    "2022": {
+     "paras": 298,
+     "statements": 21
+    }
+   }
+  },
+  "7500": {
+   "id": "7500",
+   "name": "Joel Harden",
+   "paras": 5998,
+   "words": 384552,
+   "days": 298,
+   "statements": 317,
+   "petitions": 713,
+   "by_year": {
+    "2018": {
+     "paras": 785,
+     "statements": 72,
+     "petitions": 172
+    },
+    "2019": {
+     "paras": 629,
+     "statements": 43,
+     "petitions": 101
+    },
+    "2020": {
+     "paras": 507,
+     "statements": 30,
+     "petitions": 31
+    },
+    "2021": {
+     "paras": 858,
+     "statements": 45,
+     "petitions": 109
+    },
+    "2022": {
+     "paras": 810,
+     "petitions": 148,
+     "statements": 30
+    },
+    "2023": {
+     "paras": 1305,
+     "petitions": 121,
+     "statements": 43
+    },
+    "2024": {
+     "paras": 1104,
+     "statements": 54,
+     "petitions": 31
+    }
+   }
+  },
+  "7521": {
+   "id": "7521",
+   "name": "Roman Baber",
+   "paras": 1375,
+   "words": 73648,
+   "days": 135,
+   "statements": 189,
+   "petitions": 60,
+   "by_year": {
+    "2018": {
+     "paras": 185,
+     "statements": 28
+    },
+    "2019": {
+     "paras": 278,
+     "statements": 22,
+     "petitions": 31
+    },
+    "2020": {
+     "paras": 235,
+     "statements": 28,
+     "petitions": 12
+    },
+    "2021": {
+     "paras": 570,
+     "statements": 92,
+     "petitions": 17
+    },
+    "2022": {
+     "paras": 107,
+     "statements": 19
+    }
+   }
+  },
+  "7495": {
+   "id": "7495",
+   "name": "Guy Bourgouin",
+   "paras": 4432,
+   "words": 252524,
+   "days": 282,
+   "statements": 326,
+   "petitions": 456,
+   "by_year": {
+    "2018": {
+     "paras": 310,
+     "statements": 23,
+     "petitions": 7
+    },
+    "2019": {
+     "paras": 365,
+     "statements": 41,
+     "petitions": 57
+    },
+    "2020": {
+     "paras": 376,
+     "statements": 40,
+     "petitions": 18
+    },
+    "2021": {
+     "paras": 648,
+     "statements": 46,
+     "petitions": 32
+    },
+    "2022": {
+     "paras": 435,
+     "petitions": 96,
+     "statements": 44
+    },
+    "2023": {
+     "paras": 926,
+     "statements": 46,
+     "petitions": 166
+    },
+    "2024": {
+     "paras": 657,
+     "petitions": 46,
+     "statements": 36
+    },
+    "2025": {
+     "paras": 512,
+     "statements": 47,
+     "petitions": 15
+    },
+    "2026": {
+     "paras": 203,
+     "petitions": 19,
+     "statements": 3
+    }
+   }
+  },
+  "7494": {
+   "id": "7494",
+   "name": "Nina Tangri",
+   "paras": 3032,
+   "words": 167303,
+   "days": 232,
+   "statements": 131,
+   "petitions": 122,
+   "by_year": {
+    "2018": {
+     "paras": 232,
+     "statements": 15
+    },
+    "2019": {
+     "paras": 413,
+     "statements": 62,
+     "petitions": 46
+    },
+    "2020": {
+     "paras": 601,
+     "petitions": 76,
+     "statements": 14
+    },
+    "2021": {
+     "paras": 522,
+     "statements": 26
+    },
+    "2022": {
+     "paras": 187,
+     "statements": 9
+    },
+    "2023": {
+     "paras": 395,
+     "statements": 5
+    },
+    "2024": {
+     "paras": 411
+    },
+    "2025": {
+     "paras": 214
+    },
+    "2026": {
+     "paras": 57
+    }
+   }
+  },
+  "7511": {
+   "id": "7511",
+   "name": "Vijay Thanigasalam",
+   "paras": 1858,
+   "words": 106849,
+   "days": 176,
+   "statements": 119,
+   "petitions": 24,
+   "by_year": {
+    "2018": {
+     "paras": 150,
+     "petitions": 11,
+     "statements": 6
+    },
+    "2019": {
+     "paras": 237,
+     "statements": 20
+    },
+    "2020": {
+     "paras": 314,
+     "statements": 16
+    },
+    "2021": {
+     "paras": 361,
+     "statements": 34
+    },
+    "2022": {
+     "paras": 248,
+     "statements": 16,
+     "petitions": 13
+    },
+    "2023": {
+     "paras": 280,
+     "statements": 27
+    },
+    "2024": {
+     "paras": 172
+    },
+    "2025": {
+     "paras": 73
+    },
+    "2026": {
+     "paras": 23
+    }
+   }
+  },
+  "7448": {
+   "id": "7448",
+   "name": "Andrea Khanjin",
+   "paras": 4192,
+   "words": 276473,
+   "days": 278,
+   "statements": 224,
+   "petitions": 157,
+   "by_year": {
+    "2018": {
+     "paras": 284,
+     "statements": 26
+    },
+    "2019": {
+     "paras": 380,
+     "statements": 33,
+     "petitions": 3
+    },
+    "2020": {
+     "paras": 906,
+     "statements": 44,
+     "petitions": 29
+    },
+    "2021": {
+     "paras": 1129,
+     "statements": 63,
+     "petitions": 36
+    },
+    "2022": {
+     "paras": 540,
+     "statements": 30,
+     "petitions": 10
+    },
+    "2023": {
+     "paras": 479,
+     "statements": 28,
+     "petitions": 76
+    },
+    "2024": {
+     "paras": 220,
+     "petitions": 3
+    },
+    "2025": {
+     "paras": 244
+    },
+    "2026": {
+     "paras": 10
+    }
+   },
+   "riding": "Barrie—Innisfil",
+   "mentions": 523,
+   "mention_days": 149,
+   "mentions_by_year": {
+    "2018": 37,
+    "2019": 44,
+    "2020": 99,
+    "2021": 145,
+    "2022": 66,
+    "2023": 85,
+    "2024": 33,
+    "2025": 14
+   },
+   "statement_mentions": 74,
+   "examples": [
+    [
+     "2025-11-17",
+     "orders of the day",
+     "Every minute we save for small businesses is a minute that they could spend growing their Ontario footprint or improving their services or giving back to their communities. I just think of this last weekend: Our great Ba"
+    ],
+    [
+     "2025-11-17",
+     "orders of the day",
+     "So he was utterly frustrated, and his plea of last resort was to write me a handwritten letter and insert it into my door. He left it off with his phone number, so naturally I called him right away. He was pleased to hea"
+    ],
+    [
+     "2025-11-17",
+     "orders of the day",
+     "One extra individual who comes to mind is a teacher. Not only does he teach at a high school in Barrie, he also waits tables at The Keg, and he has one unit that he rents out so that he can help someone achieve, again, h"
+    ],
+    [
+     "2025-11-26",
+     "question period",
+     "Like many people in our government, I would not be here without the great constituents of Barrie–Innisfil that I represent. Today, in the gallery, I am pleased to welcome Mike Arnold and Steve Bly from the Ontario Profes"
+    ],
+    [
+     "2025-11-26",
+     "question period",
+     "It’s the local community that inspires me every day to reduce and cut red tape with my colleagues here in our government. It’s the farmers I represent in my riding of Barrie–Innisfil. When I drive home after serving here"
+    ],
+    [
+     "2025-12-10",
+     "orders of the day",
+     "They had a perfectly situated space in the city of Barrie, but they weren’t able to break ground. The space was very close to the current footprint they already had. Thanks to the strong-mayor powers, they were able to a"
+    ]
+   ]
+  },
+  "7489": {
+   "id": "7489",
+   "name": "Natalia Kusendova",
+   "paras": 3403,
+   "words": 193327,
+   "days": 227,
+   "statements": 333,
+   "petitions": 137,
+   "by_year": {
+    "2018": {
+     "paras": 291,
+     "statements": 50
+    },
+    "2019": {
+     "paras": 593,
+     "statements": 81,
+     "petitions": 44
+    },
+    "2020": {
+     "paras": 512,
+     "statements": 29,
+     "petitions": 67
+    },
+    "2021": {
+     "paras": 578,
+     "statements": 34,
+     "petitions": 14
+    },
+    "2022": {
+     "paras": 369,
+     "statements": 43,
+     "petitions": 2
+    },
+    "2023": {
+     "paras": 547,
+     "statements": 52
+    },
+    "2024": {
+     "paras": 412,
+     "statements": 44,
+     "petitions": 10
+    },
+    "2025": {
+     "paras": 45
+    },
+    "2026": {
+     "paras": 56
+    }
+   }
+  },
+  "7516": {
+   "id": "7516",
+   "name": "Suze Morrison",
+   "paras": 3064,
+   "words": 178946,
+   "days": 169,
+   "statements": 191,
+   "petitions": 456,
+   "by_year": {
+    "2018": {
+     "paras": 562,
+     "petitions": 159,
+     "statements": 34
+    },
+    "2019": {
+     "paras": 808,
+     "petitions": 181,
+     "statements": 41
+    },
+    "2020": {
+     "paras": 775,
+     "petitions": 54,
+     "statements": 42
+    },
+    "2021": {
+     "paras": 754,
+     "statements": 53,
+     "petitions": 48
+    },
+    "2022": {
+     "paras": 165,
+     "statements": 21,
+     "petitions": 14
+    }
+   }
+  },
+  "7469": {
+   "id": "7469",
+   "name": "Christine Hogarth",
+   "paras": 3712,
+   "words": 204259,
+   "days": 223,
+   "statements": 276,
+   "petitions": 322,
+   "by_year": {
+    "2018": {
+     "paras": 277,
+     "statements": 13,
+     "petitions": 71
+    },
+    "2019": {
+     "paras": 643,
+     "statements": 43,
+     "petitions": 85
+    },
+    "2020": {
+     "paras": 681,
+     "statements": 48,
+     "petitions": 49
+    },
+    "2021": {
+     "paras": 585,
+     "petitions": 18,
+     "statements": 37
+    },
+    "2022": {
+     "paras": 319,
+     "statements": 41,
+     "petitions": 2
+    },
+    "2023": {
+     "paras": 548,
+     "statements": 41,
+     "petitions": 69
+    },
+    "2024": {
+     "paras": 659,
+     "statements": 53,
+     "petitions": 28
+    }
+   }
+  },
+  "7454": {
+   "id": "7454",
+   "name": "Kevin Yarde",
+   "paras": 1886,
+   "words": 105688,
+   "days": 133,
+   "statements": 132,
+   "petitions": 203,
+   "by_year": {
+    "2018": {
+     "paras": 397,
+     "petitions": 128,
+     "statements": 24
+    },
+    "2019": {
+     "paras": 615,
+     "statements": 26,
+     "petitions": 44
+    },
+    "2020": {
+     "paras": 276,
+     "statements": 26,
+     "petitions": 7
+    },
+    "2021": {
+     "paras": 412,
+     "statements": 44,
+     "petitions": 11
+    },
+    "2022": {
+     "paras": 186,
+     "petitions": 13,
+     "statements": 12
+    }
+   }
+  },
+  "7227": {
+   "id": "7227",
+   "name": "Mitzie Hunter",
+   "paras": 2922,
+   "words": 157748,
+   "days": 205,
+   "statements": 220,
+   "petitions": 374,
+   "by_year": {
+    "2018": {
+     "paras": 425,
+     "statements": 40,
+     "petitions": 140
+    },
+    "2019": {
+     "paras": 394,
+     "petitions": 47,
+     "statements": 38
+    },
+    "2020": {
+     "paras": 762,
+     "statements": 45,
+     "petitions": 45
+    },
+    "2021": {
+     "paras": 716,
+     "petitions": 79,
+     "statements": 55
+    },
+    "2022": {
+     "paras": 512,
+     "statements": 34,
+     "petitions": 26
+    },
+    "2023": {
+     "paras": 113,
+     "petitions": 37,
+     "statements": 8
+    }
+   }
+  },
+  "7520": {
+   "id": "7520",
+   "name": "Stan Cho",
+   "paras": 2639,
+   "words": 155202,
+   "days": 248,
+   "statements": 123,
+   "petitions": 17,
+   "by_year": {
+    "2018": {
+     "paras": 167,
+     "statements": 5
+    },
+    "2019": {
+     "paras": 309,
+     "statements": 23,
+     "petitions": 15
+    },
+    "2020": {
+     "paras": 657,
+     "statements": 57
+    },
+    "2021": {
+     "paras": 681,
+     "statements": 37
+    },
+    "2022": {
+     "paras": 218,
+     "petitions": 2
+    },
+    "2023": {
+     "paras": 241
+    },
+    "2024": {
+     "paras": 259,
+     "statements": 1
+    },
+    "2025": {
+     "paras": 69
+    },
+    "2026": {
+     "paras": 38
+    }
+   }
+  },
+  "7185": {
+   "id": "7185",
+   "name": "Victor Fedeli",
+   "paras": 3629,
+   "words": 207069,
+   "days": 270,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 767
+    },
+    "2019": {
+     "paras": 789
+    },
+    "2020": {
+     "paras": 154
+    },
+    "2021": {
+     "paras": 158
+    },
+    "2022": {
+     "paras": 490
+    },
+    "2023": {
+     "paras": 493
+    },
+    "2024": {
+     "paras": 299
+    },
+    "2025": {
+     "paras": 412
+    },
+    "2026": {
+     "paras": 67
+    }
+   }
+  },
+  "7288": {
+   "id": "7288",
+   "name": "Lisa Gretzky",
+   "paras": 6901,
+   "words": 237577,
+   "days": 273,
+   "statements": 354,
+   "petitions": 150,
+   "by_year": {
+    "2018": {
+     "paras": 965,
+     "statements": 23,
+     "petitions": 8
+    },
+    "2019": {
+     "paras": 1333,
+     "statements": 46,
+     "petitions": 34
+    },
+    "2020": {
+     "paras": 1206,
+     "statements": 41,
+     "petitions": 31
+    },
+    "2021": {
+     "paras": 1522,
+     "statements": 53,
+     "petitions": 14
+    },
+    "2022": {
+     "paras": 541,
+     "statements": 53,
+     "petitions": 8
+    },
+    "2023": {
+     "paras": 502,
+     "statements": 51,
+     "petitions": 35
+    },
+    "2024": {
+     "paras": 448,
+     "statements": 43,
+     "petitions": 12
+    },
+    "2025": {
+     "paras": 291,
+     "statements": 32
+    },
+    "2026": {
+     "paras": 93,
+     "statements": 12,
+     "petitions": 8
+    }
+   }
+  },
+  "7506": {
+   "id": "7506",
+   "name": "Daisy Wai",
+   "paras": 1943,
+   "words": 98246,
+   "days": 203,
+   "statements": 270,
+   "petitions": 64,
+   "by_year": {
+    "2018": {
+     "paras": 99,
+     "statements": 27
+    },
+    "2019": {
+     "paras": 202,
+     "statements": 59,
+     "petitions": 6
+    },
+    "2020": {
+     "paras": 324,
+     "statements": 31,
+     "petitions": 51
+    },
+    "2021": {
+     "paras": 277,
+     "statements": 33
+    },
+    "2022": {
+     "paras": 178,
+     "statements": 29
+    },
+    "2023": {
+     "paras": 385,
+     "statements": 34,
+     "petitions": 7
+    },
+    "2024": {
+     "paras": 378,
+     "statements": 42
+    },
+    "2025": {
+     "paras": 100,
+     "statements": 15
+    }
+   }
+  },
+  "7486": {
+   "id": "7486",
+   "name": "Billy Pang",
+   "paras": 2192,
+   "words": 105121,
+   "days": 217,
+   "statements": 320,
+   "petitions": 187,
+   "by_year": {
+    "2018": {
+     "paras": 171,
+     "petitions": 30,
+     "statements": 53
+    },
+    "2019": {
+     "paras": 239,
+     "statements": 22,
+     "petitions": 50
+    },
+    "2020": {
+     "paras": 338,
+     "statements": 38,
+     "petitions": 75
+    },
+    "2021": {
+     "paras": 288,
+     "statements": 38
+    },
+    "2022": {
+     "paras": 149,
+     "statements": 42,
+     "petitions": 9
+    },
+    "2023": {
+     "paras": 410,
+     "statements": 42,
+     "petitions": 16
+    },
+    "2024": {
+     "paras": 292,
+     "statements": 49,
+     "petitions": 7
+    },
+    "2025": {
+     "paras": 199,
+     "statements": 32
+    },
+    "2026": {
+     "paras": 106,
+     "statements": 4
+    }
+   }
+  },
+  "7518": {
+   "id": "7518",
+   "name": "Jessica Bell",
+   "paras": 7019,
+   "words": 446946,
+   "days": 326,
+   "statements": 325,
+   "petitions": 718,
+   "by_year": {
+    "2018": {
+     "paras": 470,
+     "statements": 32,
+     "petitions": 120
+    },
+    "2019": {
+     "paras": 839,
+     "statements": 42,
+     "petitions": 171
+    },
+    "2020": {
+     "paras": 1012,
+     "statements": 60,
+     "petitions": 60
+    },
+    "2021": {
+     "paras": 682,
+     "statements": 48,
+     "petitions": 62
+    },
+    "2022": {
+     "paras": 952,
+     "petitions": 140,
+     "statements": 37
+    },
+    "2023": {
+     "paras": 979,
+     "statements": 18,
+     "petitions": 46
+    },
+    "2024": {
+     "paras": 1181,
+     "statements": 47,
+     "petitions": 78
+    },
+    "2025": {
+     "paras": 640,
+     "petitions": 29,
+     "statements": 33
+    },
+    "2026": {
+     "paras": 264,
+     "statements": 8,
+     "petitions": 12
+    }
+   }
+  },
+  "7451": {
+   "id": "7451",
+   "name": "Rima Berns-McGown",
+   "paras": 1969,
+   "words": 100902,
+   "days": 144,
+   "statements": 159,
+   "petitions": 588,
+   "by_year": {
+    "2018": {
+     "paras": 343,
+     "statements": 28,
+     "petitions": 106
+    },
+    "2019": {
+     "paras": 704,
+     "petitions": 261,
+     "statements": 41
+    },
+    "2020": {
+     "paras": 434,
+     "petitions": 157,
+     "statements": 45
+    },
+    "2021": {
+     "paras": 372,
+     "statements": 31,
+     "petitions": 56
+    },
+    "2022": {
+     "paras": 116,
+     "petitions": 8,
+     "statements": 14
+    }
+   }
+  },
+  "7482": {
+   "id": "7482",
+   "name": "Mike Harris",
+   "paras": 4346,
+   "words": 251186,
+   "days": 243,
+   "statements": 354,
+   "petitions": 250,
+   "by_year": {
+    "2018": {
+     "paras": 344,
+     "statements": 48,
+     "petitions": 8
+    },
+    "2019": {
+     "paras": 848,
+     "statements": 58,
+     "petitions": 128
+    },
+    "2020": {
+     "paras": 465,
+     "statements": 64,
+     "petitions": 62
+    },
+    "2021": {
+     "paras": 837,
+     "petitions": 45,
+     "statements": 61
+    },
+    "2022": {
+     "paras": 595,
+     "statements": 52,
+     "petitions": 7
+    },
+    "2023": {
+     "paras": 613,
+     "statements": 49
+    },
+    "2024": {
+     "paras": 396,
+     "statements": 22
+    },
+    "2025": {
+     "paras": 231
+    },
+    "2026": {
+     "paras": 17
+    }
+   }
+  },
+  "7191": {
+   "id": "7191",
+   "name": "Jim McDonell",
+   "paras": 1590,
+   "words": 86946,
+   "days": 125,
+   "statements": 175,
+   "petitions": 165,
+   "by_year": {
+    "2018": {
+     "paras": 213,
+     "statements": 37,
+     "petitions": 19
+    },
+    "2019": {
+     "paras": 224,
+     "statements": 31,
+     "petitions": 53
+    },
+    "2020": {
+     "paras": 429,
+     "statements": 37,
+     "petitions": 34
+    },
+    "2021": {
+     "paras": 498,
+     "statements": 51,
+     "petitions": 59
+    },
+    "2022": {
+     "paras": 226,
+     "statements": 19
+    }
+   }
+  },
+  "7522": {
+   "id": "7522",
+   "name": "Faisal Hassan",
+   "paras": 2600,
+   "words": 123175,
+   "days": 179,
+   "statements": 160,
+   "petitions": 722,
+   "by_year": {
+    "2018": {
+     "paras": 423,
+     "statements": 27,
+     "petitions": 277
+    },
+    "2019": {
+     "paras": 473,
+     "petitions": 207,
+     "statements": 36
+    },
+    "2020": {
+     "paras": 704,
+     "petitions": 104,
+     "statements": 31
+    },
+    "2021": {
+     "paras": 767,
+     "statements": 49,
+     "petitions": 93
+    },
+    "2022": {
+     "paras": 233,
+     "petitions": 41,
+     "statements": 17
+    }
+   }
+  },
+  "7493": {
+   "id": "7493",
+   "name": "Deepak Anand",
+   "paras": 4514,
+   "words": 240227,
+   "days": 262,
+   "statements": 426,
+   "petitions": 399,
+   "by_year": {
+    "2018": {
+     "paras": 275,
+     "statements": 47,
+     "petitions": 54
+    },
+    "2019": {
+     "paras": 293,
+     "statements": 80,
+     "petitions": 64
+    },
+    "2020": {
+     "paras": 392,
+     "statements": 43,
+     "petitions": 57
+    },
+    "2021": {
+     "paras": 597,
+     "statements": 65,
+     "petitions": 25
+    },
+    "2022": {
+     "paras": 793,
+     "statements": 49,
+     "petitions": 71
+    },
+    "2023": {
+     "paras": 771,
+     "statements": 56,
+     "petitions": 53
+    },
+    "2024": {
+     "paras": 664,
+     "statements": 48,
+     "petitions": 33
+    },
+    "2025": {
+     "paras": 667,
+     "statements": 26,
+     "petitions": 35
+    },
+    "2026": {
+     "paras": 62,
+     "statements": 12,
+     "petitions": 7
+    }
+   }
+  },
+  "7173": {
+   "id": "7173",
+   "name": "Michael Coteau",
+   "paras": 679,
+   "words": 40677,
+   "days": 67,
+   "statements": 45,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 239,
+     "statements": 13
+    },
+    "2019": {
+     "paras": 128,
+     "statements": 10
+    },
+    "2020": {
+     "paras": 73,
+     "statements": 13
+    },
+    "2021": {
+     "paras": 239,
+     "statements": 9
+    }
+   }
+  },
+  "7472": {
+   "id": "7472",
+   "name": "Sandy Shaw",
+   "paras": 7447,
+   "words": 438278,
+   "days": 308,
+   "statements": 290,
+   "petitions": 712,
+   "by_year": {
+    "2018": {
+     "paras": 374,
+     "statements": 21,
+     "petitions": 20
+    },
+    "2019": {
+     "paras": 1388,
+     "petitions": 32,
+     "statements": 34
+    },
+    "2020": {
+     "paras": 815,
+     "statements": 28,
+     "petitions": 48
+    },
+    "2021": {
+     "paras": 866,
+     "statements": 38,
+     "petitions": 129
+    },
+    "2022": {
+     "paras": 308,
+     "petitions": 95,
+     "statements": 43
+    },
+    "2023": {
+     "paras": 1744,
+     "statements": 52,
+     "petitions": 215
+    },
+    "2024": {
+     "paras": 1520,
+     "statements": 41,
+     "petitions": 154
+    },
+    "2025": {
+     "paras": 296,
+     "statements": 19,
+     "petitions": 6
+    },
+    "2026": {
+     "paras": 136,
+     "statements": 14,
+     "petitions": 13
+    }
+   }
+  },
+  "7456": {
+   "id": "7456",
+   "name": "Amarjot Sandhu",
+   "paras": 1526,
+   "words": 78060,
+   "days": 163,
+   "statements": 196,
+   "petitions": 24,
+   "by_year": {
+    "2018": {
+     "paras": 65,
+     "statements": 6
+    },
+    "2019": {
+     "paras": 188,
+     "statements": 17
+    },
+    "2020": {
+     "paras": 106,
+     "statements": 12,
+     "petitions": 24
+    },
+    "2021": {
+     "paras": 131,
+     "statements": 32
+    },
+    "2022": {
+     "paras": 196,
+     "statements": 26
+    },
+    "2023": {
+     "paras": 361,
+     "statements": 38
+    },
+    "2024": {
+     "paras": 228,
+     "statements": 36
+    },
+    "2025": {
+     "paras": 186,
+     "statements": 20
+    },
+    "2026": {
+     "paras": 65,
+     "statements": 9
+    }
+   }
+  },
+  "7452": {
+   "id": "7452",
+   "name": "Sara Singh",
+   "paras": 2740,
+   "words": 163677,
+   "days": 176,
+   "statements": 146,
+   "petitions": 326,
+   "by_year": {
+    "2018": {
+     "paras": 524,
+     "statements": 27,
+     "petitions": 121
+    },
+    "2019": {
+     "paras": 573,
+     "petitions": 156,
+     "statements": 44
+    },
+    "2020": {
+     "paras": 452,
+     "statements": 29,
+     "petitions": 20
+    },
+    "2021": {
+     "paras": 859,
+     "statements": 29,
+     "petitions": 29
+    },
+    "2022": {
+     "paras": 332,
+     "statements": 17
+    }
+   }
+  },
+  "7513": {
+   "id": "7513",
+   "name": "Chris Glover",
+   "paras": 5313,
+   "words": 311203,
+   "days": 317,
+   "statements": 279,
+   "petitions": 676,
+   "by_year": {
+    "2018": {
+     "paras": 219,
+     "statements": 27,
+     "petitions": 39
+    },
+    "2019": {
+     "paras": 349,
+     "statements": 27,
+     "petitions": 38
+    },
+    "2020": {
+     "paras": 389,
+     "statements": 29,
+     "petitions": 10
+    },
+    "2021": {
+     "paras": 768,
+     "statements": 56,
+     "petitions": 103
+    },
+    "2022": {
+     "paras": 762,
+     "petitions": 106,
+     "statements": 33
+    },
+    "2023": {
+     "paras": 956,
+     "statements": 43,
+     "petitions": 200
+    },
+    "2024": {
+     "paras": 1065,
+     "petitions": 111,
+     "statements": 34
+    },
+    "2025": {
+     "paras": 536,
+     "petitions": 49,
+     "statements": 20
+    },
+    "2026": {
+     "paras": 269,
+     "statements": 10,
+     "petitions": 20
+    }
+   }
+  },
+  "7490": {
+   "id": "7490",
+   "name": "Kaleed Rasheed",
+   "paras": 2144,
+   "words": 117188,
+   "days": 187,
+   "statements": 214,
+   "petitions": 28,
+   "by_year": {
+    "2018": {
+     "paras": 398,
+     "statements": 43
+    },
+    "2019": {
+     "paras": 555,
+     "statements": 88
+    },
+    "2020": {
+     "paras": 545,
+     "statements": 37,
+     "petitions": 21
+    },
+    "2021": {
+     "paras": 270,
+     "statements": 29,
+     "petitions": 7
+    },
+    "2022": {
+     "paras": 134
+    },
+    "2023": {
+     "paras": 200
+    },
+    "2024": {
+     "paras": 42,
+     "statements": 17
+    }
+   }
+  },
+  "7496": {
+   "id": "7496",
+   "name": "Jeff Burch",
+   "paras": 4559,
+   "words": 259995,
+   "days": 259,
+   "statements": 292,
+   "petitions": 352,
+   "by_year": {
+    "2018": {
+     "paras": 390,
+     "statements": 21,
+     "petitions": 57
+    },
+    "2019": {
+     "paras": 541,
+     "statements": 32,
+     "petitions": 76
+    },
+    "2020": {
+     "paras": 464,
+     "statements": 39,
+     "petitions": 38
+    },
+    "2021": {
+     "paras": 455,
+     "statements": 50,
+     "petitions": 43
+    },
+    "2022": {
+     "paras": 976,
+     "statements": 39,
+     "petitions": 26
+    },
+    "2023": {
+     "paras": 926,
+     "statements": 29,
+     "petitions": 88
+    },
+    "2024": {
+     "paras": 221,
+     "statements": 43,
+     "petitions": 13
+    },
+    "2025": {
+     "paras": 462,
+     "statements": 34,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 124,
+     "statements": 5,
+     "petitions": 8
+    }
+   }
+  },
+  "7474": {
+   "id": "7474",
+   "name": "Tom Rakocevic",
+   "paras": 6109,
+   "words": 326723,
+   "days": 302,
+   "statements": 258,
+   "petitions": 778,
+   "by_year": {
+    "2018": {
+     "paras": 264,
+     "statements": 19,
+     "petitions": 127
+    },
+    "2019": {
+     "paras": 906,
+     "petitions": 285,
+     "statements": 41
+    },
+    "2020": {
+     "paras": 1212,
+     "statements": 29,
+     "petitions": 91
+    },
+    "2021": {
+     "paras": 752,
+     "statements": 51,
+     "petitions": 75
+    },
+    "2022": {
+     "paras": 597,
+     "petitions": 73,
+     "statements": 33
+    },
+    "2023": {
+     "paras": 807,
+     "petitions": 73,
+     "statements": 22
+    },
+    "2024": {
+     "paras": 930,
+     "petitions": 26,
+     "statements": 33
+    },
+    "2025": {
+     "paras": 425,
+     "statements": 20,
+     "petitions": 14
+    },
+    "2026": {
+     "paras": 216,
+     "statements": 10,
+     "petitions": 14
+    }
+   }
+  },
+  "7485": {
+   "id": "7485",
+   "name": "Logan Kanapathi",
+   "paras": 1706,
+   "words": 79508,
+   "days": 192,
+   "statements": 264,
+   "petitions": 29,
+   "by_year": {
+    "2018": {
+     "paras": 71,
+     "petitions": 7,
+     "statements": 15
+    },
+    "2019": {
+     "paras": 184,
+     "statements": 20
+    },
+    "2020": {
+     "paras": 203,
+     "statements": 32,
+     "petitions": 22
+    },
+    "2021": {
+     "paras": 204,
+     "statements": 34
+    },
+    "2022": {
+     "paras": 229,
+     "statements": 48
+    },
+    "2023": {
+     "paras": 314,
+     "statements": 40
+    },
+    "2024": {
+     "paras": 235,
+     "statements": 31
+    },
+    "2025": {
+     "paras": 195,
+     "statements": 32
+    },
+    "2026": {
+     "paras": 71,
+     "statements": 12
+    }
+   }
+  },
+  "7467": {
+   "id": "7467",
+   "name": "Kinga Surma",
+   "paras": 2136,
+   "words": 121160,
+   "days": 151,
+   "statements": 26,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 201,
+     "statements": 15
+    },
+    "2019": {
+     "paras": 254,
+     "statements": 11
+    },
+    "2020": {
+     "paras": 330
+    },
+    "2021": {
+     "paras": 100
+    },
+    "2022": {
+     "paras": 192
+    },
+    "2023": {
+     "paras": 671
+    },
+    "2024": {
+     "paras": 273
+    },
+    "2025": {
+     "paras": 115
+    }
+   }
+  },
+  "2111": {
+   "id": "2111",
+   "name": "Kathleen O. Wynne",
+   "paras": 760,
+   "words": 42085,
+   "days": 86,
+   "statements": 139,
+   "petitions": 20,
+   "by_year": {
+    "2018": {
+     "paras": 146,
+     "statements": 25,
+     "petitions": 5
+    },
+    "2019": {
+     "paras": 164,
+     "statements": 44,
+     "petitions": 15
+    },
+    "2020": {
+     "paras": 209,
+     "statements": 31
+    },
+    "2021": {
+     "paras": 129,
+     "statements": 18
+    },
+    "2022": {
+     "paras": 112,
+     "statements": 21
+    }
+   }
+  },
+  "7481": {
+   "id": "7481",
+   "name": "Amy Fee",
+   "paras": 725,
+   "words": 39731,
+   "days": 56,
+   "statements": 40,
+   "petitions": 185,
+   "by_year": {
+    "2018": {
+     "paras": 293,
+     "petitions": 32,
+     "statements": 12
+    },
+    "2019": {
+     "paras": 374,
+     "statements": 13,
+     "petitions": 123
+    },
+    "2020": {
+     "paras": 58,
+     "petitions": 30,
+     "statements": 15
+    }
+   }
+  },
+  "43": {
+   "id": "43",
+   "name": "Ernie Hardeman",
+   "paras": 1128,
+   "words": 52527,
+   "days": 149,
+   "statements": 197,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 189
+    },
+    "2019": {
+     "paras": 252
+    },
+    "2020": {
+     "paras": 231
+    },
+    "2021": {
+     "paras": 30,
+     "statements": 11
+    },
+    "2022": {
+     "paras": 100,
+     "statements": 34
+    },
+    "2023": {
+     "paras": 78,
+     "statements": 46
+    },
+    "2024": {
+     "paras": 105,
+     "statements": 56
+    },
+    "2025": {
+     "paras": 121,
+     "statements": 40
+    },
+    "2026": {
+     "paras": 22,
+     "statements": 10
+    }
+   }
+  },
+  "7483": {
+   "id": "7483",
+   "name": "Terence Kernaghan",
+   "paras": 7149,
+   "words": 380226,
+   "days": 324,
+   "statements": 420,
+   "petitions": 1335,
+   "by_year": {
+    "2018": {
+     "paras": 417,
+     "statements": 32,
+     "petitions": 48
+    },
+    "2019": {
+     "paras": 518,
+     "statements": 52,
+     "petitions": 149
+    },
+    "2020": {
+     "paras": 503,
+     "petitions": 66,
+     "statements": 43
+    },
+    "2021": {
+     "paras": 597,
+     "statements": 49,
+     "petitions": 90
+    },
+    "2022": {
+     "paras": 972,
+     "statements": 81,
+     "petitions": 271
+    },
+    "2023": {
+     "paras": 2078,
+     "petitions": 429,
+     "statements": 43
+    },
+    "2024": {
+     "paras": 1099,
+     "petitions": 226,
+     "statements": 62
+    },
+    "2025": {
+     "paras": 708,
+     "petitions": 34,
+     "statements": 47
+    },
+    "2026": {
+     "paras": 257,
+     "petitions": 22,
+     "statements": 11
+    }
+   }
+  },
+  "7284": {
+   "id": "7284",
+   "name": "Marie-France Lalonde",
+   "paras": 478,
+   "words": 22619,
+   "days": 51,
+   "statements": 66,
+   "petitions": 51,
+   "by_year": {
+    "2018": {
+     "paras": 268,
+     "statements": 46,
+     "petitions": 43
+    },
+    "2019": {
+     "paras": 210,
+     "statements": 20,
+     "petitions": 8
+    }
+   }
+  },
+  "7182": {
+   "id": "7182",
+   "name": "Monte McNaughton",
+   "paras": 2070,
+   "words": 116691,
+   "days": 183,
+   "statements": 15,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 167
+    },
+    "2019": {
+     "paras": 251
+    },
+    "2020": {
+     "paras": 229
+    },
+    "2021": {
+     "paras": 809
+    },
+    "2022": {
+     "paras": 344,
+     "statements": 15
+    },
+    "2023": {
+     "paras": 270
+    }
+   }
+  },
+  "7475": {
+   "id": "7475",
+   "name": "Merrilee Fullerton",
+   "paras": 2422,
+   "words": 129859,
+   "days": 193,
+   "statements": 10,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 279
+    },
+    "2019": {
+     "paras": 272
+    },
+    "2020": {
+     "paras": 1046
+    },
+    "2021": {
+     "paras": 348,
+     "statements": 10
+    },
+    "2022": {
+     "paras": 399
+    },
+    "2023": {
+     "paras": 78
+    }
+   }
+  },
+  "7514": {
+   "id": "7514",
+   "name": "Jennie",
+   "paras": 3793,
+   "words": 211678,
+   "days": 296,
+   "statements": 272,
+   "petitions": 311,
+   "by_year": {
+    "2018": {
+     "paras": 225,
+     "statements": 26,
+     "petitions": 47
+    },
+    "2019": {
+     "paras": 217,
+     "statements": 38,
+     "petitions": 19
+    },
+    "2020": {
+     "paras": 432,
+     "statements": 37,
+     "petitions": 16
+    },
+    "2021": {
+     "paras": 548,
+     "statements": 40,
+     "petitions": 33
+    },
+    "2022": {
+     "paras": 518,
+     "statements": 36,
+     "petitions": 35
+    },
+    "2023": {
+     "paras": 625,
+     "petitions": 51,
+     "statements": 45
+    },
+    "2024": {
+     "paras": 666,
+     "petitions": 69,
+     "statements": 24
+    },
+    "2025": {
+     "paras": 412,
+     "statements": 22,
+     "petitions": 25
+    },
+    "2026": {
+     "paras": 150,
+     "petitions": 16,
+     "statements": 4
+    }
+   }
+  },
+  "7492": {
+   "id": "7492",
+   "name": "Rudy Cuzzetto",
+   "paras": 3179,
+   "words": 186420,
+   "days": 230,
+   "statements": 298,
+   "petitions": 30,
+   "by_year": {
+    "2018": {
+     "paras": 109,
+     "statements": 13
+    },
+    "2019": {
+     "paras": 348,
+     "statements": 23
+    },
+    "2020": {
+     "paras": 331,
+     "statements": 48
+    },
+    "2021": {
+     "paras": 371,
+     "statements": 38,
+     "petitions": 9
+    },
+    "2022": {
+     "paras": 548,
+     "statements": 38,
+     "petitions": 21
+    },
+    "2023": {
+     "paras": 520,
+     "statements": 41
+    },
+    "2024": {
+     "paras": 722,
+     "statements": 67
+    },
+    "2025": {
+     "paras": 201,
+     "statements": 24
+    },
+    "2026": {
+     "paras": 29,
+     "statements": 6
+    }
+   }
+  },
+  "7228": {
+   "id": "7228",
+   "name": "Percy Hatfield",
+   "paras": 9704,
+   "words": 217200,
+   "days": 226,
+   "statements": 312,
+   "petitions": 776,
+   "by_year": {
+    "2018": {
+     "paras": 1565,
+     "statements": 94,
+     "petitions": 127
+    },
+    "2019": {
+     "paras": 1763,
+     "petitions": 245,
+     "statements": 71
+    },
+    "2020": {
+     "paras": 2539,
+     "petitions": 287,
+     "statements": 48
+    },
+    "2021": {
+     "paras": 2826,
+     "statements": 80,
+     "petitions": 85
+    },
+    "2022": {
+     "paras": 1011,
+     "statements": 19,
+     "petitions": 32
+    }
+   }
+  },
+  "7515": {
+   "id": "7515",
+   "name": "Judith Monteith-Farrell",
+   "paras": 1512,
+   "words": 72669,
+   "days": 135,
+   "statements": 137,
+   "petitions": 349,
+   "by_year": {
+    "2018": {
+     "paras": 181,
+     "statements": 31,
+     "petitions": 42
+    },
+    "2019": {
+     "paras": 456,
+     "statements": 43,
+     "petitions": 139
+    },
+    "2020": {
+     "paras": 265,
+     "statements": 22,
+     "petitions": 43
+    },
+    "2021": {
+     "paras": 397,
+     "petitions": 80,
+     "statements": 20
+    },
+    "2022": {
+     "paras": 213,
+     "statements": 21,
+     "petitions": 45
+    }
+   }
+  },
+  "7491": {
+   "id": "7491",
+   "name": "Sheref Sabawy",
+   "paras": 2545,
+   "words": 144780,
+   "days": 221,
+   "statements": 291,
+   "petitions": 112,
+   "by_year": {
+    "2018": {
+     "paras": 191,
+     "statements": 24,
+     "petitions": 48
+    },
+    "2019": {
+     "paras": 220,
+     "statements": 33,
+     "petitions": 18
+    },
+    "2020": {
+     "paras": 185,
+     "petitions": 27,
+     "statements": 15
+    },
+    "2021": {
+     "paras": 348,
+     "statements": 48
+    },
+    "2022": {
+     "paras": 282,
+     "statements": 36
+    },
+    "2023": {
+     "paras": 463,
+     "statements": 28,
+     "petitions": 17
+    },
+    "2024": {
+     "paras": 464,
+     "statements": 51,
+     "petitions": 2
+    },
+    "2025": {
+     "paras": 267,
+     "statements": 40
+    },
+    "2026": {
+     "paras": 125,
+     "statements": 16
+    }
+   }
+  },
+  "7447": {
+   "id": "7447",
+   "name": "Michael Parsa",
+   "paras": 3521,
+   "words": 196225,
+   "days": 275,
+   "statements": 159,
+   "petitions": 130,
+   "by_year": {
+    "2018": {
+     "paras": 218,
+     "statements": 12,
+     "petitions": 17
+    },
+    "2019": {
+     "paras": 646,
+     "statements": 34
+    },
+    "2020": {
+     "paras": 360,
+     "statements": 35,
+     "petitions": 96
+    },
+    "2021": {
+     "paras": 607,
+     "statements": 35,
+     "petitions": 17
+    },
+    "2022": {
+     "paras": 750,
+     "statements": 40
+    },
+    "2023": {
+     "paras": 320
+    },
+    "2024": {
+     "paras": 407,
+     "statements": 2
+    },
+    "2025": {
+     "paras": 164,
+     "statements": 1
+    },
+    "2026": {
+     "paras": 49
+    }
+   }
+  },
+  "7509": {
+   "id": "7509",
+   "name": "Aris Babikian",
+   "paras": 1585,
+   "words": 64861,
+   "days": 200,
+   "statements": 282,
+   "petitions": 267,
+   "by_year": {
+    "2018": {
+     "paras": 183,
+     "statements": 34,
+     "petitions": 40
+    },
+    "2019": {
+     "paras": 149,
+     "statements": 30,
+     "petitions": 18
+    },
+    "2020": {
+     "paras": 452,
+     "petitions": 192,
+     "statements": 59
+    },
+    "2021": {
+     "paras": 200,
+     "statements": 41
+    },
+    "2022": {
+     "paras": 196,
+     "statements": 33,
+     "petitions": 2
+    },
+    "2023": {
+     "paras": 140,
+     "statements": 28,
+     "petitions": 15
+    },
+    "2024": {
+     "paras": 171,
+     "statements": 41
+    },
+    "2025": {
+     "paras": 62,
+     "statements": 12
+    },
+    "2026": {
+     "paras": 32,
+     "statements": 4
+    }
+   }
+  },
+  "7364": {
+   "id": "7364",
+   "name": "Raymond Sung Joon Cho",
+   "paras": 690,
+   "words": 33384,
+   "days": 99,
+   "statements": 3,
+   "petitions": 0,
+   "by_year": {
+    "2018": {
+     "paras": 111
+    },
+    "2019": {
+     "paras": 106,
+     "statements": 2
+    },
+    "2020": {
+     "paras": 57
+    },
+    "2021": {
+     "paras": 51
+    },
+    "2022": {
+     "paras": 44,
+     "statements": 1
+    },
+    "2023": {
+     "paras": 173
+    },
+    "2024": {
+     "paras": 88
+    },
+    "2025": {
+     "paras": 40
+    },
+    "2026": {
+     "paras": 20
+    }
+   }
+  },
+  "7461": {
+   "id": "7461",
+   "name": "Vincent Ke",
+   "paras": 1020,
+   "words": 42872,
+   "days": 144,
+   "statements": 173,
+   "petitions": 138,
+   "by_year": {
+    "2018": {
+     "paras": 119,
+     "statements": 19,
+     "petitions": 17
+    },
+    "2019": {
+     "paras": 174,
+     "statements": 24,
+     "petitions": 30
+    },
+    "2020": {
+     "paras": 274,
+     "statements": 48,
+     "petitions": 91
+    },
+    "2021": {
+     "paras": 141,
+     "statements": 19
+    },
+    "2022": {
+     "paras": 131,
+     "statements": 32
+    },
+    "2023": {
+     "paras": 51,
+     "statements": 15
+    },
+    "2024": {
+     "paras": 130,
+     "statements": 16
+    }
+   }
+  },
+  "7499": {
+   "id": "7499",
+   "name": "Effie J. Triantafilopoulos",
+   "paras": 2988,
+   "words": 106090,
+   "days": 178,
+   "statements": 273,
+   "petitions": 152,
+   "by_year": {
+    "2018": {
+     "paras": 162,
+     "statements": 16,
+     "petitions": 17
+    },
+    "2019": {
+     "paras": 356,
+     "statements": 40,
+     "petitions": 40
+    },
+    "2020": {
+     "paras": 317,
+     "statements": 42,
+     "petitions": 32
+    },
+    "2021": {
+     "paras": 421,
+     "petitions": 47,
+     "statements": 52
+    },
+    "2022": {
+     "paras": 195,
+     "petitions": 5,
+     "statements": 29
+    },
+    "2023": {
+     "paras": 192,
+     "statements": 27,
+     "petitions": 6
+    },
+    "2024": {
+     "paras": 164,
+     "statements": 37,
+     "petitions": 2
+    },
+    "2025": {
+     "paras": 869,
+     "statements": 21,
+     "petitions": 1
+    },
+    "2026": {
+     "paras": 312,
+     "statements": 9,
+     "petitions": 2
+    }
+   }
+  },
+  "40": {
+   "id": "40",
+   "name": "Michael Gravelle",
+   "paras": 109,
+   "words": 5104,
+   "days": 13,
+   "statements": 15,
+   "petitions": 35,
+   "by_year": {
+    "2018": {
+     "paras": 34,
+     "statements": 4,
+     "petitions": 17
+    },
+    "2019": {
+     "paras": 75,
+     "statements": 11,
+     "petitions": 18
+    }
+   }
+  },
+  "7565": {
+   "id": "7565",
+   "name": "Lucille Collard",
+   "paras": 6548,
+   "words": 204130,
+   "days": 274,
+   "statements": 199,
+   "petitions": 158,
+   "by_year": {
+    "2020": {
+     "paras": 548,
+     "statements": 28,
+     "petitions": 7
+    },
+    "2021": {
+     "paras": 634,
+     "statements": 44,
+     "petitions": 10
+    },
+    "2022": {
+     "paras": 1075,
+     "petitions": 42,
+     "statements": 32
+    },
+    "2023": {
+     "paras": 1895,
+     "petitions": 61,
+     "statements": 40
+    },
+    "2024": {
+     "paras": 1379,
+     "statements": 29,
+     "petitions": 19
+    },
+    "2025": {
+     "paras": 708,
+     "statements": 20,
+     "petitions": 2
+    },
+    "2026": {
+     "paras": 309,
+     "petitions": 17,
+     "statements": 6
+    }
+   }
+  },
+  "7564": {
+   "id": "7564",
+   "name": "Stephen Blais",
+   "paras": 3382,
+   "words": 207255,
+   "days": 214,
+   "statements": 185,
+   "petitions": 70,
+   "by_year": {
+    "2020": {
+     "paras": 422,
+     "statements": 28
+    },
+    "2021": {
+     "paras": 472,
+     "statements": 49,
+     "petitions": 16
+    },
+    "2022": {
+     "paras": 370,
+     "petitions": 40,
+     "statements": 27
+    },
+    "2023": {
+     "paras": 492,
+     "statements": 27,
+     "petitions": 8
+    },
+    "2024": {
+     "paras": 236,
+     "statements": 31
+    },
+    "2025": {
+     "paras": 951,
+     "statements": 18
+    },
+    "2026": {
+     "paras": 439,
+     "petitions": 6,
+     "statements": 5
+    }
+   }
+  },
+  "7595": {
+   "id": "7595",
+   "name": "Todd J. McCarthy",
+   "paras": 2398,
+   "words": 161673,
+   "days": 104,
+   "statements": 67,
+   "petitions": 10,
+   "by_year": {
+    "2022": {
+     "paras": 445,
+     "statements": 30
+    },
+    "2023": {
+     "paras": 1177,
+     "statements": 37,
+     "petitions": 10
+    },
+    "2024": {
+     "paras": 776
+    }
+   }
+  },
+  "7584": {
+   "id": "7584",
+   "name": "Patrice Barnes",
+   "paras": 4588,
+   "words": 74219,
+   "days": 101,
+   "statements": 112,
+   "petitions": 10,
+   "by_year": {
+    "2022": {
+     "paras": 932,
+     "statements": 22
+    },
+    "2023": {
+     "paras": 1874,
+     "statements": 42,
+     "petitions": 6
+    },
+    "2024": {
+     "paras": 1782,
+     "statements": 48,
+     "petitions": 4
+    }
+   }
+  },
+  "7605": {
+   "id": "7605",
+   "name": "Dawn Gallagher Murphy",
+   "paras": 2361,
+   "words": 120856,
+   "days": 154,
+   "statements": 152,
+   "petitions": 141,
+   "by_year": {
+    "2022": {
+     "paras": 224,
+     "statements": 24,
+     "petitions": 54
+    },
+    "2023": {
+     "paras": 1024,
+     "statements": 56,
+     "petitions": 72
+    },
+    "2024": {
+     "paras": 767,
+     "statements": 45,
+     "petitions": 10
+    },
+    "2025": {
+     "paras": 299,
+     "statements": 20,
+     "petitions": 5
+    },
+    "2026": {
+     "paras": 47,
+     "statements": 7
+    }
+   }
+  },
+  "7597": {
+   "id": "7597",
+   "name": "Anthony Leardi",
+   "paras": 3441,
+   "words": 203968,
+   "days": 169,
+   "statements": 144,
+   "petitions": 229,
+   "by_year": {
+    "2022": {
+     "paras": 276,
+     "statements": 16,
+     "petitions": 24
+    },
+    "2023": {
+     "paras": 1157,
+     "statements": 42,
+     "petitions": 57
+    },
+    "2024": {
+     "paras": 1129,
+     "statements": 49,
+     "petitions": 81
+    },
+    "2025": {
+     "paras": 767,
+     "statements": 24,
+     "petitions": 56
+    },
+    "2026": {
+     "paras": 112,
+     "petitions": 11,
+     "statements": 13
+    }
+   }
+  },
+  "7606": {
+   "id": "7606",
+   "name": "Chandra Pasma",
+   "paras": 3392,
+   "words": 219025,
+   "days": 163,
+   "statements": 124,
+   "petitions": 355,
+   "by_year": {
+    "2022": {
+     "paras": 640,
+     "statements": 16,
+     "petitions": 23
+    },
+    "2023": {
+     "paras": 1135,
+     "petitions": 117,
+     "statements": 35
+    },
+    "2024": {
+     "paras": 529,
+     "statements": 34,
+     "petitions": 38
+    },
+    "2025": {
+     "paras": 849,
+     "petitions": 137,
+     "statements": 29
+    },
+    "2026": {
+     "paras": 239,
+     "petitions": 40,
+     "statements": 10
+    }
+   }
+  },
+  "7615": {
+   "id": "7615",
+   "name": "George Pirie",
+   "paras": 427,
+   "words": 23429,
+   "days": 47,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 100
+    },
+    "2023": {
+     "paras": 176
+    },
+    "2024": {
+     "paras": 98
+    },
+    "2025": {
+     "paras": 10
+    },
+    "2026": {
+     "paras": 43
+    }
+   }
+  },
+  "7593": {
+   "id": "7593",
+   "name": "Adil Shamji",
+   "paras": 2372,
+   "words": 148183,
+   "days": 139,
+   "statements": 110,
+   "petitions": 76,
+   "by_year": {
+    "2022": {
+     "paras": 190,
+     "statements": 20,
+     "petitions": 17
+    },
+    "2023": {
+     "paras": 467,
+     "statements": 33,
+     "petitions": 26
+    },
+    "2024": {
+     "paras": 465,
+     "statements": 26,
+     "petitions": 17
+    },
+    "2025": {
+     "paras": 1033,
+     "statements": 26,
+     "petitions": 9
+    },
+    "2026": {
+     "paras": 217,
+     "petitions": 7,
+     "statements": 5
+    }
+   }
+  },
+  "7601": {
+   "id": "7601",
+   "name": "Ric Bresee",
+   "paras": 2592,
+   "words": 86635,
+   "days": 123,
+   "statements": 235,
+   "petitions": 50,
+   "by_year": {
+    "2022": {
+     "paras": 131,
+     "statements": 25,
+     "petitions": 26
+    },
+    "2023": {
+     "paras": 481,
+     "statements": 81,
+     "petitions": 12
+    },
+    "2024": {
+     "paras": 470,
+     "statements": 59,
+     "petitions": 5
+    },
+    "2025": {
+     "paras": 856,
+     "statements": 56,
+     "petitions": 4
+    },
+    "2026": {
+     "paras": 654,
+     "statements": 14,
+     "petitions": 3
+    }
+   }
+  },
+  "7607": {
+   "id": "7607",
+   "name": "Graydon Smith",
+   "paras": 1021,
+   "words": 64446,
+   "days": 106,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 145
+    },
+    "2023": {
+     "paras": 203
+    },
+    "2024": {
+     "paras": 273
+    },
+    "2025": {
+     "paras": 249
+    },
+    "2026": {
+     "paras": 151
+    }
+   }
+  },
+  "7585": {
+   "id": "7585",
+   "name": "Mary-Margaret McMahon",
+   "paras": 3031,
+   "words": 153189,
+   "days": 170,
+   "statements": 108,
+   "petitions": 141,
+   "by_year": {
+    "2022": {
+     "paras": 340,
+     "statements": 22,
+     "petitions": 9
+    },
+    "2023": {
+     "paras": 547,
+     "statements": 28,
+     "petitions": 47
+    },
+    "2024": {
+     "paras": 515,
+     "petitions": 55,
+     "statements": 32
+    },
+    "2025": {
+     "paras": 1208,
+     "petitions": 14,
+     "statements": 19
+    },
+    "2026": {
+     "paras": 421,
+     "petitions": 16,
+     "statements": 7
+    }
+   }
+  },
+  "7602": {
+   "id": "7602",
+   "name": "Ted Hsu",
+   "paras": 1860,
+   "words": 112530,
+   "days": 128,
+   "statements": 92,
+   "petitions": 148,
+   "by_year": {
+    "2022": {
+     "paras": 196,
+     "statements": 17
+    },
+    "2023": {
+     "paras": 288,
+     "statements": 28,
+     "petitions": 37
+    },
+    "2024": {
+     "paras": 384,
+     "petitions": 44,
+     "statements": 21
+    },
+    "2025": {
+     "paras": 826,
+     "petitions": 64,
+     "statements": 26
+    },
+    "2026": {
+     "paras": 166,
+     "petitions": 3
+    }
+   }
+  },
+  "7589": {
+   "id": "7589",
+   "name": "Rick Byers",
+   "paras": 1023,
+   "words": 58142,
+   "days": 75,
+   "statements": 120,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 245,
+     "statements": 27
+    },
+    "2023": {
+     "paras": 489,
+     "statements": 45
+    },
+    "2024": {
+     "paras": 289,
+     "statements": 48
+    }
+   }
+  },
+  "7614": {
+   "id": "7614",
+   "name": "Lise Vaugeois",
+   "paras": 3243,
+   "words": 178112,
+   "days": 174,
+   "statements": 123,
+   "petitions": 328,
+   "by_year": {
+    "2022": {
+     "paras": 436,
+     "statements": 17,
+     "petitions": 23
+    },
+    "2023": {
+     "paras": 1013,
+     "petitions": 170,
+     "statements": 29
+    },
+    "2024": {
+     "paras": 930,
+     "petitions": 76,
+     "statements": 35
+    },
+    "2025": {
+     "paras": 717,
+     "statements": 29,
+     "petitions": 44
+    },
+    "2026": {
+     "paras": 147,
+     "petitions": 15,
+     "statements": 13
+    }
+   }
+  },
+  "7594": {
+   "id": "7594",
+   "name": "Stephanie Bowman",
+   "paras": 2524,
+   "words": 156410,
+   "days": 126,
+   "statements": 92,
+   "petitions": 57,
+   "by_year": {
+    "2022": {
+     "paras": 198,
+     "statements": 14
+    },
+    "2023": {
+     "paras": 507,
+     "statements": 34,
+     "petitions": 16
+    },
+    "2024": {
+     "paras": 395,
+     "statements": 24,
+     "petitions": 19
+    },
+    "2025": {
+     "paras": 981,
+     "statements": 17,
+     "petitions": 10
+    },
+    "2026": {
+     "paras": 443,
+     "petitions": 12,
+     "statements": 3
+    }
+   }
+  },
+  "7616": {
+   "id": "7616",
+   "name": "Kristyn Wong-Tam",
+   "paras": 4528,
+   "words": 261844,
+   "days": 177,
+   "statements": 189,
+   "petitions": 654,
+   "by_year": {
+    "2022": {
+     "paras": 854,
+     "statements": 23,
+     "petitions": 40
+    },
+    "2023": {
+     "paras": 1494,
+     "statements": 46,
+     "petitions": 322
+    },
+    "2024": {
+     "paras": 1104,
+     "statements": 75,
+     "petitions": 51
+    },
+    "2025": {
+     "paras": 675,
+     "petitions": 159,
+     "statements": 37
+    },
+    "2026": {
+     "paras": 401,
+     "petitions": 82,
+     "statements": 8
+    }
+   }
+  },
+  "7603": {
+   "id": "7603",
+   "name": "Jess Dixon",
+   "paras": 969,
+   "words": 69522,
+   "days": 87,
+   "statements": 146,
+   "petitions": 5,
+   "by_year": {
+    "2022": {
+     "paras": 206,
+     "statements": 20
+    },
+    "2023": {
+     "paras": 220,
+     "statements": 33
+    },
+    "2024": {
+     "paras": 302,
+     "statements": 65
+    },
+    "2025": {
+     "paras": 176,
+     "statements": 21
+    },
+    "2026": {
+     "paras": 65,
+     "statements": 7,
+     "petitions": 5
+    }
+   }
+  },
+  "7617": {
+   "id": "7617",
+   "name": "Andrew Dowie",
+   "paras": 1911,
+   "words": 107028,
+   "days": 154,
+   "statements": 184,
+   "petitions": 62,
+   "by_year": {
+    "2022": {
+     "paras": 331,
+     "statements": 29,
+     "petitions": 36
+    },
+    "2023": {
+     "paras": 703,
+     "statements": 75,
+     "petitions": 15
+    },
+    "2024": {
+     "paras": 388,
+     "statements": 46,
+     "petitions": 2
+    },
+    "2025": {
+     "paras": 361,
+     "petitions": 9,
+     "statements": 30
+    },
+    "2026": {
+     "paras": 128,
+     "statements": 4
+    }
+   }
+  },
+  "7596": {
+   "id": "7596",
+   "name": "Rob Flack",
+   "paras": 2275,
+   "words": 127732,
+   "days": 127,
+   "statements": 61,
+   "petitions": 7,
+   "by_year": {
+    "2022": {
+     "paras": 236,
+     "statements": 27
+    },
+    "2023": {
+     "paras": 689,
+     "statements": 34,
+     "petitions": 7
+    },
+    "2024": {
+     "paras": 452
+    },
+    "2025": {
+     "paras": 712
+    },
+    "2026": {
+     "paras": 186
+    }
+   }
+  },
+  "7600": {
+   "id": "7600",
+   "name": "Neil Lumsden",
+   "paras": 339,
+   "words": 16396,
+   "days": 49,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 103
+    },
+    "2023": {
+     "paras": 196
+    },
+    "2024": {
+     "paras": 33
+    },
+    "2025": {
+     "paras": 1
+    },
+    "2026": {
+     "paras": 6
+    }
+   }
+  },
+  "7613": {
+   "id": "7613",
+   "name": "Kevin Holland",
+   "paras": 927,
+   "words": 47560,
+   "days": 104,
+   "statements": 93,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 385,
+     "statements": 19
+    },
+    "2023": {
+     "paras": 205,
+     "statements": 53
+    },
+    "2024": {
+     "paras": 176,
+     "statements": 21
+    },
+    "2025": {
+     "paras": 141
+    },
+    "2026": {
+     "paras": 20
+    }
+   }
+  },
+  "7619": {
+   "id": "7619",
+   "name": "Michael D. Ford",
+   "paras": 202,
+   "words": 11663,
+   "days": 26,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 34
+    },
+    "2023": {
+     "paras": 82
+    },
+    "2024": {
+     "paras": 86
+    }
+   }
+  },
+  "7604": {
+   "id": "7604",
+   "name": "John Jordan",
+   "paras": 1340,
+   "words": 72450,
+   "days": 101,
+   "statements": 149,
+   "petitions": 33,
+   "by_year": {
+    "2022": {
+     "paras": 288,
+     "statements": 13
+    },
+    "2023": {
+     "paras": 345,
+     "petitions": 11,
+     "statements": 50
+    },
+    "2024": {
+     "paras": 345,
+     "statements": 49,
+     "petitions": 14
+    },
+    "2025": {
+     "paras": 261,
+     "statements": 28,
+     "petitions": 8
+    },
+    "2026": {
+     "paras": 101,
+     "statements": 9
+    }
+   }
+  },
+  "7608": {
+   "id": "7608",
+   "name": "Matthew Rae",
+   "paras": 2702,
+   "words": 156837,
+   "days": 138,
+   "statements": 215,
+   "petitions": 8,
+   "by_year": {
+    "2022": {
+     "paras": 175,
+     "statements": 18
+    },
+    "2023": {
+     "paras": 1040,
+     "statements": 81
+    },
+    "2024": {
+     "paras": 744,
+     "statements": 63
+    },
+    "2025": {
+     "paras": 628,
+     "statements": 48,
+     "petitions": 4
+    },
+    "2026": {
+     "paras": 115,
+     "statements": 5,
+     "petitions": 4
+    }
+   }
+  },
+  "7587": {
+   "id": "7587",
+   "name": "Hardeep Singh Grewal",
+   "paras": 595,
+   "words": 37078,
+   "days": 53,
+   "statements": 98,
+   "petitions": 12,
+   "by_year": {
+    "2022": {
+     "paras": 196,
+     "statements": 17,
+     "petitions": 12
+    },
+    "2023": {
+     "paras": 236,
+     "statements": 30
+    },
+    "2024": {
+     "paras": 163,
+     "statements": 51
+    }
+   }
+  },
+  "7599": {
+   "id": "7599",
+   "name": "Bobbi Ann Brady",
+   "paras": 858,
+   "words": 39067,
+   "days": 81,
+   "statements": 136,
+   "petitions": 159,
+   "by_year": {
+    "2022": {
+     "paras": 151,
+     "statements": 27,
+     "petitions": 9
+    },
+    "2023": {
+     "paras": 265,
+     "petitions": 62,
+     "statements": 34
+    },
+    "2024": {
+     "paras": 183,
+     "statements": 41,
+     "petitions": 39
+    },
+    "2025": {
+     "paras": 227,
+     "statements": 29,
+     "petitions": 38
+    },
+    "2026": {
+     "paras": 32,
+     "statements": 5,
+     "petitions": 11
+    }
+   }
+  },
+  "7592": {
+   "id": "7592",
+   "name": "Trevor Jones",
+   "paras": 1539,
+   "words": 75408,
+   "days": 136,
+   "statements": 87,
+   "petitions": 14,
+   "by_year": {
+    "2022": {
+     "paras": 100,
+     "statements": 21
+    },
+    "2023": {
+     "paras": 694,
+     "statements": 32,
+     "petitions": 2
+    },
+    "2024": {
+     "paras": 623,
+     "statements": 34,
+     "petitions": 12
+    },
+    "2025": {
+     "paras": 102
+    },
+    "2026": {
+     "paras": 20
+    }
+   }
+  },
+  "7588": {
+   "id": "7588",
+   "name": "Graham McGregor",
+   "paras": 1609,
+   "words": 89496,
+   "days": 114,
+   "statements": 107,
+   "petitions": 44,
+   "by_year": {
+    "2022": {
+     "paras": 409,
+     "statements": 21,
+     "petitions": 11
+    },
+    "2023": {
+     "paras": 564,
+     "statements": 58,
+     "petitions": 33
+    },
+    "2024": {
+     "paras": 489,
+     "statements": 28
+    },
+    "2025": {
+     "paras": 113
+    },
+    "2026": {
+     "paras": 34
+    }
+   }
+  },
+  "7586": {
+   "id": "7586",
+   "name": "Charmaine A. Williams",
+   "paras": 821,
+   "words": 47501,
+   "days": 74,
+   "statements": 0,
+   "petitions": 11,
+   "by_year": {
+    "2022": {
+     "paras": 147
+    },
+    "2023": {
+     "paras": 404
+    },
+    "2024": {
+     "paras": 270,
+     "petitions": 11
+    }
+   }
+  },
+  "7610": {
+   "id": "7610",
+   "name": "Brian Saunderson",
+   "paras": 2151,
+   "words": 121933,
+   "days": 114,
+   "statements": 146,
+   "petitions": 49,
+   "by_year": {
+    "2022": {
+     "paras": 129,
+     "statements": 16
+    },
+    "2023": {
+     "paras": 576,
+     "statements": 35,
+     "petitions": 39
+    },
+    "2024": {
+     "paras": 607,
+     "statements": 53,
+     "petitions": 3
+    },
+    "2025": {
+     "paras": 680,
+     "statements": 31,
+     "petitions": 4
+    },
+    "2026": {
+     "paras": 159,
+     "statements": 11,
+     "petitions": 3
+    }
+   },
+   "riding": "Simcoe—Grey",
+   "mentions": 259,
+   "mention_days": 86,
+   "mentions_by_year": {
+    "2022": 41,
+    "2023": 71,
+    "2024": 82,
+    "2025": 45,
+    "2026": 20
+   },
+   "statement_mentions": 77,
+   "examples": [
+    [
+     "2026-05-25",
+     "orders of the day",
+     "There’s no shame in declaring a conflict of interest, Madam Speaker. What is important is that you declare it. Having a connection in a municipality, especially a municipality the size of Collingwood—I had to declare con"
+    ],
+    [
+     "2026-05-25",
+     "orders of the day",
+     "This is a critical piece, as well, of the puzzle. This legislation is not designed to restrict or detract from public debate. It’s really designed to augment that debate and ensure that it is done in a respectful way, wi"
+    ],
+    [
+     "2026-05-25",
+     "orders of the day",
+     "I can tell you that in the town of Collingwood, in the wake of Justice Marrocco’s report that was tendered in 2020, the town has worked extremely hard at implementing the recommendations that were directed at the municip"
+    ],
+    [
+     "2026-06-01",
+     "members’ statements",
+     "It’s a privilege to rise in the House this morning to speak about some very exciting health care news for the residents of Simcoe–Grey. This past March 9, the Stevenson Memorial Hospital in Alliston broke ground on a cri"
+    ],
+    [
+     "2026-06-01",
+     "members’ statements",
+     "It was an honour to welcome Premier Ford and Deputy Premier and Minister of Health Sylvia Jones to Simcoe–Grey to mark this important milestone. This redevelopment will build a state-of-the-art facility that is twice the"
+    ],
+    [
+     "2026-06-01",
+     "members’ statements",
+     "While we celebrate this important milestone for Stevenson Memorial Hospital, I know the residents of South Georgian Bay are anxiously watching the progress of the redevelopment of the Collingwood General and Marine Hospi"
+    ]
+   ]
+  },
+  "7611": {
+   "id": "7611",
+   "name": "Nolan Quinn",
+   "paras": 1295,
+   "words": 65230,
+   "days": 119,
+   "statements": 89,
+   "petitions": 29,
+   "by_year": {
+    "2022": {
+     "paras": 212,
+     "statements": 11
+    },
+    "2023": {
+     "paras": 395,
+     "petitions": 29,
+     "statements": 45
+    },
+    "2024": {
+     "paras": 440,
+     "statements": 33
+    },
+    "2025": {
+     "paras": 197
+    },
+    "2026": {
+     "paras": 51
+    }
+   }
+  },
+  "7591": {
+   "id": "7591",
+   "name": "Brian Riddell",
+   "paras": 803,
+   "words": 42548,
+   "days": 89,
+   "statements": 134,
+   "petitions": 9,
+   "by_year": {
+    "2022": {
+     "paras": 59,
+     "statements": 11
+    },
+    "2023": {
+     "paras": 311,
+     "statements": 39,
+     "petitions": 7
+    },
+    "2024": {
+     "paras": 274,
+     "statements": 51,
+     "petitions": 2
+    },
+    "2025": {
+     "paras": 114,
+     "statements": 25
+    },
+    "2026": {
+     "paras": 45,
+     "statements": 8
+    }
+   }
+  },
+  "7598": {
+   "id": "7598",
+   "name": "Stéphane Sarrazin",
+   "paras": 781,
+   "words": 40642,
+   "days": 89,
+   "statements": 153,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 217,
+     "statements": 27
+    },
+    "2023": {
+     "paras": 251,
+     "statements": 42
+    },
+    "2024": {
+     "paras": 204,
+     "statements": 46
+    },
+    "2025": {
+     "paras": 86,
+     "statements": 29
+    },
+    "2026": {
+     "paras": 23,
+     "statements": 9
+    }
+   }
+  },
+  "7590": {
+   "id": "7590",
+   "name": "Natalie Pierre",
+   "paras": 1371,
+   "words": 70185,
+   "days": 133,
+   "statements": 139,
+   "petitions": 36,
+   "by_year": {
+    "2022": {
+     "paras": 244,
+     "statements": 24
+    },
+    "2023": {
+     "paras": 419,
+     "petitions": 24,
+     "statements": 45
+    },
+    "2024": {
+     "paras": 317,
+     "statements": 31,
+     "petitions": 12
+    },
+    "2025": {
+     "paras": 326,
+     "statements": 30
+    },
+    "2026": {
+     "paras": 65,
+     "statements": 9
+    }
+   }
+  },
+  "7618": {
+   "id": "7618",
+   "name": "Michael S. Kerzner",
+   "paras": 1486,
+   "words": 85034,
+   "days": 106,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 169
+    },
+    "2023": {
+     "paras": 713
+    },
+    "2024": {
+     "paras": 604
+    }
+   }
+  },
+  "7612": {
+   "id": "7612",
+   "name": "Laura Smith",
+   "paras": 2050,
+   "words": 108687,
+   "days": 156,
+   "statements": 162,
+   "petitions": 74,
+   "by_year": {
+    "2022": {
+     "paras": 170,
+     "statements": 18
+    },
+    "2023": {
+     "paras": 747,
+     "statements": 47,
+     "petitions": 61
+    },
+    "2024": {
+     "paras": 487,
+     "petitions": 13,
+     "statements": 51
+    },
+    "2025": {
+     "paras": 487,
+     "statements": 37
+    },
+    "2026": {
+     "paras": 159,
+     "statements": 9
+    }
+   }
+  },
+  "7609": {
+   "id": "7609",
+   "name": "David Smith",
+   "paras": 543,
+   "words": 28002,
+   "days": 70,
+   "statements": 103,
+   "petitions": 0,
+   "by_year": {
+    "2022": {
+     "paras": 96,
+     "statements": 16
+    },
+    "2023": {
+     "paras": 207,
+     "statements": 27
+    },
+    "2024": {
+     "paras": 144,
+     "statements": 35
+    },
+    "2025": {
+     "paras": 65,
+     "statements": 22
+    },
+    "2026": {
+     "paras": 31,
+     "statements": 3
+    }
+   }
+  },
+  "7624": {
+   "id": "7624",
+   "name": "Sarah Jama",
+   "paras": 213,
+   "words": 10629,
+   "days": 17,
+   "statements": 15,
+   "petitions": 16,
+   "by_year": {
+    "2023": {
+     "paras": 213,
+     "statements": 15,
+     "petitions": 16
+    }
+   }
+  },
+  "7644": {
+   "id": "7644",
+   "name": "Andrea Hazell",
+   "paras": 2103,
+   "words": 55847,
+   "days": 76,
+   "statements": 52,
+   "petitions": 20,
+   "by_year": {
+    "2023": {
+     "paras": 136,
+     "statements": 7
+    },
+    "2024": {
+     "paras": 214,
+     "statements": 22,
+     "petitions": 10
+    },
+    "2025": {
+     "paras": 1133,
+     "statements": 16,
+     "petitions": 8
+    },
+    "2026": {
+     "paras": 620,
+     "statements": 7,
+     "petitions": 2
+    }
+   }
+  },
+  "7645": {
+   "id": "7645",
+   "name": "Karen McCrimmon",
+   "paras": 1083,
+   "words": 58159,
+   "days": 76,
+   "statements": 45,
+   "petitions": 19,
+   "by_year": {
+    "2023": {
+     "paras": 165,
+     "petitions": 5,
+     "statements": 13
+    },
+    "2024": {
+     "paras": 201,
+     "statements": 16
+    },
+    "2025": {
+     "paras": 460,
+     "statements": 8,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 257,
+     "petitions": 11,
+     "statements": 8
+    }
+   }
+  },
+  "104": {
+   "id": "104",
+   "name": "Aislinn Clancy",
+   "paras": 1511,
+   "words": 90153,
+   "days": 91,
+   "statements": 84,
+   "petitions": 131,
+   "by_year": {
+    "2024": {
+     "paras": 739,
+     "petitions": 78,
+     "statements": 29
+    },
+    "2025": {
+     "paras": 504,
+     "statements": 44,
+     "petitions": 26
+    },
+    "2026": {
+     "paras": 268,
+     "statements": 11,
+     "petitions": 27
+    }
+   }
+  },
+  "115": {
+   "id": "115",
+   "name": "Silvia Gualtieri",
+   "paras": 177,
+   "words": 8255,
+   "days": 16,
+   "statements": 37,
+   "petitions": 0,
+   "by_year": {
+    "2025": {
+     "paras": 133,
+     "statements": 33
+    },
+    "2026": {
+     "paras": 44,
+     "statements": 4
+    }
+   }
+  },
+  "109": {
+   "id": "109",
+   "name": "Michelle Cooper",
+   "paras": 383,
+   "words": 22332,
+   "days": 28,
+   "statements": 36,
+   "petitions": 0,
+   "by_year": {
+    "2025": {
+     "paras": 303,
+     "statements": 24
+    },
+    "2026": {
+     "paras": 80,
+     "statements": 12
+    }
+   }
+  },
+  "116": {
+   "id": "116",
+   "name": "Robin Lennox",
+   "paras": 467,
+   "words": 31962,
+   "days": 31,
+   "statements": 23,
+   "petitions": 30,
+   "by_year": {
+    "2025": {
+     "paras": 360,
+     "statements": 15,
+     "petitions": 20
+    },
+    "2026": {
+     "paras": 107,
+     "statements": 8,
+     "petitions": 10
+    }
+   }
+  },
+  "113": {
+   "id": "113",
+   "name": "Mohamed Firin",
+   "paras": 355,
+   "words": 16848,
+   "days": 30,
+   "statements": 27,
+   "petitions": 0,
+   "by_year": {
+    "2025": {
+     "paras": 293,
+     "statements": 21
+    },
+    "2026": {
+     "paras": 62,
+     "statements": 6
+    }
+   }
+  },
+  "111": {
+   "id": "111",
+   "name": "Billy Denault",
+   "paras": 266,
+   "words": 13844,
+   "days": 22,
+   "statements": 39,
+   "petitions": 4,
+   "by_year": {
+    "2025": {
+     "paras": 167,
+     "statements": 29
+    },
+    "2026": {
+     "paras": 99,
+     "statements": 10,
+     "petitions": 4
+    }
+   }
+  },
+  "122": {
+   "id": "122",
+   "name": "Jonathan Tsao",
+   "paras": 438,
+   "words": 25008,
+   "days": 34,
+   "statements": 24,
+   "petitions": 5,
+   "by_year": {
+    "2025": {
+     "paras": 304,
+     "petitions": 5,
+     "statements": 13
+    },
+    "2026": {
+     "paras": 134,
+     "statements": 11
+    }
+   }
+  },
+  "119": {
+   "id": "119",
+   "name": "Bill Rosenberg",
+   "paras": 313,
+   "words": 15324,
+   "days": 23,
+   "statements": 47,
+   "petitions": 6,
+   "by_year": {
+    "2025": {
+     "paras": 214,
+     "statements": 40,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 99,
+     "statements": 7,
+     "petitions": 3
+    }
+   }
+  },
+  "112": {
+   "id": "112",
+   "name": "Lee Fairclough",
+   "paras": 1190,
+   "words": 70800,
+   "days": 51,
+   "statements": 24,
+   "petitions": 16,
+   "by_year": {
+    "2025": {
+     "paras": 1052,
+     "statements": 20,
+     "petitions": 6
+    },
+    "2026": {
+     "paras": 138,
+     "petitions": 10,
+     "statements": 4
+    }
+   }
+  },
+  "118": {
+   "id": "118",
+   "name": "Joseph Racinsky",
+   "paras": 407,
+   "words": 20966,
+   "days": 39,
+   "statements": 38,
+   "petitions": 2,
+   "by_year": {
+    "2025": {
+     "paras": 316,
+     "statements": 29,
+     "petitions": 2
+    },
+    "2026": {
+     "paras": 91,
+     "statements": 9
+    }
+   }
+  },
+  "106": {
+   "id": "106",
+   "name": "Steve Pinsonneault",
+   "paras": 175,
+   "words": 8510,
+   "days": 19,
+   "statements": 21,
+   "petitions": 0,
+   "by_year": {
+    "2025": {
+     "paras": 142,
+     "statements": 14
+    },
+    "2026": {
+     "paras": 33,
+     "statements": 7
+    }
+   }
+  },
+  "7646": {
+   "id": "7646",
+   "name": "Monica Ciriello",
+   "paras": 238,
+   "words": 12213,
+   "days": 22,
+   "statements": 23,
+   "petitions": 4,
+   "by_year": {
+    "2025": {
+     "paras": 187,
+     "statements": 18,
+     "petitions": 4
+    },
+    "2026": {
+     "paras": 51,
+     "statements": 5
+    }
+   }
+  },
+  "117": {
+   "id": "117",
+   "name": "Catherine McKenney",
+   "paras": 695,
+   "words": 41564,
+   "days": 46,
+   "statements": 34,
+   "petitions": 26,
+   "by_year": {
+    "2025": {
+     "paras": 538,
+     "statements": 24,
+     "petitions": 12
+    },
+    "2026": {
+     "paras": 157,
+     "statements": 10,
+     "petitions": 14
+    }
+   }
+  },
+  "110": {
+   "id": "110",
+   "name": "George Darouze",
+   "paras": 227,
+   "words": 10919,
+   "days": 29,
+   "statements": 22,
+   "petitions": 9,
+   "by_year": {
+    "2025": {
+     "paras": 166,
+     "statements": 22
+    },
+    "2026": {
+     "paras": 61,
+     "petitions": 9
+    }
+   }
+  },
+  "123": {
+   "id": "123",
+   "name": "Paul Vickers",
+   "paras": 249,
+   "words": 12542,
+   "days": 29,
+   "statements": 36,
+   "petitions": 7,
+   "by_year": {
+    "2025": {
+     "paras": 170,
+     "statements": 27,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 79,
+     "statements": 9,
+     "petitions": 4
+    }
+   }
+  },
+  "121": {
+   "id": "121",
+   "name": "Stephanie Smyth",
+   "paras": 686,
+   "words": 38448,
+   "days": 41,
+   "statements": 25,
+   "petitions": 5,
+   "by_year": {
+    "2025": {
+     "paras": 530,
+     "statements": 14
+    },
+    "2026": {
+     "paras": 156,
+     "statements": 11,
+     "petitions": 5
+    }
+   }
+  },
+  "114": {
+   "id": "114",
+   "name": "Alexa Gilmour",
+   "paras": 636,
+   "words": 34578,
+   "days": 47,
+   "statements": 35,
+   "petitions": 94,
+   "by_year": {
+    "2025": {
+     "paras": 467,
+     "statements": 32,
+     "petitions": 70
+    },
+    "2026": {
+     "paras": 169,
+     "petitions": 24,
+     "statements": 3
+    }
+   }
+  },
+  "120": {
+   "id": "120",
+   "name": "Chris Scott",
+   "paras": 160,
+   "words": 10174,
+   "days": 12,
+   "statements": 19,
+   "petitions": 0,
+   "by_year": {
+    "2025": {
+     "paras": 160,
+     "statements": 19
+    }
+   }
+  },
+  "7647": {
+   "id": "7647",
+   "name": "Rob Cerjanec",
+   "paras": 892,
+   "words": 57498,
+   "days": 42,
+   "statements": 32,
+   "petitions": 22,
+   "by_year": {
+    "2025": {
+     "paras": 774,
+     "statements": 24,
+     "petitions": 18
+    },
+    "2026": {
+     "paras": 118,
+     "statements": 8,
+     "petitions": 4
+    }
+   }
+  },
+  "124": {
+   "id": "124",
+   "name": "Tyler Watt",
+   "paras": 864,
+   "words": 46262,
+   "days": 44,
+   "statements": 26,
+   "petitions": 12,
+   "by_year": {
+    "2025": {
+     "paras": 458,
+     "statements": 26,
+     "petitions": 5
+    },
+    "2026": {
+     "paras": 406,
+     "petitions": 7
+    }
+   }
+  },
+  "108": {
+   "id": "108",
+   "name": "Tyler Allsopp",
+   "paras": 500,
+   "words": 27864,
+   "days": 37,
+   "statements": 41,
+   "petitions": 3,
+   "by_year": {
+    "2025": {
+     "paras": 339,
+     "statements": 36,
+     "petitions": 3
+    },
+    "2026": {
+     "paras": 161,
+     "statements": 5
+    }
+   }
+  },
+  "105": {
+   "id": "105",
+   "name": "Zee Hamid",
+   "paras": 249,
+   "words": 12411,
+   "days": 20,
+   "statements": 0,
+   "petitions": 0,
+   "by_year": {
+    "2025": {
+     "paras": 164
+    },
+    "2026": {
+     "paras": 85
+    }
+   }
+  }
+ }
+}
