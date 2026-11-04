@@ -115,7 +115,7 @@ def parse_vote_page(html: str, url: str) -> VotePage:
 # Votes and Proceedings: recorded divisions
 # ---------------------------------------------------------------------------
 
-DIVISION_RE = re.compile(r"\bon the following division\b", re.I)
+DIVISION_RE = re.compile(r"\bo[nf] the following division\b", re.I)  # "of": typo seen on 2022-11-28
 INLINE_TOTALS_RE = re.compile(r"Ayes\s+(\d+)\s*,\s*Nays\s+(\d+)", re.I)
 INLINE_TOTALS_REV_RE = re.compile(r"[-–]\s*(\d+)\s+Ayes\s*,\s*(\d+)\s+Nays", re.I)  # "– 0 Ayes, 0 Nays" (tie)
 COUNT_RE = re.compile(r"\((\d+)\)")
@@ -175,7 +175,7 @@ def _vp_names(header: Tag) -> list[str]:
     els = table.find_all("div", attrs={"lang": "en"}) or [
         p for p in table.find_all("p") if "MsoFooter" in (p.get("class") or [])
     ]
-    if not els and "votesList" in (table.get("class") or []):
+    if not els and {"votesList", "drum-table"} & set(table.get("class") or []):
         els = table.find_all("td")      # 2022-23 pages: bare names in cells
     return [n for n in (_text(e) for e in els) if n]
 
@@ -192,6 +192,11 @@ def _is_english_text(el: Tag) -> bool:
         return True
     if td.get("lang"):
         return False
+    tr = td.find_parent("tr")
+    tds = tr.find_all("td", recursive=False) if tr is not None else []
+    if len(tds) == 2 and all("votesProceedingsDoc2col" in (c.get("class") or []) for c in tds):
+        # Two language columns without lang attributes: English is the first.
+        return td is tds[0]
     # Word-derived layout: English-only text sits in a one-cell row.
     if set(el.get("class") or []) & NAME_CELL_CLASSES:
         return False
@@ -236,6 +241,8 @@ def parse_vp_divisions(html: str, date: str, source: str) -> list[VPDivision]:
             n = int(m.group(1)) if m else -1
             names = _vp_names(el) if n != 0 else []
             if en.lower().startswith("aye"):
+                if current.ayes or current.ayes_total >= 0:
+                    current.notes.append("second Ayes list under one result line; a division may have been missed")
                 current.ayes_total, current.ayes = n, names
             elif en.lower().startswith("nay"):
                 current.nays_total, current.nays = n, names

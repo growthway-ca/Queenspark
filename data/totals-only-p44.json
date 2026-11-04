@@ -7,6 +7,7 @@
   "ayes": 44,
   "nays": 73,
   "result": "Lost on the following division – Ayes 44, Nays 73",
+  "reason": "source prints totals only",
   "source": "https://www.ola.org/en/legislative-business/house-documents/parliament-44/session-1/2025-06-04/votes-proceedings"
  },
  {
@@ -17,6 +18,7 @@
   "ayes": 24,
   "nays": 61,
   "result": "Lost on the following division – Ayes 24, Nays 61",
+  "reason": "source prints totals only",
   "source": "https://www.ola.org/en/legislative-business/house-documents/parliament-44/session-1/2025-11-18/votes-proceedings"
  },
  {
@@ -27,6 +29,7 @@
   "ayes": 69,
   "nays": 25,
   "result": "Carried on the following division – Ayes 69, Nays 25",
+  "reason": "source prints totals only",
   "source": "https://www.ola.org/en/legislative-business/house-documents/parliament-44/session-1/2025-11-19/votes-proceedings"
  },
  {
@@ -37,6 +40,7 @@
   "ayes": 57,
   "nays": 28,
   "result": "Carried on the following division – Ayes 57, Nays 28",
+  "reason": "source prints totals only",
   "source": "https://www.ola.org/en/legislative-business/house-documents/parliament-44/session-1/2026-06-02/votes-proceedings"
  }
 ]

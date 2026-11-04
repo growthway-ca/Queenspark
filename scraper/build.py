@@ -219,7 +219,8 @@ class Build:
             vid = base_id if ids[base_id] == 1 else f"{base_id}-{ids[base_id]}"
             votes.append({"id": vid, "bill": bill, "title": title, "stage": stage,
                           "date": dv.date, "source": source, "roll": roll})
-            meta[vid] = {"session": d["session"], "printed": [dv.ayes_total, dv.nays_total],
+            printed = [page.ayes_total, page.nays_total] if page is not None else [dv.ayes_total, dv.nays_total]
+            meta[vid] = {"session": d["session"], "printed": printed, "vp_printed": [dv.ayes_total, dv.nays_total],
                          "unmatched": unmatched_n, "vp_source": dv.source, "vp_index": dv.index,
                          "from": "vote-search" if page is not None else "votes-proceedings"}
             self.all_votes.append((p, d["session"], votes[-1]))

@@ -22,7 +22,7 @@ MOVED_RE = re.compile(r"^(?:Hon\.\s+)?[A-Z][\w.'’ -]+?(?:\s*\([^)]*\))?\s+move
 LEAVE_RE = re.compile(r"moved,? that leave be given to introduce a Bill entitled (.+?) and that the same be now read the first time", re.I)
 AMEND_HEADING_RE = re.compile(r"^Amendment to the (amendment to the )?(.+)$", re.I)
 
-ON_MOTION_FIRST_RE = re.compile(r"^On motion by .*?\bBill\s+((?:Pr)?\d+),\s*(.*?),? was introduced and read the first time", re.I)
+ON_MOTION_FIRST_RE = re.compile(r"^On motion by .*?\bBill\s+((?:Pr)?\d+)\s*,\s*(.*?)\s*,? was introduced and read the first time", re.I)
 
 HEADINGS = [
     ("leave", LEAVE_RE),
