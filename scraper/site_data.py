@@ -72,6 +72,16 @@ def main() -> int:
         for b in json.loads((DATA / f"bills-p{p}.json").read_text()):
             bill_meta[(p, b["session"], b["number"].lower())] = b
 
+    by_name = {p: {m.full_name: m for m in rosters[p].values()} for p in PARLIAMENTS}
+
+    def sponsor(p: int, sp: dict):
+        """Roster member for a bill sponsor. Bill pages sometimes link a slug the
+        directory doesn't use ("jennifer-(jennie)-stevens", "nathalie-des-rosiers"),
+        so fall back to the slug without punctuation, then the exact full name."""
+        r = rosters[p]
+        return (r.get(sp["slug"]) or r.get(re.sub(r"[()]", "", sp["slug"]))
+                or by_name[p].get(sp["name"]))
+
     def bill_record(p: int, s: int, num: str) -> str | None:
         key = f"{p}-{s}-{num}"
         if key in bills_out:
@@ -84,7 +94,7 @@ def main() -> int:
         sponsors = []
         gov = False
         for sp in b["sponsors"]:
-            mem = rosters[p].get(sp["slug"])
+            mem = sponsor(p, sp)
             party = None
             if mem and first:
                 from .common import party_code
@@ -158,8 +168,59 @@ def main() -> int:
             "roles": sorted(pr["roles"].values(), key=lambda r: r[1]),
         }
 
+    # Every bill introduced, with how far it got. Used by the Opposition bills
+    # and Government record views.
+    from .common import party_code as _pc
+    second_votes = {}
+    for v in votes_out:
+        if v["k"] == "bill" and v["st"] == "Second reading" and v["b"].startswith("Bill "):
+            second_votes[(v["p"], v["s"], v["b"].split()[1].lower())] = v
+    current = max((b["parliament"], b["session"]) for b in bill_meta.values())
+    all_bills = []
+    for (p, s, num), b in sorted(bill_meta.items()):
+        st = b["status"]
+        first = next((r["date"] for r in st if r["stage"] == "First Reading"), None)
+        if not b["sponsors"] or not first:
+            continue
+        mems = [sponsor(p, sp) for sp in b["sponsors"]]
+        lead = mems[0]
+        pl = lead.party_on(first) if lead else None
+        party = _pc(pl) if pl else None
+        gov = any(m and m.minister_on(first) for m in mems)
+        kind = "private" if num.startswith("pr") else ("gov" if gov else "pmb")
+        stages = {r["stage"] for r in st}
+        acts = [(r["stage"], r["activity"], r["outcome"]) for r in st]
+        ra = next((r["date"] for r in st if r["stage"] == "Royal Assent"), None)
+        lost2 = any(a[0] == "Second Reading" and a[1] == "Vote" and a[2].startswith("Lost") for a in acts)
+        passed2 = any(a[0] == "Second Reading" and ((a[1] == "Vote" and a[2].startswith("Carried")) or a[1].startswith("Ordered referred")) for a in acts)
+        if ra:
+            outcome = "law"
+        elif "Third Reading" in stages and any(a[0] == "Third Reading" and a[1] == "Vote" and a[2].startswith("Carried") for a in acts):
+            outcome = "passed"
+        elif lost2:
+            outcome = "defeated"
+        elif passed2:
+            outcome = "committee"
+        elif "Second Reading" in stages:
+            outcome = "debated"
+        else:
+            outcome = "intro"
+        sv = second_votes.get((p, s, num))
+        rec = {"k": f"{p}-{s}-{num}", "n": b["bill"], "t": b["title"], "lt": b.get("long_title") or "",
+               "p": p, "s": s, "kind": kind, "party": party, "sp": [x["name"] for x in b["sponsors"]],
+               "fr": first, "ra": ra, "o": outcome, "open": (p, s) == current, "url": b["source"]}
+        if sv:
+            pc_y = sum(1 for i in sv["y"] if seat_rows[i][1] == 0)
+            pc_n = sum(1 for i in sv["n"] if seat_rows[i][1] == 0)
+            rec["v2"] = [sv["id"], len(sv["y"]), len(sv["n"]), pc_y, pc_n]
+        all_bills.append(rec)
+
+    record = json.loads((DATA / "record.json").read_text()) if (DATA / "record.json").exists() else []
+
     out = {
         "built": max(v["d"] for v in votes_out),
+        "allBills": all_bills,
+        "record": record,
         "parties": PARTY_ORDER,
         "people": list(people),
         "ridings": list(ridings),

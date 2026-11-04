@@ -179,6 +179,24 @@ td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .srcs{font-size:.82rem;color:var(--muted)}
 .foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:.4rem}
 .loading{padding:4rem 0;color:var(--muted)}
+.funnel{display:flex;flex-direction:column;gap:.8rem}
+.funnel .row{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr);gap:.3rem 1rem;align-items:center}
+.funnel .lab{font-size:.9rem;font-weight:600;min-width:0}
+.funnel .lab small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.stackbar{display:flex;height:1.6rem;border-radius:6px;overflow:hidden;background:var(--soft)}
+.stackbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.72rem;font-weight:700;color:var(--sheet);min-width:0;overflow:hidden;white-space:nowrap}
+@media (max-width:40rem){.funnel .row{grid-template-columns:1fr}}
+.o-law{background:var(--good)}.o-passed{background:color-mix(in srgb,var(--good) 55%,var(--sheet))}.o-committee{background:var(--warn)}.o-defeated{background:var(--bad)}.o-debated{background:color-mix(in srgb,var(--muted) 70%,var(--sheet))}.o-intro{background:var(--rule)}
+.o-intro{color:var(--muted)!important}
+.legend .sw{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:.35rem;vertical-align:-1px}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.card .top{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;align-items:baseline}
+.card h3{font-size:1.15rem}
+.hist{display:flex;align-items:flex-end;gap:4px;height:8rem}
+.hist div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.2rem;height:100%;min-width:0}
+.hist i{display:block;width:100%;border-radius:3px 3px 0 0;background:var(--accent)}
+.hist b{font-size:.72rem;font-variant-numeric:tabular-nums}
+.hist span{font-size:.7rem;color:var(--muted);text-align:center;white-space:nowrap}
 @media (prefers-reduced-motion:no-preference){.split i,.hbar .t i{transition:width .3s ease}}
 </style>
 
@@ -235,7 +253,7 @@ function lower(a,x){var l=0,h=a.length;while(l<h){var m=(l+h)>>1;if(a[m]<x)l=m+1
 function upper(a,x){var l=0,h=a.length;while(l<h){var m=(l+h)>>1;if(a[m]<=x)l=m+1;else h=m;}return l;}
 
 /* ---------------- shared pieces ---------------- */
-var VIEWS=[['','Overview'],['votes','Votes'],['mpps','MPPs'],['bills','Bills'],['downey','Doug Downey'],['method','About the data']];
+var VIEWS=[['','Overview'],['votes','Votes'],['mpps','MPPs'],['bills','Bills'],['opposition','Opposition bills'],['record','Government record'],['downey','Doug Downey'],['method','About the data']];
 function setNav(cur){nav.innerHTML=VIEWS.map(function(v){return '<a href="#'+v[0]+'"'+(cur===v[0]?' aria-current="page"':'')+'>'+v[1]+'</a>';}).join('');}
 function split(v){var t=v.yes+v.no||1;return '<div class="split" aria-hidden="true"><i class="y" style="width:'+(v.yes/t*100).toFixed(1)+'%"></i><i class="n" style="width:'+(v.no/t*100).toFixed(1)+'%"></i></div>';}
 function kindChip(k){return '<span class="chip k">'+esc(KIND[k]||k)+'</span>';}
@@ -289,6 +307,11 @@ function vHome(){
   h+='<section class="stats" aria-label="Key numbers">'+
     stat(V.length,'recorded votes since July 2018')+stat(((mppVotes-rebVotes)/mppVotes*100).toFixed(2)+'%','of '+mppVotes.toLocaleString()+' individual MPP votes followed the party line')+
     stat(cut,'closure and time-allocation votes ('+pct(cut,V.length)+'% of all votes)')+stat(oppWon+' of '+opp.length,'opposition day motions passed')+'</section>';
+  var opb=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party!=='PC';}),pcb=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party==='PC';});
+  var lawOf=function(a){return a.filter(function(b){return b.o==='law';}).length;};
+  var rec=(D.record||[]).filter(function(r){return r.kind==='court'||r.kind==='reversal';}).length;
+  h+='<section class="grid2"><a class="panel sec" href="#opposition" style="text-decoration:none"><span class="eyebrow">Opposition bills</span><p><span class="big">'+pct(lawOf(opb),opb.length)+'%</span> <span class="muted">of '+opb.length+' opposition bills became law, compared with '+pct(lawOf(pcb),pcb.length)+'% of PC backbench bills.</span></p><span class="linkbtn">See every defeated bill and its vote</span></a>'+
+   '<a class="panel sec" href="#record" style="text-decoration:none"><span class="eyebrow">Government record</span><p><span class="big">'+(rec||'—')+'</span> <span class="muted">'+(rec?'court rulings, reversals and repeals of the government’s own laws, each with sources.':'Court rulings and reversals, with sources.')+'</span></p><span class="linkbtn">See the government record</span></a></section>';
   h+='<section class="panel sec"><div class="sec-head"><h2>How often debate gets cut short</h2><a class="linkbtn" href="#votes" data-preset="cut">See these votes</a></div><p class="sub">Recorded votes per quarter. Red marks votes on closure or time allocation, which end or limit debate on a bill.</p><div class="chart">'+timeline()+'</div>'+
     '<div class="grid3">'+[42,43,44].map(function(p){return '<div><span class="eyebrow">'+PARL[p]+'</span><p><b class="num" style="font-family:var(--serif);font-size:1.5rem">'+cutBy[p][0]+'</b> <span class="muted">of '+cutBy[p][1]+' votes ('+pct(cutBy[p][0],cutBy[p][1])+'%)</span></p></div>';}).join('')+'</div></section>';
   h+='<section class="grid2">'+
@@ -465,10 +488,76 @@ function vMethod(){
   page('method',h);
 }
 
+
+/* ----- opposition bills ----- */
+var OUT={law:['Became law','o-law'],passed:['Passed third reading','o-passed'],committee:['Passed second reading, stopped in committee','o-committee'],defeated:['Defeated at second reading','o-defeated'],debated:['Debated, no vote','o-debated'],intro:['Never debated','o-intro']};
+var TOPICS=[['Housing and renters',/rent|tenant|housing|homeless|evict|landlord/i],['Health and long-term care',/health|care|hospital|nurse|patient|medic|mental|drug|pharma|long-term|dental/i],['Workers and wages',/worker|wage|pay|labour|employ|sick|wsib|scab|injur/i],['Climate and environment',/climate|carbon|environment|green|flood|water|gas|energy|agricultural land/i],['Democracy and accountability',/integrity|corruption|election|democra|accountab|transparen|advocate|commissioner|watchdog/i],['Transport and highways',/highway|transit|transport|road|vehicle|mobility/i],['Education and child care',/school|education|child ?care|student|early years/i]];
+var of=Object.assign({q:'',party:'',parl:''},store.get('of')||{});
+function oppGroups(){return [['PC backbench','PC','Government MPPs outside cabinet'],['New Democratic','NDP',''],['Liberal','Liberal',''],['Green','Green',''],['Independent','Ind','']].map(function(g){var list=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party===g[1];});var c={};list.forEach(function(b){c[b.o]=(c[b.o]||0)+1;});return {label:g[0],party:g[1],note:g[2],list:list,c:c};}).filter(function(g){return g.list.length;});}
+function vOpposition(){
+  var G=oppGroups(),opp=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party!=='PC';}),pcb=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party==='PC';});
+  var oLaw=opp.filter(function(b){return b.o==='law';}).length,pLaw=pcb.filter(function(b){return b.o==='law';}).length;
+  var defeated=opp.filter(function(b){return b.o==='defeated';}),defRec=defeated.filter(function(b){return b.v2;}),pcFor=defRec.reduce(function(s,b){return s+b.v2[3];},0);
+  var unopp=opp.filter(function(b){return b.o==='committee'&&b.v2&&b.v2[2]===0;});
+  var pcDefeated=pcb.filter(function(b){return b.o==='defeated';}).length;
+  var h='<section class="lede"><h1>Opposition bills</h1><p class="dek">What happens to bills introduced by MPPs who aren’t in cabinet. Government backbench bills are shown alongside for comparison.</p></section>';
+  h+='<section class="stats">'+stat(opp.length,'bills introduced by NDP, Liberal, Green and independent MPPs since 2018')+stat(oLaw+' ('+pct(oLaw,opp.length)+'%)','of them became law, compared with '+pLaw+' of '+pcb.length+' PC backbench bills ('+pct(pLaw,pcb.length)+'%)')+
+   stat(defeated.length,'opposition bills defeated at second reading; '+pcDefeated+' PC backbench bills were')+stat(pcFor,'PC votes cast in favour, across the '+defRec.length+' defeats that were recorded votes')+'</section>';
+  h+='<section class="panel sec"><h2>How far bills get, by sponsor’s party</h2><p class="sub">Each bar is every private member’s bill introduced by that party’s MPPs, 2018 to today. Party is the sponsor’s party on the day the bill was introduced.</p><div class="funnel">'+G.map(function(g){var t=g.list.length;return '<div class="row"><span class="lab">'+esc(g.label)+'<small>'+t+' bills'+(g.note?' · '+esc(g.note):'')+'</small></span><div class="stackbar" role="img" aria-label="'+esc(g.label+': '+Object.keys(OUT).filter(function(k){return g.c[k];}).map(function(k){return g.c[k]+' '+OUT[k][0].toLowerCase();}).join(', '))+'">'+Object.keys(OUT).filter(function(k){return g.c[k];}).map(function(k){var w=g.c[k]/t*100;return '<i class="'+OUT[k][1]+'" style="width:'+w.toFixed(2)+'%" title="'+esc(OUT[k][0]+': '+g.c[k]+' ('+Math.round(w)+'%)')+'">'+(w>=7?g.c[k]:'')+'</i>';}).join('')+'</div></div>';}).join('')+'</div>'+
+   '<div class="legend">'+Object.keys(OUT).map(function(k){return '<span><span class="sw '+OUT[k][1]+'"></span>'+OUT[k][0]+'</span>';}).join('')+'</div>'+
+   '<p class="sub">Bills from the current session that are still in committee or not yet debated can still move. Most private members’ bills from every party are never called for debate, because each MPP gets a limited number of debate slots.</p></section>';
+  // topics
+  var topicRows=TOPICS.map(function(t){var n=defeated.filter(function(b){return t[1].test(b.t+' '+b.lt);}).length;return [t[0],n,'var(--bad)'];}).filter(function(r){return r[1];}).sort(function(a,b){return b[1]-a[1];});
+  h+='<section class="grid2"><div class="panel sec"><h2>What the defeated bills were about</h2><p class="sub">Defeated opposition bills, grouped by keywords in their titles. A bill can fall in more than one group.</p>'+hbars(topicRows)+'</div>';
+  h+='<div class="panel sec"><h2>Passed second reading with no one opposed, then stopped</h2><p class="sub">Opposition bills that every MPP present supported at second reading, sent to a committee that never reported them back.</p><ul class="rank">'+unopp.map(function(b){return '<li><a href="#v-'+b.v2[0]+'">'+esc(b.n+', '+b.t)+'<small>'+esc(b.sp[0])+' ('+esc(b.party)+') · passed '+b.v2[1]+'–0 on '+esc(fmt(byId[b.v2[0]].date))+(b.open?' · current session, still in committee':'')+'</small></a><span class="chip warn">In committee</span></li>';}).join('')+'</ul></div></section>';
+  // defeated table
+  var q=of.q.toLowerCase();
+  var list=defeated.filter(function(b){return (!of.party||b.party===of.party)&&(!of.parl||String(b.p)===of.parl)&&(!q||(b.n+' '+b.t+' '+b.lt+' '+b.sp.join(' ')).toLowerCase().indexOf(q)>-1);}).sort(function(a,b){return (b.v2?byId[b.v2[0]].date:b.fr).localeCompare(a.v2?byId[a.v2[0]].date:a.fr);});
+  h+='<section class="sec"><div class="sec-head"><h2>Every opposition bill defeated at second reading</h2></div><p class="sub">Second reading is the vote on whether the House agrees with a bill’s principle. A defeat there ends the bill.</p>'+
+   '<div class="filters" role="search"><label class="sr" for="oq">Search defeated bills</label><input id="oq" type="search" placeholder="Search: rent, sick days, highway…" value="'+esc(of.q)+'">'+sel('oparty','Party',[['','All parties'],['NDP','New Democratic'],['Liberal','Liberal'],['Green','Green'],['Ind','Independent']],of.party)+sel('oparl','Parliament',[['','All parliaments']].concat([42,43,44].map(function(p){return [String(p),PARL[p]];})),of.parl)+'</div>'+
+   '<p class="count"><b>'+list.length+'</b> bills</p><div class="tw"><table><thead><tr><th>Date</th><th>Bill</th><th>Sponsor</th><th class="r">Vote</th><th class="r">PC for</th></tr></thead><tbody>'+list.map(function(b){var v=b.v2&&byId[b.v2[0]];return '<tr><td class="num">'+(v?esc(fmt(v.date)):'<span class="muted">voice vote</span>')+'</td><td>'+(v?'<a href="#v-'+v.id+'"><b>'+esc(b.n)+'</b></a>':'<b>'+esc(b.n)+'</b>')+' <span class="muted">'+b.p+'-'+b.s+'</span><br><span style="font-size:.88rem">'+esc(b.t)+'</span></td><td>'+esc(b.sp[0])+(b.sp.length>1?' <span class="muted">+'+(b.sp.length-1)+'</span>':'')+'<br>'+partyChip(b.party)+'</td><td class="r">'+(v?v.yes+'–'+v.no:'')+'</td><td class="r">'+(b.v2?b.v2[3]:'')+'</td></tr>';}).join('')+'</tbody></table></div></section>';
+  page('opposition',h);
+}
+
+/* ----- government record ----- */
+var RKIND={court:'Court rulings',reversal:'Reversals and repeals',pairing:'Opposition proposed, government acted later',other:'Other'};
+function vRecord(){
+  var gov=D.allBills.filter(function(b){return b.kind==='gov'&&b.n!=='Bill 1';});
+  var law=gov.filter(function(b){return b.ra;}),days=law.map(function(b){return Math.round((new Date(b.ra)-new Date(b.fr))/864e5);});
+  var med=days.slice().sort(function(a,b){return a-b;})[Math.floor(days.length/2)];
+  var cutBills=D.bills.map(function(b){var vs=(billVotes[b.k]||[]).filter(function(v){return v.kind==='closure'||v.kind==='ta';});return [b,vs.length];}).filter(function(x){return x[1];}).sort(function(a,b){return b[1]-a[1];});
+  var opp=V.filter(function(v){return v.kind==='opp';});
+  var h='<section class="lede"><h1>Government record</h1><p class="dek">Where the government’s own laws were reversed, repealed or struck down, how quickly bills were passed, and how often debate was limited. Every item links to its source.</p></section>';
+  h+='<section class="stats">'+stat(law.length+' of '+gov.length,'government bills became law')+stat(med+' days','median time from first reading to royal assent')+stat(V.filter(function(v){return v.kind==='closure'||v.kind==='ta';}).length,'recorded votes on closure or time allocation')+stat(opp.filter(function(v){return v.carried;}).length+' of '+opp.length,'opposition day motions passed')+'</section>';
+  var R=D.record||[];
+  if(R.length){Object.keys(RKIND).forEach(function(k){var items=R.filter(function(r){return r.kind===k;}).sort(function(a,b){return (b.date||'').localeCompare(a.date||'');});if(!items.length)return;
+    h+='<section class="sec"><h2>'+RKIND[k]+'</h2><div class="grid2">'+items.map(recordCard).join('')+'</div></section>';});}
+  else h+='<section class="panel"><p class="muted">Sourced items on court rulings and reversals are being added.</p></section>';
+  // fast-tracked
+  var bins=[[0,0,'Same day'],[1,7,'1–7'],[8,30,'8–30'],[31,60,'31–60'],[61,120,'61–120'],[121,99999,'121+']];
+  var counts=bins.map(function(b){return days.filter(function(d){return d>=b[0]&&d<=b[1];}).length;}),cmax=Math.max.apply(null,counts);
+  var fast=law.map(function(b,i){return [b,days[i]];}).filter(function(x){return x[1]<=7;}).sort(function(a,b){return a[1]-b[1]||a[0].fr.localeCompare(b[0].fr);});
+  h+='<section class="grid2"><div class="panel sec"><h2>How fast government bills became law</h2><p class="sub">Days from first reading to royal assent, for the '+law.length+' government bills that became law.</p><div class="hist" role="img" aria-label="'+esc(bins.map(function(b,i){return b[2]+' days: '+counts[i];}).join(', '))+'">'+bins.map(function(b,i){return '<div><b>'+counts[i]+'</b><i style="height:'+Math.max(2,counts[i]/cmax*100).toFixed(1)+'%"></i><span>'+b[2]+'</span></div>';}).join('')+'</div><p class="sub" style="text-align:center">days</p></div>'+
+   '<div class="panel sec"><h2>Passed within a week</h2><p class="sub">Many are COVID-19 emergency measures and spending bills, which often pass quickly with all-party agreement.</p><ul class="rank">'+fast.map(function(x){var b=x[0];return '<li>'+(bills[b.k]?'<a href="#b-'+b.k+'">':'<a href="'+esc(b.url)+'" target="_blank" rel="noopener">')+esc(b.n+', '+b.t)+'<small>'+esc(fmt(b.fr))+' to '+esc(fmt(b.ra))+'</small></a><span class="num"><b>'+x[1]+'</b> <span class="muted">'+(x[1]===1?'day':'days')+'</span></span></li>';}).join('')+'</ul></div></section>';
+  // debate limits per bill
+  h+='<section class="sec"><h2>Bills with the most debate limits</h2><p class="sub">Recorded votes on closure or time allocation tied to each bill. One time-allocation motion often covers several bills.</p><div class="tw"><table><thead><tr><th>Bill</th><th>Sponsor</th><th class="r">Closure / time allocation votes</th><th>Status</th></tr></thead><tbody>'+cutBills.slice(0,15).map(function(x){var b=x[0];return '<tr><td><a href="#b-'+b.k+'"><b>'+esc(b.n)+'</b></a> <span class="muted">'+b.p+'-'+b.s+'</span><br><span style="font-size:.88rem">'+esc(b.t)+'</span></td><td>'+esc(b.sp.map(function(s){return s[0];}).join(', '))+'</td><td class="r">'+x[1]+'</td><td>'+(b.ra?'<span class="chip good">Law</span>':'<span class="chip k">Not law</span>')+'</td></tr>';}).join('')+'</tbody></table></div></section>';
+  // gov bills that did not pass
+  var notLaw=gov.filter(function(b){return !b.ra;}).sort(function(a,b){return b.fr.localeCompare(a.fr);});
+  h+='<section class="sec"><h2>Government bills that did not become law</h2><p class="sub">Bills still open in the current session can still pass. Others ended when the session closed or an election was called.</p><div class="tw"><table><thead><tr><th>Bill</th><th>Sponsor</th><th>First reading</th><th>Where it stopped</th></tr></thead><tbody>'+notLaw.map(function(b){return '<tr><td><a href="'+esc(b.url)+'" target="_blank" rel="noopener"><b>'+esc(b.n)+'</b></a> <span class="muted">'+b.p+'-'+b.s+'</span><br><span style="font-size:.88rem">'+esc(b.t)+'</span></td><td>'+esc(b.sp.join(', '))+'</td><td class="num">'+esc(fmt(b.fr))+'</td><td>'+(b.open?'<span class="chip prog">Still open</span> ':'')+esc(OUT[b.o][0])+'</td></tr>';}).join('')+'</tbody></table></div></section>';
+  page('record',h);
+}
+function recordCard(r){
+  var links=(r.bills||[]).map(function(n){var hit=D.allBills.filter(function(b){return b.n===n&&(!r.parliament||b.p===r.parliament);})[0];if(!hit)return esc(n);return bills[hit.k]?'<a href="#b-'+hit.k+'">'+esc(n)+'</a>':'<a href="'+esc(hit.url)+'" target="_blank" rel="noopener">'+esc(n)+'</a>';});
+  return '<article class="card"><div class="top"><span class="eyebrow">'+esc(fmt(r.date))+(links.length?' · '+links.join(', '):'')+'</span></div><h3>'+esc(r.title)+'</h3><p>'+esc(r.summary)+'</p>'+
+   (r.timeline&&r.timeline.length?'<ol class="timeline">'+r.timeline.map(function(t){return '<li><span class="d">'+esc(fmt(t[0]))+'</span>'+esc(t[1])+'</li>';}).join('')+'</ol>':'')+
+   (r.government_position?'<p class="side"><b>Government’s position:</b> '+esc(r.government_position)+'</p>':'')+
+   '<p class="srcs">Sources: '+(r.sources||[]).map(function(x){return '<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+esc(x[0])+'</a>';}).join(', ')+'</p></article>';
+}
+
 /* ---------------- routing and events ---------------- */
 function render(){
   var h=(location.hash||'').slice(1),ok=true;
-  if(h==='votes')vVotes();else if(h==='mpps')vMpps();else if(h==='bills')vBills();else if(h==='downey')vDowney();else if(h==='method')vMethod();
+  if(h==='votes')vVotes();else if(h==='mpps')vMpps();else if(h==='bills')vBills();else if(h==='downey')vDowney();else if(h==='method')vMethod();else if(h==='opposition')vOpposition();else if(h==='record')vRecord();
   else if(h.indexOf('v-')===0)ok=vVote(h.slice(2));else if(h.indexOf('p-')===0)ok=vMpp(h.slice(2));else if(h.indexOf('b-')===0)ok=vBill(h.slice(2));else vHome();
   if(ok===false)vHome();
 }
@@ -478,6 +567,7 @@ app.addEventListener('input',function(e){var t=e.target;
   if(t.id==='vq'){vf.q=t.value;vf.n=40;store.set('vf',vf);clearTimeout(tmr);tmr=setTimeout(function(){keepFocus('vq',vVotes);},120);}
   else if(t.id==='mq'){mf.q=t.value;store.set('mf',mf);clearTimeout(tmr);tmr=setTimeout(function(){keepFocus('mq',vMpps);},120);}
   else if(t.id==='bq'){bf.q=t.value;store.set('bf',bf);clearTimeout(tmr);tmr=setTimeout(function(){keepFocus('bq',vBills);},120);}
+  else if(t.id==='oq'){of.q=t.value;store.set('of',of);clearTimeout(tmr);tmr=setTimeout(function(){var y=window.scrollY;keepFocus('oq',vOpposition);window.scrollTo(0,y);},150);}
   else if(t.id==='rq'){store.set('rq',t.value);var v=byId[(location.hash||'').slice(3)];if(v)document.getElementById('rtab').innerHTML=rollRows(v,t.value);}
 });
 app.addEventListener('change',function(e){var t=e.target,id=t.id;
@@ -486,6 +576,7 @@ app.addEventListener('change',function(e){var t=e.target,id=t.id;
   else if(id==='vreb'||id==='vclose'||id==='vlocal'){vf[{vreb:'reb',vclose:'close',vlocal:'local'}[id]]=t.checked;vf.n=40;store.set('vf',vf);vVotes();}
   else if(id==='mparty'||id==='mparl'){mf[id==='mparty'?'party':'parl']=t.value;store.set('mf',mf);vMpps();}
   else if(id==='btype'||id==='bparl'||id==='blaw'){bf[{btype:'type',bparl:'parl',blaw:'law'}[id]]=t.value;store.set('bf',bf);vBills();}
+  else if(id==='oparty'||id==='oparl'){var y=window.scrollY;of[id==='oparty'?'party':'parl']=t.value;store.set('of',of);vOpposition();window.scrollTo(0,y);}
   else if(id==='cmp'){var p=bySlug[(location.hash||'').slice(3)];store.set('cmp:'+(p&&p.slug),t.value);document.getElementById('cmpout').innerHTML=compare(p,byName[t.value]);}
 });
 app.addEventListener('click',function(e){var t=e.target.closest('button,a');if(!t)return;
