@@ -251,6 +251,26 @@ To add your own picks, create `data/tags.json` and rerun the build:
 for the current size). The full `votes-p*.json` files are for the planned
 Netlify site.
 
+## The explorer site
+
+`site/index.html` is an interactive explorer of the full dataset: an
+overview with key numbers and charts, a filterable vote list, each vote's
+seat chart and roll, MPP profiles with party agreement and side-by-side
+comparison, bills, Doug Downey's record (commitments, portfolio metrics,
+riding money, sponsored bills), and notes on the data.
+
+```sh
+python -m scraper.site_data    # writes site/data.json and site/dist/
+```
+
+- `site/index.html` plus `site/data.json` is what gets published as the
+  Claude artifact.
+- `site/dist/` is a standalone copy for static hosting. On Netlify, set the
+  publish directory to `site/dist`; there is no build command.
+- The editorial content (commitments, metrics, money, bill notes) lives in
+  `data/editorial.json`. It was copied from the original Queen's Park Watch
+  page; edit it there and rerun `site_data`.
+
 ## Checks
 
 `python -m scraper.checks` runs:

@@ -1,0 +1,328 @@
+{
+ "ledger": [
+  {
+   "id": "l1",
+   "area": "Attorney General",
+   "status": "off",
+   "said": "Bill 245 would cut the time Ontarians spend waiting for their day in court.",
+   "saidDate": "2021-02-16",
+   "saidSrc": "https://www.christineelliottmpp.ca/accelerating_access_to_justice_act_2021",
+   "measure": "Criminal cases stayed for unreasonable delay under the Jordan time limits.",
+   "evidence": [
+    [
+     "2019-08",
+     "191 provincially prosecuted cases stayed for delay since July 2016 (Auditor General, 2019 audit).",
+     "https://www.ola.org/en/legislative-business/committees/public-accounts/parliament-43/reports/2023-nov-28-criminal-court-system-chapter-3-2019-annual-report-office-auditor-general-ontario-volume"
+    ],
+    [
+     "2023-12",
+     "More than 580 stayed from 2016 through 2023, with 59 sexual assault cases stayed in 2023, the most in any year (ministry data via CBC).",
+     "https://www.cbc.ca/news/canada/toronto/criminal-case-outcomes-ontario-delays-1.7378668"
+    ],
+    [
+     "2026-01",
+     "Charges for crimes against a person rose from about 57,000 in 2015 to about 80,000 in 2025, and withdrawn charges are rising (CP24).",
+     "https://www.cp24.com/local/toronto/2026/01/16/a-matter-of-public-safety-number-of-withdrawn-criminal-charges-rises-dramatically-in-ontario/"
+    ]
+   ],
+   "side": "His office says stays for delay are under 0.1% of cases, and points to up to 52 new judges and nearly 700 more Crowns, victim support and court staff.",
+   "sideSrc": "https://www.cp24.com/local/toronto/2026/01/16/a-matter-of-public-safety-number-of-withdrawn-criminal-charges-rises-dramatically-in-ontario/",
+   "context": "Much of the backlog predates him, and the pandemic and growth in digital evidence added to it."
+  },
+  {
+   "id": "l2",
+   "area": "Attorney General",
+   "status": "off",
+   "said": "The Landlord and Tenant Board’s own standard is a hearing within 30 days. The board sits under his ministry through Tribunals Ontario.",
+   "saidDate": "2023-05-04",
+   "saidSrc": "https://ombudsman.on.ca/en/news/speeches-and-articles/excruciating-delays-ontarios-landlord-and-tenant-board-ombudsman-report-global-news",
+   "measure": "Board backlog and wait times.",
+   "evidence": [
+    [
+     "2023-05",
+     "The Ombudsman found the board fundamentally failing, with waits of seven to eight months and up to two years, and made 61 recommendations.",
+     "https://ombudsman.on.ca/en/news/speeches-and-articles/excruciating-delays-ontarios-landlord-and-tenant-board-ombudsman-report-global-news"
+    ],
+    [
+     "2025-03",
+     "Backlog down from 53,057 to 41,465 cases, with processing times of three to seven months. Adjudicators up from 51 in 2018–19 to 133 (Tribunal Watch, from the annual report).",
+     "https://tribunalwatch.ca/2025/the-landlord-and-tenant-board-annual-report-progress-but-still-a-long-way-to-go/"
+    ]
+   ],
+   "side": "The ministry says it funded more adjudicators and a new case management system, and the backlog has fallen from its peak.",
+   "sideSrc": "https://www.theglobeandmail.com/canada/article-excruciating-delays-at-ontarios-landlord-and-tenant-board-ombudsman-2/",
+   "context": "Improving, but still far from the 30-day standard and from pre-2019 levels."
+  },
+  {
+   "id": "l3",
+   "area": "Attorney General",
+   "status": "done",
+   "said": "Merge five land tribunals into one Ontario Land Tribunal and widen judicial appointment shortlists from two names to six.",
+   "saidDate": "2021-02-16",
+   "saidSrc": "https://www.lawtimesnews.com/practice-areas/real-estate/theres-still-a-ton-to-go-were-not-stopping-attorney-general-doug-downey-on-justice-reforms/338121",
+   "measure": "Whether it became law.",
+   "evidence": [
+    [
+     "2021-04",
+     "Bill 245 received royal assent on April 19, 2021.",
+     "https://en.wikipedia.org/wiki/Accelerating_Access_to_Justice_Act,_2021"
+    ]
+   ],
+   "side": "",
+   "sideSrc": "",
+   "context": "Delivered as promised. Whether it sped up appointments is a separate, disputed question."
+  },
+  {
+   "id": "l4",
+   "area": "Attorney General",
+   "status": "check",
+   "said": "No further cuts to the legal aid budget after the 2019 cut of $133 million.",
+   "saidDate": "2019-12-09",
+   "saidSrc": "https://www.durhamradionews.com/archives/123302",
+   "measure": "Legal Aid Ontario funding since 2020.",
+   "evidence": [
+    [
+     "2025-03",
+     "Legal Aid Ontario raised income eligibility for duty counsel and criminal certificates to $45,440 for families of up to four, which it says reaches about 180,000 more people a year.",
+     "https://www.legalaid.on.ca/?p=17336390"
+    ],
+    [
+     "2025-01",
+     "His press secretary said the agency’s strong financial position made the increase possible, which critics read as no new provincial money (a defence lawyer’s column).",
+     "https://www.michaelspratt.com/?p=3847"
+    ]
+   ],
+   "side": "Legal Aid Ontario framed the expansion as supporting the province’s goal of reducing the criminal court backlog.",
+   "sideSrc": "https://www.legalaid.on.ca/in-briefs/page/2",
+   "context": "No sign of further cuts after 2019, and no sign of the 2019 cut being restored either. Provincial funding figures from Legal Aid Ontario’s annual reports would settle it."
+  },
+  {
+   "id": "l5",
+   "area": "Riding",
+   "status": "progress",
+   "said": "Connect every resident to a family doctor or nurse practitioner by 2029, which he called fairly ambitious, but achievable.",
+   "saidDate": "2026-05-08",
+   "saidSrc": "https://barrie360.com/ontario-primary-care-funding-barrie-angus-family-doctors/",
+   "measure": "Unattached patients in the riding, against the 2029 deadline.",
+   "deadline": "2029-12-31",
+   "evidence": [
+    [
+     "2026-05",
+     "$6.6 million for the Barrie Community Health Centre and Barrie and Community Family Health Team, expected to connect nearly 20,000 unattached residents, with new sites in north Barrie and Angus.",
+     "https://www.barrietoday.com/local-news/province-spending-66m-to-connect-thousands-in-barrie-area-to-primary-care-12258632"
+    ]
+   ],
+   "side": "",
+   "sideSrc": "",
+   "context": "Track attachment numbers each year until 2029."
+  },
+  {
+   "id": "l6",
+   "area": "Riding",
+   "status": "early",
+   "said": "$18.5 million for the Mapleview Drive East and Yonge Street expansion, to unlock 11,900 new homes.",
+   "saidDate": "2025-01-24",
+   "saidSrc": "https://www.barrietoday.com/local-news/mpps-announce-185m-in-funding-for-south-barrie-road-project-10120776",
+   "measure": "Road work finished, then homes built in the area.",
+   "evidence": [],
+   "side": "",
+   "sideSrc": "",
+   "context": "Too early to judge. The homes figure is a projection, not a count."
+  }
+ ],
+ "bills": [
+  {
+   "num": "Bill 161",
+   "title": "Smarter and Stronger Justice Act",
+   "intro": "2019-12-09",
+   "status": "Law",
+   "what": "Amended more than 20 acts: rewrote the Legal Aid Services Act, changed class action rules, allowed online verification of identity and legal documents, and simplified small estates.",
+   "critics": "Critics said the legal aid rewrite dropped access to justice from the system’s stated purpose.",
+   "src": "https://www.thelawyersdaily.ca/articles/17180/downey-stresses-modernization-in-unveiling-reforms-to-legal-aid-law-society-legislation"
+  },
+  {
+   "num": "Bill 245",
+   "title": "Accelerating Access to Justice Act",
+   "intro": "2021-02-16",
+   "status": "Law, April 19, 2021",
+   "what": "Created the Ontario Land Tribunal, widened judicial shortlists from two to six and let the Attorney General reject a list, made virtual witnessing of wills permanent, and expanded French-language filing.",
+   "critics": "Critics said the appointment changes gave the Attorney General too much say over who becomes a judge.",
+   "src": "https://en.wikipedia.org/wiki/Accelerating_Access_to_Justice_Act,_2021"
+  },
+  {
+   "num": "Bill 68 (election changes)",
+   "title": "Ends fixed election dates, raises the donation limit to $5,000",
+   "intro": "2025-10-27",
+   "status": "Law, passed November 2025",
+   "what": "Downey announced these reforms in October 2025. They passed inside the Finance Minister’s fall budget bill, Bill 68, under a time-allocation motion that limited debate. Fixed election dates are gone, though a five-year maximum between elections still applies. The donation limit rises from $3,400 to $5,000, and the per-vote subsidy to parties becomes permanent.",
+   "critics": "Opposition parties said it favours big donors and the governing party, and that ending fixed dates lets the government pick the timing.",
+   "src": "https://www.villagereport.ca/village-picks/ford-government-passes-fast-tracked-budget-bill-that-boosts-donation-limits-nixes-climate-targets-11540845"
+  },
+  {
+   "num": "Bills 254 and 307",
+   "title": "Protecting Ontario Elections Act, then the Protecting Elections and Defending Democracy Act",
+   "intro": "",
+   "status": "Struck down",
+   "what": "Bill 254 doubled donation limits and tightened limits on third-party political advertising in the year before an election. In June 2021 the Ontario Superior Court found the advertising limits violated freedom of expression. The government recalled the legislature and re-passed them as Bill 307 using the notwithstanding clause, a first in Ontario. Downey supported the move as protecting elections from outside influence. The Court of Appeal struck Bill 307 down in 2023, and the Supreme Court of Canada upheld that ruling.",
+   "critics": "Unions and civil liberties groups said the limits were designed to silence critics of the government before an election.",
+   "src": "https://www.lawtimesnews.com/news/general/ontario-court-rules-provinces-law-restricting-third-party-election-spending-is-unconstitutional/374171"
+  },
+  {
+   "num": "Bill 157",
+   "title": "Enhancing Access to Justice Act",
+   "intro": "",
+   "status": "Law, 2024",
+   "what": "A justice-system omnibus he moved to third reading in March 2024, pitched as improving access to justice, community safety and court modernization.",
+   "critics": "",
+   "src": "https://www.ola.org/en/legislative-business/house-documents/parliament-43/session-1/2024-03-04/hansard"
+  }
+ ],
+ "money": [
+  {
+   "date": "2025-01-24",
+   "amount": 18500000,
+   "what": "Mapleview Drive East and Yonge Street expansion",
+   "with": "With Andrea Khanjin",
+   "src": "https://www.barrietoday.com/local-news/mpps-announce-185m-in-funding-for-south-barrie-road-project-10120776"
+  },
+  {
+   "date": "2026-03-19",
+   "amount": 26194000,
+   "what": "Ice storm recovery, City of Barrie (up to)",
+   "with": "Joint with Andrea Khanjin",
+   "src": "https://www.barrietoday.com/local-news/city-of-barrie-getting-26m-from-province-for-ice-storm-recovery-12029647"
+  },
+  {
+   "date": "2026-04-20",
+   "amount": 400000,
+   "what": "Project Bright Futures youth prevention program, from proceeds of crime",
+   "with": "As Attorney General",
+   "src": "https://www.frequencynews.ca/news/safer-and-compassionate-barrie-city-prevention-programs-secure-400k-from-ontarios-crime-proceeds-fund/"
+  },
+  {
+   "date": "2026-05-08",
+   "amount": 6600000,
+   "what": "Primary care expansion, Barrie and Angus",
+   "with": "",
+   "src": "https://www.barrietoday.com/local-news/province-spending-66m-to-connect-thousands-in-barrie-area-to-primary-care-12258632"
+  },
+  {
+   "date": "2026-09-28",
+   "amount": 129000000,
+   "what": "Development charge reduction program, City of Barrie (up to, over 10 years, with Canada)",
+   "with": "Federal–provincial",
+   "src": "https://www.canada.ca/en/housing-infrastructure-communities/news/2026/09/canada-and-ontario-making-homes-more-affordable-in-barrie.html"
+  }
+ ],
+ "notes": {
+  "bill-76-third-reading-2025-12-09": "Moves land from Springwater and Oro-Medonte into Barrie. Springwater council voted 4–3 to reject the boundary framework in November 2025; the mayor approved it with strong mayor powers."
+ },
+ "metrics": [
+  {
+   "title": "Landlord and Tenant Board backlog",
+   "unit": "Open cases",
+   "pts": [
+    [
+     "Before 2019",
+     14000,
+     1,
+     "Average"
+    ],
+    [
+     "Mar 2023",
+     53057
+    ],
+    [
+     "Jul 2024",
+     46632
+    ],
+    [
+     "Mar 2025",
+     41465
+    ]
+   ],
+   "note": "The four-year average before the board moved under Tribunals Ontario was under 14,000.",
+   "srcs": [
+    [
+     "Tribunal Watch, 2024",
+     "https://tribunalwatch.ca/2025/statement-of-concern-under-the-ford-government-justice-delayed-and-denied/"
+    ],
+    [
+     "Tribunal Watch, 2025",
+     "https://tribunalwatch.ca/2025/the-landlord-and-tenant-board-annual-report-progress-but-still-a-long-way-to-go/"
+    ]
+   ]
+  },
+  {
+   "title": "Board adjudicators",
+   "unit": "Full- and part-time",
+   "pts": [
+    [
+     "2018–19",
+     51,
+     1
+    ],
+    [
+     "Mar 2025",
+     133
+    ]
+   ],
+   "note": "More than two and a half times as many adjudicators, with the backlog still about three times the pre-2019 level.",
+   "srcs": [
+    [
+     "Tribunal Watch, 2025",
+     "https://tribunalwatch.ca/2025/the-landlord-and-tenant-board-annual-report-progress-but-still-a-long-way-to-go/"
+    ]
+   ]
+  },
+  {
+   "title": "Criminal cases stayed for delay",
+   "unit": "Running total since July 2016",
+   "pts": [
+    [
+     "Aug 2019",
+     191,
+     1
+    ],
+    [
+     "End of 2023",
+     580
+    ]
+   ],
+   "note": "Cumulative counts. The 2019 figure is from before most of his time as Attorney General.",
+   "srcs": [
+    [
+     "Auditor General, 2019",
+     "https://www.ola.org/en/legislative-business/committees/public-accounts/parliament-43/reports/2023-nov-28-criminal-court-system-chapter-3-2019-annual-report-office-auditor-general-ontario-volume"
+    ],
+    [
+     "CBC, 2024",
+     "https://www.cbc.ca/news/canada/toronto/criminal-case-outcomes-ontario-delays-1.7378668"
+    ]
+   ]
+  },
+  {
+   "title": "Charges for crimes against a person",
+   "unit": "Ontario Court of Justice, yearly",
+   "pts": [
+    [
+     "2015",
+     57000,
+     1
+    ],
+    [
+     "2025",
+     80000
+    ]
+   ],
+   "note": "Rising caseload is part of why delays persist. It is context, not a measure of his performance.",
+   "srcs": [
+    [
+     "CP24, Jan 2026",
+     "https://www.cp24.com/local/toronto/2026/01/16/a-matter-of-public-safety-number-of-withdrawn-criminal-charges-rises-dramatically-in-ontario/"
+    ]
+   ]
+  }
+ ],
+ "councilWatch": "https://claude.ai/artifact/TyNmeerQ7eH6BA1HebaAvS"
+}

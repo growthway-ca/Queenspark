@@ -1,0 +1,499 @@
+<title>Queen’s Park Watch</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a legislative record — sticky masthead, one reading column for prose,
+   wide panels for charts and tables; party colour is the only loud colour. */
+:root{
+  --ground:#EEF1EE;--sheet:#FBFCFB;--ink:#14201B;--muted:#5A6862;--rule:#C8D3CD;--soft:#E1E8E4;--accent:#1D5A44;
+  --pc:#1D4E9E;--ndp:#D9701A;--lib:#C2202F;--grn:#3A8A35;--ind:#7A7F86;
+  --good:#1C7A52;--bad:#B5401F;--warn:#A57A12;--prog:#1D4E9E;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Schibsted Grotesk","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#0F1512;--sheet:#161E1A;--ink:#E5ECE8;--muted:#98A69F;--rule:#2E3A35;--soft:#1E2823;--accent:#7FC3A4;--pc:#7EA8F0;--ndp:#F2A25E;--lib:#F07A84;--grn:#7FCB78;--ind:#A0A6AD;--good:#5FCB98;--bad:#F08A6A;--warn:#E3B651;--prog:#7EA8F0;color-scheme:dark}}
+:root[data-theme="dark"]{--ground:#0F1512;--sheet:#161E1A;--ink:#E5ECE8;--muted:#98A69F;--rule:#2E3A35;--soft:#1E2823;--accent:#7FC3A4;--pc:#7EA8F0;--ndp:#F2A25E;--lib:#F07A84;--grn:#7FCB78;--ind:#A0A6AD;--good:#5FCB98;--bad:#F08A6A;--warn:#E3B651;--prog:#7EA8F0;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sheet)}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;letter-spacing:-.01em}
+h2{font-size:1.55rem;line-height:1.2}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.wrap{max-width:74rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* masthead */
+.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--sheet);border-bottom:1px solid var(--rule)}
+.mast .wrap{display:flex;align-items:center;gap:.5rem 1.5rem;flex-wrap:wrap;padding-block:.6rem}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--accent)}
+.nav{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{text-decoration:none;padding:.35rem .7rem;border-radius:999px;font-size:.93rem;font-weight:500;white-space:nowrap;color:var(--muted)}
+.nav a:hover{color:var(--ink);background:var(--soft)}
+.nav a[aria-current="page"]{background:var(--ink);color:var(--sheet)}
+
+main{padding-block:1.6rem 5rem}
+.stack{display:flex;flex-direction:column;gap:2.4rem}
+.lede{display:flex;flex-direction:column;gap:.7rem;max-width:46rem}
+.dek{font-family:var(--serif);font-size:1.15rem;line-height:1.5;color:var(--muted)}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.back{font-size:.9rem;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+.panel{background:var(--sheet);border:1px solid var(--rule);border-radius:14px;padding:1.2rem;min-width:0}
+.sec{display:flex;flex-direction:column;gap:.9rem}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.3rem 1rem}
+.sub{color:var(--muted);font-size:.95rem;max-width:44rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}
+
+/* stat tiles */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10.5rem),1fr));gap:.8rem}
+.stat{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:.9rem 1rem;display:flex;flex-direction:column;gap:.15rem}
+.stat b{font-family:var(--serif);font-size:2rem;line-height:1.05;font-variant-numeric:tabular-nums}
+.stat span{font-size:.85rem;color:var(--muted)}
+
+/* chips and pills */
+.chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:600;padding:.12rem .55rem;border-radius:999px;border:1.5px solid currentColor;white-space:nowrap;line-height:1.4}
+.chip.k{color:var(--muted);border-color:var(--rule)}
+.chip.good{color:var(--good)}.chip.bad{color:var(--bad)}.chip.warn{color:var(--warn)}.chip.prog{color:var(--prog)}
+.pdot{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--c);flex:none}
+.party{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:.4rem;border:1.5px solid var(--ink);border-radius:999px;padding:.4rem .9rem;font-weight:600;font-size:.9rem;text-decoration:none;background:none;cursor:pointer}
+.btn.solid{background:var(--ink);color:var(--sheet)}
+.linkbtn{background:none;border:0;padding:0;cursor:pointer;color:var(--accent);font-weight:600;font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.filters input[type=search],.filters select{background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:.5rem .9rem;font-size:.95rem;min-width:0;max-width:100%}
+.filters input[type=search]{flex:1 1 15rem}
+.seg{display:inline-flex;flex-wrap:wrap;gap:.3rem}
+.seg button{border:1px solid var(--rule);background:var(--sheet);border-radius:999px;padding:.35rem .75rem;font-size:.86rem;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.toggle{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;color:var(--muted);cursor:pointer;padding:.3rem .2rem}
+.count{font-size:.9rem;color:var(--muted)}
+
+/* vote list */
+.vlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.vlist li{border-top:1px solid var(--rule)}
+.vlist li:first-child{border-top:0}
+.vrow{display:grid;grid-template-columns:6.2rem minmax(0,1fr) 9rem;gap:.2rem 1rem;padding:.8rem .2rem;text-decoration:none;align-items:center}
+.vrow:hover{background:var(--soft)}
+.vrow .dt{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.vrow .tt{min-width:0}
+.vrow .tt b{display:block;font-weight:600;overflow-wrap:anywhere}
+.vrow .tt small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;color:var(--muted);font-size:.86rem}
+.vrow .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.3rem}
+.vrow .res{display:flex;flex-direction:column;gap:.3rem;align-items:stretch}
+.vrow .res .sc{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;font-variant-numeric:tabular-nums}
+@media (max-width:40rem){.vrow{grid-template-columns:minmax(0,1fr) 6.5rem}.vrow .dt{grid-column:1/-1}}
+.split{display:flex;height:.5rem;border-radius:999px;overflow:hidden;background:var(--soft)}
+.split i{display:block;height:100%}
+.split .y{background:var(--good)}.split .n{background:var(--bad)}
+.more{display:flex;justify-content:center;padding-top:1rem}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);border-radius:12px;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:.55rem .8rem;border-bottom:1px solid var(--rule);vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+th{font-size:.8rem;font-weight:600;color:var(--muted);white-space:nowrap}
+th button{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+th button[data-dir]::after{content:attr(data-dir);margin-left:.25rem}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vy{color:var(--good);font-weight:700}.vn{color:var(--bad);font-weight:700}
+.minibar{display:inline-block;width:5rem;height:.4rem;border-radius:999px;background:var(--soft);vertical-align:middle;margin-left:.4rem;overflow:hidden}
+.minibar i{display:block;height:100%;background:var(--accent)}
+
+/* seat wall */
+.wall{display:flex;flex-direction:column;gap:.55rem}
+.wall .grp{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:.6rem;align-items:start}
+.wall .gl{font-size:.82rem;font-weight:600;color:var(--c)}
+.wall .gl small{display:block;color:var(--muted);font-weight:500}
+.wall .sq{display:flex;flex-wrap:wrap;gap:3px}
+.wall a{display:block;line-height:0}
+.wall i{display:block;width:14px;height:14px;border-radius:3px;border:2px solid var(--c);background:var(--c)}
+.wall i.n{background:transparent}
+.wall i.x{outline:2px solid var(--ink);outline-offset:1px}
+.legend{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;font-size:.82rem;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;border:2px solid var(--muted);margin-right:.35rem;vertical-align:-1px}
+
+/* charts */
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{fill:var(--muted);font-family:var(--sans);font-size:11px}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.hbar{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr) 3.4rem;gap:.4rem .7rem;align-items:center;font-size:.9rem}
+.hbar .t{height:.7rem;border-radius:999px;background:var(--soft);overflow:hidden;position:relative}
+.hbar .t i{position:absolute;inset:0 auto 0 0;border-radius:999px;background:var(--c,var(--accent))}
+.hbar .l{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hbar .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.big{font-family:var(--serif);font-size:2.6rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.res-c{color:var(--good)}.res-l{color:var(--bad)}
+.kv{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.35rem 1rem;font-size:.93rem}
+.kv dt{color:var(--muted)}.kv dd{margin:0;min-width:0}
+.timeline{list-style:none;margin:0;padding:0 0 0 1rem;border-left:2px solid var(--rule);display:flex;flex-direction:column;gap:.7rem}
+.timeline li{position:relative;font-size:.93rem}
+.timeline li::before{content:"";position:absolute;left:-1.42rem;top:.45rem;width:.65rem;height:.65rem;border-radius:50%;background:var(--sheet);border:2px solid var(--c,var(--accent))}
+.timeline .d{font-weight:600;font-variant-numeric:tabular-nums;margin-right:.4rem}
+.note{border-left:3px solid var(--accent);padding:.15rem 0 .15rem .9rem;max-width:46rem}
+.callout{display:flex;flex-direction:column;gap:.6rem}
+.callout .big{font-size:2.2rem}
+.rank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.rank li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem;padding:.5rem 0;border-top:1px solid var(--rule);align-items:center}
+.rank li:first-child{border-top:0}
+.rank a{text-decoration:none;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rank a:hover{text-decoration:underline}
+.rank small{display:block;color:var(--muted);font-weight:400;font-size:.82rem}
+
+/* commitments (Downey) */
+.prom{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;gap:.55rem;border-top:4px solid var(--sc)}
+.prom .said{font-family:var(--serif);font-size:1.12rem;line-height:1.45}
+.prom h4{font-size:.8rem;margin:.3rem 0 0;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.ev{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.45rem;font-size:.93rem}
+.ev .d{font-weight:600;font-variant-numeric:tabular-nums;margin-right:.35rem}
+.side{background:var(--soft);border-radius:8px;padding:.6rem .8rem;font-size:.92rem}
+.track{height:.5rem;border-radius:999px;background:var(--soft);overflow:hidden}
+.track span{display:block;height:100%;background:var(--sc)}
+.trackl{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}
+.metric .bars{display:flex;align-items:flex-end;gap:.5rem;height:7rem}
+.metric .bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.25rem;height:100%}
+.metric .bar i{display:block;width:100%;max-width:3.2rem;border-radius:4px 4px 0 0;background:var(--accent)}
+.metric .bar.pre i{background:var(--muted)}
+.metric .bar b{font-size:.8rem;font-variant-numeric:tabular-nums}
+.metric .xl{display:flex;gap:.5rem}
+.metric .xl span{flex:1;text-align:center;font-size:.74rem;color:var(--muted)}
+.srcs{font-size:.82rem;color:var(--muted)}
+.foot{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:.4rem}
+.loading{padding:4rem 0;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.split i,.hbar .t i{transition:width .3s ease}}
+</style>
+
+<header class="mast"><div class="wrap"><a class="brand" href="#">Queen’s Park <span>Watch</span></a><nav class="nav" id="nav" aria-label="Sections"></nav></div></header>
+<main class="wrap" id="app"><p class="loading">Loading 705 recorded votes…</p></main>
+
+<script>
+(function(){
+'use strict';
+var D=null, app=document.getElementById('app'), nav=document.getElementById('nav');
+var PARTY={PC:['Progressive Conservative','--pc'],NDP:['New Democratic','--ndp'],Liberal:['Liberal','--lib'],Green:['Green','--grn'],Ind:['Independent','--ind']};
+var KIND={bill:'Bill readings',closure:'Closure',ta:'Time allocation',opp:'Opposition day',pmm:"Private members' motions",conf:'Budget and throne speech',motion:'Other motions'};
+var PARL={42:'42nd (2018–22)',43:'43rd (2022–25)',44:'44th (2025–)'};
+var esc=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});};
+function pc(p){return 'var('+(PARTY[p]||PARTY.Ind)[1]+')';}
+function pn(p){return (PARTY[p]||[p])[0];}
+function fmt(s,short){if(!s)return '';var a=s.split('-').map(Number);var d=new Date(a[0],a[1]-1,a[2]||1);return d.toLocaleDateString('en-CA',short?{month:'short',year:'numeric'}:{month:'short',day:'numeric',year:'numeric'});}
+function pct(a,b){return b?Math.round(a/b*100):0;}
+function partyChip(p){return '<span class="party"><span class="pdot" style="--c:'+pc(p)+'"></span>'+esc(p)+'</span>';}
+function slug(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+var store={get:function(k){try{return JSON.parse(localStorage.getItem('qpw:'+k));}catch(e){return null;}},set:function(k,v){try{localStorage.setItem('qpw:'+k,JSON.stringify(v));}catch(e){}}};
+
+/* ---------------- data model ---------------- */
+var V=[],byId={},people=[],byName={},bySlug={},bills={},billVotes={};
+function prepare(){
+  var seats=D.seats.map(function(s){return {person:s[0],party:D.parties[s[1]],riding:D.ridings[s[2]],hon:s[3]};});
+  people=D.people.map(function(n,i){var pr=D.profiles[n]||{};return {i:i,name:n,slug:pr.slug||slug(n),prof:pr,votes:[],rebel:[],party:null,riding:null,hon:0,first:null,last:null};});
+  people.forEach(function(p){byName[p.name]=p;bySlug[p.slug]=p;});
+  D.bills.forEach(function(b){bills[b.k]=b;billVotes[b.k]=[];});
+  V=D.votes.map(function(v){
+    var roll=[];v.y.forEach(function(s){roll.push([seats[s],'y']);});v.n.forEach(function(s){roll.push([seats[s],'n']);});
+    var by={};roll.forEach(function(r){var p=r[0].party;by[p]=by[p]||{y:0,n:0};by[p][r[1]]++;});
+    var line={};Object.keys(by).forEach(function(p){line[p]=by[p].y>by[p].n?'y':by[p].n>by[p].y?'n':null;});
+    var rebels=roll.filter(function(r){var p=r[0].party;return p!=='Ind'&&line[p]&&by[p].y+by[p].n>1&&r[1]!==line[p];});
+    var o={id:v.id,bill:v.b,title:v.t,stage:v.st,date:v.d,parl:v.p,sess:v.s,src:v.src,kind:v.k,bk:v.bk,flags:v.f,roll:roll,by:by,line:line,rebels:rebels,
+      yes:v.y.length,no:v.n.length,carried:v.y.length>v.n.length,margin:Math.abs(v.y.length-v.n.length),year:+v.d.slice(0,4)};
+    o.text=(o.bill+' '+o.title+' '+o.stage).toLowerCase();
+    // did the government (PC) side win? PC majority line vs result
+    o.govLine=line.PC||null;
+    return o;
+  });
+  V.forEach(function(v,vi){
+    byId[v.id]=v;v.bk.forEach(function(k){if(billVotes[k])billVotes[k].push(v);});
+    v.roll.forEach(function(r){var p=people[r[0].person];var reb=r[0].party!=='Ind'&&v.line[r[0].party]&&v.by[r[0].party].y+v.by[r[0].party].n>1&&r[1]!==v.line[r[0].party];
+      p.votes.push({v:v,vote:r[1],party:r[0].party,riding:r[0].riding,hon:r[0].hon,rebel:reb});if(reb)p.rebel.push(v);
+      p.party=r[0].party;p.riding=r[0].riding;p.hon=r[0].hon;if(!p.first)p.first=v.date;p.last=v.date;p.parls=p.parls||{};p.parls[v.parl]=1;});
+  });
+  // participation: present / votes held between first and last appearance
+  var dates=V.map(function(v){return v.date;});
+  people.forEach(function(p){if(!p.votes.length){p.held=0;return;}var lo=lower(dates,p.first),hi=upper(dates,p.last);p.held=hi-lo;p.part=pct(p.votes.length,p.held);
+    var cnt={};p.votes.forEach(function(x){cnt[x.party]=(cnt[x.party]||0)+1;});p.loyal=pct(p.votes.length-p.rebel.length,p.votes.length);});
+}
+function lower(a,x){var l=0,h=a.length;while(l<h){var m=(l+h)>>1;if(a[m]<x)l=m+1;else h=m;}return l;}
+function upper(a,x){var l=0,h=a.length;while(l<h){var m=(l+h)>>1;if(a[m]<=x)l=m+1;else h=m;}return l;}
+
+/* ---------------- shared pieces ---------------- */
+var VIEWS=[['','Overview'],['votes','Votes'],['mpps','MPPs'],['bills','Bills'],['downey','Doug Downey'],['method','About the data']];
+function setNav(cur){nav.innerHTML=VIEWS.map(function(v){return '<a href="#'+v[0]+'"'+(cur===v[0]?' aria-current="page"':'')+'>'+v[1]+'</a>';}).join('');}
+function split(v){var t=v.yes+v.no||1;return '<div class="split" aria-hidden="true"><i class="y" style="width:'+(v.yes/t*100).toFixed(1)+'%"></i><i class="n" style="width:'+(v.no/t*100).toFixed(1)+'%"></i></div>';}
+function kindChip(k){return '<span class="chip k">'+esc(KIND[k]||k)+'</span>';}
+function voteRow(v,extra){
+  return '<li><a class="vrow" href="#v-'+v.id+'"><span class="dt">'+esc(fmt(v.date))+'</span><span class="tt"><b>'+esc(v.bill)+' · '+esc(v.stage)+'</b><small>'+esc(v.title)+'</small><span class="tags">'+kindChip(v.kind)+
+   (v.rebels.length?'<span class="chip warn">'+v.rebels.length+' broke ranks</span>':'')+(v.flags.indexOf('local')>-1?'<span class="chip prog">Simcoe / Downey</span>':'')+(extra||'')+'</span></span>'+
+   '<span class="res"><span class="sc"><span class="'+(v.carried?'res-c':'res-l')+'">'+(v.carried?'Carried':'Lost')+'</span><span>'+v.yes+'–'+v.no+'</span></span>'+split(v)+'</span></a></li>';
+}
+function wall(v){
+  var groups=Object.keys(PARTY).map(function(p){return {p:p,rows:v.roll.filter(function(r){return r[0].party===p;}).sort(function(a,b){return (a[1]===b[1]?0:a[1]==='y'?-1:1)||people[a[0].person].name.localeCompare(people[b[0].person].name);})};}).filter(function(g){return g.rows.length;});
+  return '<div class="wall" role="img" aria-label="'+esc(v.yes+' for, '+v.no+' against. '+(v.rebels.length?v.rebels.length+' voted against their party.':'Every member voted with their party.'))+'">'+groups.map(function(g){
+    var b=v.by[g.p];return '<div class="grp" style="--c:'+pc(g.p)+'"><span class="gl">'+esc(pn(g.p))+'<small>'+b.y+' for · '+b.n+' against</small></span><span class="sq">'+g.rows.map(function(r){var p=people[r[0].person];var reb=v.rebels.indexOf(r)>-1;return '<a href="#p-'+p.slug+'" title="'+esc(p.name+', '+r[0].riding+': '+(r[1]==='y'?'For':'Against')+(reb?' (against party)':''))+'"><i class="'+(r[1]==='y'?'y':'n')+(reb?' x':'')+'"></i></a>';}).join('')+'</span></div>';
+  }).join('')+'</div><div class="legend"><span><i style="background:var(--muted)"></i>For</span><span><i></i>Against</span><span><i style="outline:2px solid var(--ink);outline-offset:1px"></i>Voted against their party</span></div>';
+}
+function hbars(rows,max,fmtv){max=max||Math.max.apply(null,rows.map(function(r){return r[1];}))||1;return '<div class="hbar">'+rows.map(function(r){return '<span class="l" title="'+esc(r[0])+'">'+(r[3]||esc(r[0]))+'</span><span class="t"><i style="width:'+(r[1]/max*100).toFixed(1)+'%;'+(r[2]?'--c:'+r[2]:'')+'"></i></span><span class="v">'+(fmtv?fmtv(r[1]):r[1])+'</span>';}).join('')+'</div>';}
+function foot(){return '<footer class="foot"><p>Votes from the Legislative Assembly of Ontario: vote search for the 43rd Parliament onward, Votes and Proceedings for the 42nd and for motions. Party, riding and cabinet status are as of each vote’s date.</p><p>Latest vote in the data: '+esc(fmt(D.built))+'. <a href="#method">How the data was built</a></p></footer>';}
+function page(cur,html){setNav(cur);app.innerHTML='<div class="stack">'+html+'</div>'+foot();}
+
+/* ---------------- charts ---------------- */
+function timeline(){
+  // votes per quarter, stacked: closure+time allocation vs everything else
+  var q={};V.forEach(function(v){var k=v.date.slice(0,4)+'-Q'+(Math.floor((+v.date.slice(5,7)-1)/3)+1);q[k]=q[k]||{cut:0,other:0};if(v.kind==='closure'||v.kind==='ta')q[k].cut++;else q[k].other++;});
+  var keys=[];for(var y=2018;y<=+D.built.slice(0,4);y++)for(var i=1;i<=4;i++){var k=y+'-Q'+i;if((y===2018&&i<3))continue;if(k>D.built.slice(0,4)+'-Q'+(Math.floor((+D.built.slice(5,7)-1)/3)+1))break;keys.push(k);}
+  var max=Math.max.apply(null,keys.map(function(k){return q[k]?q[k].cut+q[k].other:0;}));max=Math.ceil(max/10)*10;
+  var W=760,H=200,L=30,B=24,T=8,bw=(W-L)/keys.length;
+  var s='<svg viewBox="0 0 '+W+' '+(H+B)+'" role="img" aria-label="Recorded votes per quarter, 2018 to '+D.built.slice(0,4)+', with closure and time allocation highlighted">';
+  for(var g=0;g<=max;g+=max/4){var yy=T+(H-T)*(1-g/max);s+='<line class="grid" x1="'+L+'" x2="'+W+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(L-6)+'" y="'+(yy+4)+'" text-anchor="end">'+g+'</text>';}
+  keys.forEach(function(k,i){var c=q[k]||{cut:0,other:0},x=L+i*bw+bw*.15,w=bw*.7,h1=(H-T)*c.other/max,h2=(H-T)*c.cut/max;
+    s+='<rect x="'+x+'" y="'+(H-h1)+'" width="'+w+'" height="'+h1+'" rx="1.5" fill="var(--rule)"><title>'+k+': '+(c.cut+c.other)+' votes, '+c.cut+' closure or time allocation</title></rect>';
+    s+='<rect x="'+x+'" y="'+(H-h1-h2)+'" width="'+w+'" height="'+h2+'" rx="1.5" fill="var(--bad)"><title>'+k+': '+c.cut+' closure or time allocation</title></rect>';
+    if(k.slice(-2)==='Q1'||i===0)s+='<text x="'+(x+w/2)+'" y="'+(H+16)+'" text-anchor="middle">'+k.slice(0,4)+'</text>';});
+  // election markers
+  [['2022-06-02','2022 election'],['2025-02-27','2025 election']].forEach(function(e){var k=e[0].slice(0,4)+'-Q'+(Math.floor((+e[0].slice(5,7)-1)/3)+1),i=keys.indexOf(k);if(i<0)return;var x=L+i*bw+bw/2;s+='<line x1="'+x+'" x2="'+x+'" y1="'+T+'" y2="'+H+'" stroke="var(--muted)" stroke-dasharray="3 3"/><text x="'+(x+4)+'" y="'+(T+10)+'">'+e[1]+'</text>';});
+  return s+'</svg>';
+}
+
+/* ---------------- views ---------------- */
+function vHome(){
+  var cut=V.filter(function(v){return v.kind==='closure'||v.kind==='ta';}).length;
+  var withReb=V.filter(function(v){return v.rebels.length;}).length;
+  var mppVotes=V.reduce(function(s,v){return s+v.roll.length;},0),rebVotes=V.reduce(function(s,v){return s+v.rebels.length;},0);
+  var opp=V.filter(function(v){return v.kind==='opp';}),oppWon=opp.filter(function(v){return v.carried;}).length;
+  var pmm=V.filter(function(v){return v.kind==='pmm';}),pmmWon=pmm.filter(function(v){return v.carried;}).length;
+  var govLost=V.filter(function(v){return v.govLine&&((v.govLine==='y')!==v.carried);});
+  var rebels=people.filter(function(p){return p.rebel.length;}).sort(function(a,b){return b.rebel.length-a.rebel.length;}).slice(0,8);
+  var close=V.filter(function(v){return v.kind!=='motion';}).slice().sort(function(a,b){return a.margin-b.margin||b.date.localeCompare(a.date);}).slice(0,5);
+  var cohesion=['PC','NDP','Liberal','Green'].map(function(p){var t=0,r=0;V.forEach(function(v){if(v.by[p]){t+=v.by[p].y+v.by[p].n;r+=v.rebels.filter(function(x){return x[0].party===p;}).length;}});return [pn(p),r,pc(p),t];});
+  var cutBy={42:[0,0],43:[0,0],44:[0,0]};V.forEach(function(v){cutBy[v.parl][1]++;if(v.kind==='closure'||v.kind==='ta')cutBy[v.parl][0]++;});
+  var feat=byId['bill-76-third-reading-2025-12-09'];
+  var h='<section class="lede"><span class="eyebrow">Legislative Assembly of Ontario · 2018 to today</span><h1>Every recorded vote at Queen’s Park, searchable.</h1><p class="dek">'+V.length.toLocaleString()+' recorded votes across three parliaments, with how all '+people.length+' MPPs voted, who broke ranks, and how often debate was cut short.</p></section>';
+  h+='<section class="stats" aria-label="Key numbers">'+
+    stat(V.length,'recorded votes since July 2018')+stat(((mppVotes-rebVotes)/mppVotes*100).toFixed(2)+'%','of '+mppVotes.toLocaleString()+' individual MPP votes followed the party line')+
+    stat(cut,'closure and time-allocation votes ('+pct(cut,V.length)+'% of all votes)')+stat(oppWon+' of '+opp.length,'opposition day motions passed')+'</section>';
+  h+='<section class="panel sec"><div class="sec-head"><h2>How often debate gets cut short</h2><a class="linkbtn" href="#votes" data-preset="cut">See these votes</a></div><p class="sub">Recorded votes per quarter. Red marks votes on closure or time allocation, which end or limit debate on a bill.</p><div class="chart">'+timeline()+'</div>'+
+    '<div class="grid3">'+[42,43,44].map(function(p){return '<div><span class="eyebrow">'+PARL[p]+'</span><p><b class="num" style="font-family:var(--serif);font-size:1.5rem">'+cutBy[p][0]+'</b> <span class="muted">of '+cutBy[p][1]+' votes ('+pct(cutBy[p][0],cutBy[p][1])+'%)</span></p></div>';}).join('')+'</div></section>';
+  h+='<section class="grid2">'+
+    '<div class="panel sec"><h2>Party discipline</h2><p class="sub">Times a member voted against the majority of their own caucus, out of all votes that caucus cast.</p>'+hbars(cohesion.map(function(c){return [c[0],c[1],c[2]];}))+'<dl class="kv">'+cohesion.map(function(c){return '<dt>'+esc(c[0])+'</dt><dd class="num">'+c[1]+' of '+c[3].toLocaleString()+' votes ('+(c[3]?((c[3]-c[1])/c[3]*100).toFixed(2):'0')+'% with caucus)</dd>';}).join('')+'</dl>'+
+    '<p class="sub">'+withReb+' of '+V.length+' votes had at least one member break ranks.</p></div>'+
+    '<div class="panel sec"><div class="sec-head"><h2>Most often against their party</h2><a class="linkbtn" href="#mpps" data-sort="rebel">All MPPs</a></div><ol class="rank">'+rebels.map(function(p){return '<li><a href="#p-'+p.slug+'">'+esc(p.name)+'<small>'+esc(pn(p.party))+' · '+esc(p.riding)+'</small></a><span class="num"><b>'+p.rebel.length+'</b> <span class="muted">of '+p.votes.length+'</span></span></li>';}).join('')+'</ol></div></section>';
+  h+='<section class="grid2">'+
+    '<div class="panel sec callout"><span class="eyebrow">Opposition and private members</span><p><span class="big">'+oppWon+'</span> <span class="muted">of '+opp.length+' opposition day motions passed on a recorded vote.</span></p><p><span class="big">'+pmmWon+'</span> <span class="muted">of '+pmm.length+' private members’ motions passed on a recorded vote.</span></p><p class="sub">Government MPPs lost '+govLost.length+' recorded vote'+(govLost.length===1?'':'s')+' where most PC members voted the other way.</p>'+(oppWon?'<h3>'+(oppWon===1?'The opposition day motion that passed':'Opposition day motions that passed')+'</h3><ul class="vlist">'+opp.filter(function(v){return v.carried;}).map(function(v){return voteRow(v);}).join('')+'</ul>':'')+'<a class="linkbtn" href="#votes" data-preset="opp">See all opposition day votes</a></div>'+
+    '<div class="panel sec"><h2>Closest votes</h2><p class="sub">Smallest margins on bills and named motions.</p><ul class="vlist">'+close.map(function(v){return voteRow(v);}).join('')+'</ul></div></section>';
+  if(feat){h+='<section class="panel sec"><div class="sec-head"><div><span class="eyebrow">Barrie–Springwater–Oro-Medonte</span><h2>'+esc(feat.bill+': '+feat.title)+'</h2></div><a class="btn" href="#v-'+feat.id+'">Open this vote</a></div>'+
+    '<p class="sub">'+esc((D.editorial.notes||{})[feat.id]||'')+'</p><p><span class="big res-c">'+feat.yes+'–'+feat.no+'</span> <span class="muted">'+esc(feat.stage)+', '+esc(fmt(feat.date))+'</span></p>'+wall(feat)+
+    '<p><a class="btn solid" href="#downey">Doug Downey’s record</a> <a class="btn" href="#votes" data-preset="local">All Simcoe and Downey votes</a></p></section>';}
+  page('',h);
+}
+function stat(b,s){return '<div class="stat"><b>'+b+'</b><span>'+esc(s)+'</span></div>';}
+
+/* ----- votes ----- */
+var vf=Object.assign({q:'',parl:'',kind:'',res:'',year:'',reb:false,local:false,close:false,sort:'new',n:40},store.get('vf')||{},{n:40});
+function filterVotes(){
+  var q=vf.q.trim().toLowerCase(),words=q?q.split(/\s+/):[];
+  var out=V.filter(function(v){
+    if(vf.parl&&String(v.parl)!==vf.parl)return false;
+    if(vf.kind==='cut'){if(v.kind!=='closure'&&v.kind!=='ta')return false;}else if(vf.kind&&v.kind!==vf.kind)return false;
+    if(vf.res==='c'&&!v.carried)return false;if(vf.res==='l'&&v.carried)return false;
+    if(vf.year&&String(v.year)!==vf.year)return false;
+    if(vf.reb&&!v.rebels.length)return false;if(vf.local&&v.flags.indexOf('local')<0)return false;
+    if(vf.close&&v.margin>10)return false;
+    for(var i=0;i<words.length;i++)if(v.text.indexOf(words[i])<0)return false;
+    return true;});
+  var s={new:function(a,b){return b.date.localeCompare(a.date);},old:function(a,b){return a.date.localeCompare(b.date);},close:function(a,b){return a.margin-b.margin;},reb:function(a,b){return b.rebels.length-a.rebels.length||b.date.localeCompare(a.date);}}[vf.sort];
+  return out.sort(s);
+}
+function vVotes(){
+  var list=filterVotes(),years=[];for(var y=2018;y<=+D.built.slice(0,4);y++)years.push(y);
+  var car=list.filter(function(v){return v.carried;}).length;
+  var h='<section class="lede"><h1>Recorded votes</h1><p class="dek">Filter by parliament, type, result or year, or search a bill number, title or topic.</p></section>';
+  h+='<section class="sec"><div class="filters" role="search"><label class="sr" for="vq">Search votes</label><input id="vq" type="search" placeholder="Search: “Bill 23”, “housing”, “Greenbelt”…" value="'+esc(vf.q)+'">'+
+   sel('vparl','Parliament',[['','All parliaments']].concat([42,43,44].map(function(p){return [String(p),PARL[p]];})),vf.parl)+
+   sel('vkind','Type',[['','All types'],['cut','Closure and time allocation']].concat(Object.keys(KIND).map(function(k){return [k,KIND[k]];})),vf.kind)+
+   sel('vyear','Year',[['','All years']].concat(years.map(function(y){return [String(y),String(y)];})),vf.year)+
+   sel('vres','Result',[['','Any result'],['c','Carried'],['l','Lost']],vf.res)+
+   sel('vsort','Sort',[['new','Newest first'],['old','Oldest first'],['close','Closest margin'],['reb','Most broke ranks']],vf.sort)+'</div>'+
+   '<div class="filters"><label class="toggle"><input type="checkbox" id="vreb"'+(vf.reb?' checked':'')+'> Someone broke ranks</label><label class="toggle"><input type="checkbox" id="vclose"'+(vf.close?' checked':'')+'> Margin of 10 or less</label><label class="toggle"><input type="checkbox" id="vlocal"'+(vf.local?' checked':'')+'> Simcoe County and Downey bills</label>'+
+   '<button type="button" class="linkbtn" id="vreset">Clear filters</button></div>'+
+   '<p class="count" aria-live="polite"><b>'+list.length+'</b> votes · '+car+' carried · '+(list.length-car)+' lost</p>'+
+   '<div class="panel" style="padding:.3rem 1rem"><ul class="vlist">'+(list.length?list.slice(0,vf.n).map(function(v){return voteRow(v);}).join(''):'<li class="muted" style="padding:1rem 0">No votes match these filters. Try clearing one.</li>')+'</ul></div>'+
+   (list.length>vf.n?'<div class="more"><button type="button" class="btn" id="vmore">Show more ('+(list.length-vf.n)+' left)</button></div>':'')+'</section>';
+  page('votes',h);
+}
+function sel(id,label,opts,val){return '<label class="sr" for="'+id+'">'+label+'</label><select id="'+id+'">'+opts.map(function(o){return '<option value="'+esc(o[0])+'"'+(o[0]===val?' selected':'')+'>'+esc(o[1])+'</option>';}).join('')+'</select>';}
+
+function vVote(id){
+  var v=byId[id];if(!v)return false;
+  var note=(D.editorial.notes||{})[v.id];
+  var rq=(store.get('rq')||'');
+  var h='<section class="lede"><a class="back" href="#votes">← All votes</a><span class="eyebrow">'+esc(PARL[v.parl])+' · Session '+v.sess+' · '+esc(fmt(v.date))+'</span><h1>'+esc(v.bill)+'</h1><p class="dek">'+esc(v.title)+'</p>'+
+   '<p><span class="big '+(v.carried?'res-c':'res-l')+'">'+v.yes+'–'+v.no+'</span> <span class="muted">'+(v.carried?'Carried':'Lost')+' · '+esc(v.stage)+'</span></p><div style="display:flex;gap:.4rem;flex-wrap:wrap">'+kindChip(v.kind)+(v.rebels.length?'<span class="chip warn">'+v.rebels.length+' broke ranks</span>':'<span class="chip good">Everyone voted with their party</span>')+'</div>'+(note?'<p class="note">'+esc(note)+'</p>':'')+'</section>';
+  h+='<section class="panel sec"><h2>How the House voted</h2>'+wall(v)+'</section>';
+  h+='<section class="grid2"><div class="panel sec"><h2>By party</h2>'+Object.keys(PARTY).filter(function(p){return v.by[p];}).map(function(p){var b=v.by[p],t=b.y+b.n;return '<div style="display:flex;flex-direction:column;gap:.3rem"><div style="display:flex;justify-content:space-between;gap:1rem">'+partyChip(p)+'<span class="num muted">'+b.y+' for · '+b.n+' against</span></div><div class="split"><i class="y" style="width:'+(b.y/t*100)+'%"></i><i class="n" style="width:'+(b.n/t*100)+'%"></i></div></div>';}).join('')+'</div>';
+  h+='<div class="panel sec"><h2>Broke ranks</h2>'+(v.rebels.length?'<ul class="rank">'+v.rebels.map(function(r){var p=people[r[0].person];return '<li><a href="#p-'+p.slug+'">'+esc(p.name)+'<small>'+esc(pn(r[0].party))+' · '+esc(r[0].riding)+'</small></a><span class="'+(r[1]==='y'?'vy':'vn')+'">'+(r[1]==='y'?'For':'Against')+'</span></li>';}).join('')+'</ul>':'<p class="muted">Every member voted with the majority of their party.</p>')+
+   (v.bk.length?'<h3 style="margin-top:.6rem">Bills in this vote</h3><ul class="rank">'+v.bk.map(function(k){var b=bills[k];return b?'<li><a href="#b-'+k+'">'+esc(b.n+', '+b.t)+'<small>'+esc(b.type)+(b.sp.length?' · '+esc(b.sp.map(function(s){return s[0];}).join(', ')):'')+'</small></a><span class="chip '+(b.ra?'good':'k')+'">'+(b.ra?'Law':'Not law')+'</span></li>':'';}).join('')+'</ul>':'')+'</div></section>';
+  h+='<section class="sec"><div class="sec-head"><h2>Every MPP’s vote</h2><a class="linkbtn" href="'+esc(v.src)+'" target="_blank" rel="noopener">Official record ↗</a></div><div class="filters"><label class="sr" for="rq">Filter MPPs</label><input id="rq" type="search" placeholder="Filter by name, riding or party" value="'+esc(rq)+'"></div>'+
+   '<div class="tw"><table><thead><tr><th>MPP</th><th>Party</th><th>Riding</th><th>Vote</th></tr></thead><tbody id="rtab">'+rollRows(v,rq)+'</tbody></table></div></section>';
+  page('votes',h);return true;
+}
+function rollRows(v,q){q=(q||'').toLowerCase();return v.roll.slice().sort(function(a,b){return people[a[0].person].name.split(' ').pop().localeCompare(people[b[0].person].name.split(' ').pop());}).filter(function(r){var p=people[r[0].person];return !q||(p.name+' '+r[0].riding+' '+r[0].party+' '+pn(r[0].party)).toLowerCase().indexOf(q)>-1;}).map(function(r){var p=people[r[0].person],reb=v.rebels.indexOf(r)>-1;return '<tr><td><a href="#p-'+p.slug+'">'+(r[0].hon?'Hon. ':'')+esc(p.name)+'</a></td><td>'+partyChip(r[0].party)+'</td><td>'+esc(r[0].riding)+'</td><td class="'+(r[1]==='y'?'vy':'vn')+'">'+(r[1]==='y'?'For':'Against')+(reb?' <span class="chip warn">against party</span>':'')+'</td></tr>';}).join('');}
+
+/* ----- MPPs ----- */
+var mf=Object.assign({q:'',party:'',parl:'',sort:'name',dir:1},store.get('mf')||{});
+function vMpps(){
+  var q=mf.q.toLowerCase();
+  var list=people.filter(function(p){return p.votes.length&&(!q||(p.name+' '+p.riding).toLowerCase().indexOf(q)>-1)&&(!mf.party||p.party===mf.party)&&(!mf.parl||p.parls[mf.parl]);});
+  var key={name:function(p){return p.name.split(' ').pop();},party:function(p){return p.party;},riding:function(p){return p.riding;},votes:function(p){return p.votes.length;},part:function(p){return p.part;},rebel:function(p){return p.rebel.length;}}[mf.sort]||function(p){return p.name;};
+  list.sort(function(a,b){var x=key(a),y=key(b);return (x<y?-1:x>y?1:0)*mf.dir;});
+  function th(k,l,r){return '<th'+(r?' class="r"':'')+'><button type="button" data-msort="'+k+'"'+(mf.sort===k?' data-dir="'+(mf.dir>0?'↑':'↓')+'"':'')+'>'+l+'</button></th>';}
+  var h='<section class="lede"><h1>MPPs</h1><p class="dek">Everyone who cast a recorded vote since 2018. Party and riding shown are from their most recent vote.</p></section>';
+  h+='<section class="sec"><div class="filters" role="search"><label class="sr" for="mq">Search MPPs</label><input id="mq" type="search" placeholder="Name or riding" value="'+esc(mf.q)+'">'+
+   sel('mparty','Party',[['','All parties']].concat(Object.keys(PARTY).map(function(p){return [p,pn(p)];})),mf.party)+sel('mparl','Parliament',[['','All parliaments']].concat([42,43,44].map(function(p){return [String(p),PARL[p]];})),mf.parl)+'</div>'+
+   '<p class="count"><b>'+list.length+'</b> MPPs</p><div class="tw"><table><thead><tr>'+th('name','MPP')+th('party','Party')+th('riding','Riding')+th('votes','Votes cast',1)+th('part','Present',1)+th('rebel','Against party',1)+'</tr></thead><tbody>'+
+   list.map(function(p){return '<tr><td><a href="#p-'+p.slug+'">'+(p.hon?'Hon. ':'')+esc(p.name)+'</a></td><td>'+partyChip(p.party)+'</td><td>'+esc(p.riding)+'</td><td class="r">'+p.votes.length+'</td><td class="r" title="'+p.votes.length+' of '+p.held+' votes between their first and last recorded vote">'+p.part+'%<span class="minibar"><i style="width:'+p.part+'%"></i></span></td><td class="r">'+(p.rebel.length||'<span class="muted">0</span>')+'</td></tr>';}).join('')+'</tbody></table></div></section>';
+  page('mpps',h);
+}
+function vMpp(s){
+  var p=bySlug[s];if(!p||!p.votes.length)return false;
+  var pr=p.prof||{};var cmpName=store.get('cmp:'+p.slug)||'';
+  // agreement with each party's majority
+  var agree={};p.votes.forEach(function(x){Object.keys(x.v.line).forEach(function(q){if(!x.v.line[q]||q==='Ind')return;agree[q]=agree[q]||[0,0];agree[q][1]++;if(x.v.line[q]===x.vote)agree[q][0]++;});});
+  var kinds={};p.votes.forEach(function(x){kinds[x.v.kind]=kinds[x.v.kind]||[0,0];kinds[x.v.kind][x.vote==='y'?0:1]++;});
+  var h='<section class="lede"><a class="back" href="#mpps">← All MPPs</a><span class="eyebrow">'+esc(pn(p.party))+' · '+esc(p.riding)+'</span><h1>'+(p.hon?'Hon. ':'')+esc(p.name)+'</h1>'+
+   (p.slug==='doug-downey'?'<p><a class="btn solid" href="#downey">Full record: commitments, portfolio and money</a></p>':'')+'</section>';
+  h+='<section class="stats">'+stat(p.votes.length,'recorded votes cast')+stat(p.part+'%','present for votes held between '+fmt(p.first,1)+' and '+fmt(p.last,1))+stat(p.rebel.length,'votes against their party')+stat(pct(p.votes.filter(function(x){return x.vote==='y';}).length,p.votes.length)+'%','of their votes were “for”')+'</section>';
+  h+='<section class="grid2"><div class="panel sec"><h2>Voted with each party</h2><p class="sub">How often their vote matched the majority of each caucus, on votes where that caucus voted.</p>'+
+   hbars(Object.keys(PARTY).filter(function(q){return agree[q];}).map(function(q){return [pn(q),agree[q][0]/agree[q][1]*100,pc(q)];}),100,function(x){return Math.round(x)+'%';})+'</div>';
+  h+='<div class="panel sec"><h2>Career in this period</h2><dl class="kv">'+
+   (pr.parties||[]).filter(function(r){return r[2]>='2018';}).map(function(r){return '<dt>'+esc(fmt(r[1],1))+' – '+(r[2]>'9000'?'now':esc(fmt(r[2],1)))+'</dt><dd>'+esc(r[0])+'</dd>';}).join('')+
+   (pr.ridings||[]).filter(function(r){return r[2]>='2018';}).map(function(r){return '<dt>'+esc(fmt(r[1],1))+' – '+(r[2]>'9000'?'now':esc(fmt(r[2],1)))+'</dt><dd>MPP for '+esc(r[0])+'</dd>';}).join('')+
+   (pr.roles||[]).map(function(r){return '<dt>'+esc(fmt(r[1],1))+' – '+(r[2]>'9000'?'now':esc(fmt(r[2],1)))+'</dt><dd>'+esc(r[0])+'</dd>';}).join('')+'</dl>'+
+   (pr.slug?'<p class="srcs"><a href="https://www.ola.org/en/members/all/'+esc(pr.slug)+'" target="_blank" rel="noopener">Member page on ola.org ↗</a></p>':'')+'</div></section>';
+  // compare
+  var others=people.filter(function(o){return o!==p&&o.votes.length;}).sort(function(a,b){return a.name.localeCompare(b.name);});
+  h+='<section class="panel sec"><h2>Compare with another MPP</h2><div class="filters">'+sel('cmp','Compare with',[['','Choose an MPP']].concat(others.map(function(o){return [o.name,o.name+' ('+o.party+')'];})),cmpName)+'</div><div id="cmpout">'+compare(p,byName[cmpName])+'</div></section>';
+  if(p.rebel.length)h+='<section class="sec"><h2>Votes against their party</h2><div class="panel" style="padding:.3rem 1rem"><ul class="vlist">'+p.votes.filter(function(x){return x.rebel;}).reverse().map(function(x){return voteRow(x.v,'<span class="chip '+(x.vote==='y'?'good':'bad')+'">Voted '+(x.vote==='y'?'for':'against')+'</span>');}).join('')+'</ul></div></section>';
+  h+='<section class="sec"><h2>All recorded votes</h2><div class="panel" style="padding:.3rem 1rem"><ul class="vlist" id="mvl">'+p.votes.slice().reverse().slice(0,30).map(function(x){return voteRow(x.v,'<span class="chip '+(x.vote==='y'?'good':'bad')+'">Voted '+(x.vote==='y'?'for':'against')+'</span>');}).join('')+'</ul></div>'+(p.votes.length>30?'<div class="more"><button type="button" class="btn" data-mall="'+p.slug+'">Show all '+p.votes.length+'</button></div>':'')+'</section>';
+  page('mpps',h);return true;
+}
+function compare(a,b){
+  if(!b)return '<p class="muted">Pick an MPP to see how often they voted the same way.</p>';
+  var bv={};b.votes.forEach(function(x){bv[x.v.id]=x.vote;});var same=0,both=0,diff=[];
+  a.votes.forEach(function(x){if(bv[x.v.id]){both++;if(bv[x.v.id]===x.vote)same++;else diff.push(x);}});
+  if(!both)return '<p class="muted">'+esc(a.name)+' and '+esc(b.name)+' never voted in the same recorded vote.</p>';
+  return '<p><span class="big">'+pct(same,both)+'%</span> <span class="muted">agreement on '+both+' votes they both cast. They split on '+diff.length+'.</span></p>'+hbars([[a.name+' and '+b.name,same/both*100,'var(--accent)']],100,function(x){return Math.round(x)+'%';})+
+   (diff.length?'<h3 style="margin-top:.4rem">Most recent splits</h3><ul class="vlist">'+diff.slice(-5).reverse().map(function(x){return voteRow(x.v,'<span class="chip k">'+esc(a.name.split(' ').pop())+': '+(x.vote==='y'?'for':'against')+'</span>');}).join('')+'</ul>':'');
+}
+
+/* ----- bills ----- */
+var bf=Object.assign({q:'',type:'',parl:'',law:''},store.get('bf')||{});
+function vBills(){
+  var q=bf.q.toLowerCase();
+  var list=D.bills.filter(function(b){return (!q||(b.n+' '+b.t+' '+b.lt+' '+b.sp.map(function(s){return s[0];}).join(' ')).toLowerCase().indexOf(q)>-1)&&(!bf.type||b.type===bf.type)&&(!bf.parl||String(b.p)===bf.parl)&&(!bf.law||(bf.law==='y'?!!b.ra:!b.ra));}).sort(function(a,b){return (b.fr||'').localeCompare(a.fr||'');});
+  var h='<section class="lede"><h1>Bills</h1><p class="dek">Bills that had at least one recorded vote, including time allocation and closure motions on them, plus every bill Doug Downey sponsored.</p></section>';
+  h+='<section class="sec"><div class="filters" role="search"><label class="sr" for="bq">Search bills</label><input id="bq" type="search" placeholder="Bill number, title or sponsor" value="'+esc(bf.q)+'">'+
+   sel('btype','Type',[['','All types'],['Government bill','Government bills'],["Private member's bill","Private members’ bills"],['Private bill','Private bills']],bf.type)+
+   sel('bparl','Parliament',[['','All parliaments']].concat([42,43,44].map(function(p){return [String(p),PARL[p]];})),bf.parl)+sel('blaw','Status',[['','Any status'],['y','Became law'],['n','Did not become law']],bf.law)+'</div>'+
+   '<p class="count"><b>'+list.length+'</b> bills · '+list.filter(function(b){return b.ra;}).length+' became law</p><div class="tw"><table><thead><tr><th>Bill</th><th>Sponsor</th><th>Type</th><th class="r">Recorded votes</th><th class="r">Debate limits</th><th>Status</th></tr></thead><tbody>'+
+   list.map(function(b){var vs=billVotes[b.k]||[],cut=vs.filter(function(v){return v.kind==='closure'||v.kind==='ta';}).length;return '<tr><td><a href="#b-'+b.k+'"><b>'+esc(b.n)+'</b></a> <span class="muted">'+esc(b.p+'-'+b.s)+'</span><br><span style="font-size:.88rem">'+esc(b.t)+'</span></td><td>'+b.sp.map(function(s){return esc(s[0])+(s[1]?' '+partyChip(s[1]):'');}).join('<br>')+'</td><td style="font-size:.86rem">'+esc(b.type)+'</td><td class="r">'+vs.length+'</td><td class="r">'+(cut?'<span class="chip bad">'+cut+'</span>':'<span class="muted">0</span>')+'</td><td>'+(b.ra?'<span class="chip good">Law '+esc(fmt(b.ra,1))+'</span>':'<span class="chip k">Not law</span>')+'</td></tr>';}).join('')+'</tbody></table></div></section>';
+  page('bills',h);
+}
+function vBill(k){
+  var b=bills[k];if(!b)return false;var vs=(billVotes[k]||[]).slice().sort(function(a,c){return a.date.localeCompare(c.date);});
+  var h='<section class="lede"><a class="back" href="#bills">← All bills</a><span class="eyebrow">'+esc(PARL[b.p])+' · Session '+b.s+' · '+esc(b.type)+'</span><h1>'+esc(b.n+', '+b.t)+'</h1>'+(b.lt?'<p class="dek">'+esc(b.lt)+'</p>':'')+'</section>';
+  h+='<section class="grid2"><div class="panel sec"><h2>At a glance</h2><dl class="kv"><dt>Sponsor</dt><dd>'+b.sp.map(function(s){var p=byName[s[0]];return (p?'<a href="#p-'+p.slug+'">'+esc(s[0])+'</a>':esc(s[0]))+(s[1]?' '+partyChip(s[1]):'');}).join(', ')+'</dd><dt>First reading</dt><dd>'+esc(fmt(b.fr))+'</dd><dt>Royal assent</dt><dd>'+(b.ra?esc(fmt(b.ra)):'Not received')+'</dd><dt>Recorded votes</dt><dd>'+vs.length+'</dd></dl><p class="srcs"><a href="'+esc(b.url)+'" target="_blank" rel="noopener">Bill page on ola.org ↗</a></p></div>'+
+   '<div class="panel sec"><h2>Path through the House</h2><ol class="timeline"><li style="--c:var(--muted)"><span class="d">'+esc(fmt(b.fr))+'</span>First reading</li>'+vs.map(function(v){return '<li style="--c:'+(v.carried?'var(--good)':'var(--bad)')+'"><span class="d">'+esc(fmt(v.date))+'</span><a href="#v-'+v.id+'">'+esc(v.stage)+(v.bill!==b.n?' ('+esc(v.bill)+')':'')+'</a> · <span class="num">'+v.yes+'–'+v.no+'</span></li>';}).join('')+(b.ra?'<li style="--c:var(--good)"><span class="d">'+esc(fmt(b.ra))+'</span>Royal assent</li>':'')+'</ol></div></section>';
+  if(vs.length)h+='<section class="sec"><h2>Votes</h2><div class="panel" style="padding:.3rem 1rem"><ul class="vlist">'+vs.slice().reverse().map(function(v){return voteRow(v);}).join('')+'</ul></div></section>';
+  page('bills',h);return true;
+}
+
+/* ----- Downey ----- */
+var STATUS={done:['Delivered','good','--good'],progress:['In progress','prog','--prog'],off:['Off track','bad','--bad'],early:['Too early','k','--muted'],check:['Not checked yet','warn','--warn']};
+function vDowney(){
+  var E=D.editorial,p=bySlug['doug-downey'];
+  var counts={};E.ledger.forEach(function(l){counts[l.status]=(counts[l.status]||0)+1;});
+  var h='<section class="lede"><span class="eyebrow">Barrie–Springwater–Oro-Medonte</span><h1>Hon. Doug Downey</h1><p class="dek">MPP since 2018, re-elected in February 2025. Attorney General of Ontario since June 2019. Progressive Conservative.</p><div style="display:flex;gap:.4rem;flex-wrap:wrap">'+['done','progress','off','early','check'].filter(function(k){return counts[k];}).map(function(k){return '<span class="chip '+STATUS[k][1]+'">'+counts[k]+' '+STATUS[k][0].toLowerCase()+'</span>';}).join('')+'</div></section>';
+  if(p)h+='<section class="stats">'+stat(p.votes.length,'recorded votes cast since 2018')+stat(p.rebel.length,'votes against his party')+stat(D.downeyBills.length,'bills he sponsored')+stat(D.downeyBills.filter(function(b){return b.royal_assent;}).length,'of them became law')+'</section>';
+  h+='<section class="sec"><h2>Commitments against results</h2><p class="sub">What was said, what the record shows, and his side.</p><div class="grid2">';
+  var order={off:0,check:1,progress:2,early:3,done:4};
+  E.ledger.slice().sort(function(a,b){return order[a.status]-order[b.status];}).forEach(function(l){var s=STATUS[l.status]||STATUS.check;
+    h+='<article class="prom" style="--sc:var('+s[2]+')"><div style="display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap"><span class="eyebrow">'+esc(l.area)+'</span><span class="chip '+s[1]+'">'+s[0]+'</span></div><p class="said">'+esc(l.said)+'</p><p class="srcs">'+esc(fmt(l.saidDate,1))+(l.saidSrc?' · <a href="'+esc(l.saidSrc)+'" target="_blank" rel="noopener">Source</a>':'')+' · Measured by: '+esc(l.measure)+'</p>';
+    if(l.deadline){var s0=new Date(l.saidDate).getTime(),e=new Date(l.deadline).getTime(),pp=Math.max(0,Math.min(100,(Date.now()-s0)/(e-s0)*100));h+='<div class="track"><span style="width:'+pp.toFixed(1)+'%"></span></div><div class="trackl"><span>Promised '+esc(fmt(l.saidDate,1))+'</span><span>Due '+esc(fmt(l.deadline,1))+'</span></div>';}
+    if(l.evidence&&l.evidence.length)h+='<h4>The record</h4><ul class="ev">'+l.evidence.map(function(x){return '<li><span class="d">'+esc(fmt(x[0],1))+'</span>'+esc(x[1])+(x[2]?' <a href="'+esc(x[2])+'" target="_blank" rel="noopener">Source</a>':'')+'</li>';}).join('')+'</ul>';
+    if(l.side)h+='<h4>His side</h4><p class="side">'+esc(l.side)+(l.sideSrc?' <a href="'+esc(l.sideSrc)+'" target="_blank" rel="noopener">Source</a>':'')+'</p>';
+    if(l.context)h+='<p class="muted" style="font-size:.92rem">'+esc(l.context)+'</p>';h+='</article>';});
+  h+='</div></section>';
+  h+='<section class="sec"><h2>The numbers on his desk</h2><p class="sub">Outcomes the Attorney General’s ministry is responsible for. Grey bars are from before the period he answers for.</p><div class="grid2">'+E.metrics.map(metric).join('')+'</div></section>';
+  // sponsored bills from the scraped data, with editorial notes where they exist
+  var notes={};E.bills.forEach(function(b){(b.num.match(/\d+/g)||[]).forEach(function(n){notes[n]=notes[n]||b;});});
+  h+='<section class="sec"><h2>Bills he sponsored</h2><div class="tw"><table><thead><tr><th>Bill</th><th>Parliament</th><th>First reading</th><th>Royal assent</th><th class="r">Recorded votes</th></tr></thead><tbody>'+D.downeyBills.map(function(b){var k=b.parliament+'-'+b.session+'-'+b.number.toLowerCase();var vs=billVotes[k]||[];return '<tr><td>'+(bills[k]?'<a href="#b-'+k+'"><b>'+esc(b.bill)+'</b></a>':'<b>'+esc(b.bill)+'</b>')+'<br><span style="font-size:.88rem">'+esc(b.title)+'</span></td><td>'+b.parliament+'-'+b.session+'</td><td class="num">'+esc(fmt(b.first_reading))+'</td><td>'+(b.royal_assent?'<span class="chip good">'+esc(fmt(b.royal_assent))+'</span>':'<span class="chip k">Not law</span>')+'</td><td class="r">'+vs.length+'</td></tr>';}).join('')+'</tbody></table></div>';
+  h+='<div class="grid2">'+E.bills.map(function(b){return '<article class="panel sec"><div style="display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap"><h3>'+esc(b.num+', '+b.title)+'</h3><span class="chip '+(/^Law/.test(b.status)?'good':/Struck/.test(b.status)?'bad':'k')+'">'+esc(b.status)+'</span></div><p>'+esc(b.what)+'</p>'+(b.critics?'<p class="side">'+esc(b.critics)+'</p>':'')+'<p class="srcs"><a href="'+esc(b.src)+'" target="_blank" rel="noopener">Source</a></p></article>';}).join('')+'</div></section>';
+  var tot=E.money.reduce(function(s,m){return s+m.amount;},0);
+  h+='<section class="sec"><h2>Money announced in the riding</h2><p class="sub">Announcements he made or shared. Some are joint with Barrie–Innisfil’s MPP or the federal government, and “up to” amounts may not all flow.</p><p><span class="big">'+money(tot)+'</span> <span class="muted">across '+E.money.length+' announcements</span></p>'+
+   hbars(E.money.slice().sort(function(a,b){return b.amount-a.amount;}).map(function(m){return [m.what,m.amount,'var(--accent)','<a href="'+esc(m.src)+'" target="_blank" rel="noopener">'+esc(m.what)+'</a>'];}),0,money)+'</section>';
+  if(p)h+='<section class="sec"><div class="sec-head"><h2>How he voted</h2><a class="linkbtn" href="#p-doug-downey">Full voting profile</a></div><p class="sub">As a minister he votes with the government. '+(p.rebel.length?p.rebel.length+' vote(s) against his party.':'No votes against his party in '+p.votes.length+' recorded votes.')+' Votes on his own bills and on Simcoe County bills:</p><div class="panel" style="padding:.3rem 1rem"><ul class="vlist">'+p.votes.filter(function(x){return x.v.flags.indexOf('local')>-1;}).reverse().map(function(x){return voteRow(x.v,'<span class="chip '+(x.vote==='y'?'good':'bad')+'">Voted '+(x.vote==='y'?'for':'against')+'</span>');}).join('')+'</ul></div></section>';
+  page('downey',h);
+}
+function money(n){return n>=1e6?'$'+(n/1e6).toFixed(1).replace(/\.0$/,'')+'M':'$'+Math.round(n).toLocaleString('en-CA');}
+function metric(m){var max=Math.max.apply(null,m.pts.map(function(p){return p[1];}));return '<article class="panel sec metric"><div><h3>'+esc(m.title)+'</h3><span class="muted" style="font-size:.86rem">'+esc(m.unit)+'</span></div><div class="bars" role="img" aria-label="'+esc(m.title+': '+m.pts.map(function(p){return p[0]+' '+p[1].toLocaleString('en-CA');}).join(', '))+'">'+m.pts.map(function(p){return '<div class="bar'+(p[2]?' pre':'')+'"><b>'+(p[3]?'~':'')+p[1].toLocaleString('en-CA')+'</b><i style="height:'+Math.max(4,p[1]/max*100).toFixed(1)+'%"></i></div>';}).join('')+'</div><div class="xl">'+m.pts.map(function(p){return '<span>'+esc(p[0])+'</span>';}).join('')+'</div><p class="muted" style="font-size:.9rem">'+esc(m.note)+'</p><p class="srcs">'+m.srcs.map(function(s){return '<a href="'+esc(s[1])+'" target="_blank" rel="noopener">'+esc(s[0])+'</a>';}).join(', ')+'</p></article>';}
+
+/* ----- method ----- */
+function vMethod(){
+  var vs=V.filter(function(v){return /votes-search/.test(v.src);}).length;
+  var h='<section class="lede"><h1>About the data</h1><p class="dek">Where the votes come from, what counts as breaking ranks, and what is left out.</p></section>';
+  h+='<section class="grid2"><div class="panel sec"><h2>Sources</h2><p>'+vs+' votes come from the Legislative Assembly’s vote search, which starts with the 43rd Parliament. The other '+(V.length-vs)+' come from the daily Votes and Proceedings, where names are printed by surname and matched to members sitting on that date. Every vote links to its official record.</p><p>Party, riding and cabinet status are as of the vote’s date. The vote-search pages show today’s party, so they were corrected from each member’s history on ola.org.</p></div>'+
+   '<div class="panel sec"><h2>Definitions</h2><dl class="kv"><dt>Broke ranks</dt><dd>Voted against the majority of their own caucus. Independents and one-member caucuses are never counted.</dd><dt>Present</dt><dd>Recorded votes cast, out of all recorded votes held between the member’s first and last recorded vote. Speakers do not vote, so they do not appear.</dd><dt>Debate limits</dt><dd>Recorded votes on closure (ending debate) or time allocation (scheduling the rest of a bill’s debate).</dd><dt>Hon.</dt><dd>Held a cabinet post on the date of the vote.</dd></dl></div></section>';
+  h+='<section class="sec"><h2>Votes not shown</h2><p class="sub">'+D.totalsOnly.length+' recorded divisions were printed with totals but no list of names, mostly adjournment motions. They cannot show how individual MPPs voted.</p><div class="tw"><table><thead><tr><th>Date</th><th>Question</th><th class="r">Ayes</th><th class="r">Nays</th><th>Why</th></tr></thead><tbody>'+D.totalsOnly.slice().sort(function(a,b){return b.d.localeCompare(a.d);}).map(function(t){return '<tr><td class="num"><a href="'+esc(t.src)+'" target="_blank" rel="noopener">'+esc(fmt(t.d))+'</a></td><td>'+esc(t.b)+' <span class="muted">'+esc(t.st)+'</span></td><td class="r">'+t.a+'</td><td class="r">'+t.n+'</td><td style="font-size:.86rem">'+esc(t.why)+'</td></tr>';}).join('')+'</tbody></table></div></section>';
+  page('method',h);
+}
+
+/* ---------------- routing and events ---------------- */
+function render(){
+  var h=(location.hash||'').slice(1),ok=true;
+  if(h==='votes')vVotes();else if(h==='mpps')vMpps();else if(h==='bills')vBills();else if(h==='downey')vDowney();else if(h==='method')vMethod();
+  else if(h.indexOf('v-')===0)ok=vVote(h.slice(2));else if(h.indexOf('p-')===0)ok=vMpp(h.slice(2));else if(h.indexOf('b-')===0)ok=vBill(h.slice(2));else vHome();
+  if(ok===false)vHome();
+}
+function keepFocus(id,fn){var el=document.getElementById(id),pos=el&&el.selectionStart;fn();var n=document.getElementById(id);if(n){n.focus();try{n.setSelectionRange(pos,pos);}catch(e){}}}
+var tmr=null;
+app.addEventListener('input',function(e){var t=e.target;
+  if(t.id==='vq'){vf.q=t.value;vf.n=40;store.set('vf',vf);clearTimeout(tmr);tmr=setTimeout(function(){keepFocus('vq',vVotes);},120);}
+  else if(t.id==='mq'){mf.q=t.value;store.set('mf',mf);clearTimeout(tmr);tmr=setTimeout(function(){keepFocus('mq',vMpps);},120);}
+  else if(t.id==='bq'){bf.q=t.value;store.set('bf',bf);clearTimeout(tmr);tmr=setTimeout(function(){keepFocus('bq',vBills);},120);}
+  else if(t.id==='rq'){store.set('rq',t.value);var v=byId[(location.hash||'').slice(3)];if(v)document.getElementById('rtab').innerHTML=rollRows(v,t.value);}
+});
+app.addEventListener('change',function(e){var t=e.target,id=t.id;
+  var vmap={vparl:'parl',vkind:'kind',vyear:'year',vres:'res',vsort:'sort'};
+  if(vmap[id]){vf[vmap[id]]=t.value;vf.n=40;store.set('vf',vf);vVotes();}
+  else if(id==='vreb'||id==='vclose'||id==='vlocal'){vf[{vreb:'reb',vclose:'close',vlocal:'local'}[id]]=t.checked;vf.n=40;store.set('vf',vf);vVotes();}
+  else if(id==='mparty'||id==='mparl'){mf[id==='mparty'?'party':'parl']=t.value;store.set('mf',mf);vMpps();}
+  else if(id==='btype'||id==='bparl'||id==='blaw'){bf[{btype:'type',bparl:'parl',blaw:'law'}[id]]=t.value;store.set('bf',bf);vBills();}
+  else if(id==='cmp'){var p=bySlug[(location.hash||'').slice(3)];store.set('cmp:'+(p&&p.slug),t.value);document.getElementById('cmpout').innerHTML=compare(p,byName[t.value]);}
+});
+app.addEventListener('click',function(e){var t=e.target.closest('button,a');if(!t)return;
+  if(t.id==='vmore'){vf.n+=60;vVotes();}
+  else if(t.id==='vreset'){vf={q:'',parl:'',kind:'',res:'',year:'',reb:false,local:false,close:false,sort:'new',n:40};store.set('vf',vf);vVotes();}
+  else if(t.dataset.msort){var k=t.dataset.msort;mf.dir=mf.sort===k?-mf.dir:(k==='votes'||k==='rebel'||k==='part'?-1:1);mf.sort=k;store.set('mf',mf);vMpps();}
+  else if(t.dataset.mall){var p=bySlug[t.dataset.mall];document.getElementById('mvl').innerHTML=p.votes.slice().reverse().map(function(x){return voteRow(x.v,'<span class="chip '+(x.vote==='y'?'good':'bad')+'">Voted '+(x.vote==='y'?'for':'against')+'</span>');}).join('');t.parentNode.remove();}
+  else if(t.dataset.preset){var pr=t.dataset.preset;vf={q:'',parl:'',kind:pr==='cut'?'cut':pr==='opp'?'opp':'',res:'',year:'',reb:false,local:pr==='local',close:false,sort:'new',n:40};store.set('vf',vf);}
+  else if(t.dataset.sort){mf.sort=t.dataset.sort;mf.dir=-1;store.set('mf',mf);}
+});
+window.addEventListener('hashchange',function(){render();window.scrollTo(0,0);});
+
+fetch('data.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){D=d;prepare();render();})
+ .catch(function(err){app.innerHTML='<p class="loading">The vote data couldn’t load ('+esc(err.message)+'). Reload the page to try again.</p>';});
+})();
+</script>
