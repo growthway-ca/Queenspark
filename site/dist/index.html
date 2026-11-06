@@ -136,7 +136,7 @@ td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
 .chart text{fill:var(--muted);font-family:var(--sans);font-size:11px}
 .chart .grid{stroke:var(--rule);stroke-width:1}
-.hbar{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr) 3.4rem;gap:.4rem .7rem;align-items:center;font-size:.9rem}
+.hbar{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr) 3.4rem;gap:.4rem .7rem;align-items:center;font-size:.9rem}
 .hbar .t{height:.7rem;border-radius:999px;background:var(--soft);overflow:hidden;position:relative}
 .hbar .t i{position:absolute;inset:0 auto 0 0;border-radius:999px;background:var(--c,var(--accent))}
 .hbar .l{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -310,8 +310,9 @@ function vHome(){
   var opb=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party!=='PC';}),pcb=D.allBills.filter(function(b){return b.kind==='pmb'&&b.party==='PC';});
   var lawOf=function(a){return a.filter(function(b){return b.o==='law';}).length;};
   var rec=(D.record||[]).filter(function(r){return r.kind==='court'||r.kind==='reversal';}).length;
-  h+='<section class="grid2"><a class="panel sec" href="#opposition" style="text-decoration:none"><span class="eyebrow">Opposition bills</span><p><span class="big">'+pct(lawOf(opb),opb.length)+'%</span> <span class="muted">of '+opb.length+' opposition bills became law, compared with '+pct(lawOf(pcb),pcb.length)+'% of PC backbench bills.</span></p><span class="linkbtn">See every defeated bill and its vote</span></a>'+
-   '<a class="panel sec" href="#record" style="text-decoration:none"><span class="eyebrow">Government record</span><p><span class="big">'+(rec||'—')+'</span> <span class="muted">'+(rec?'court rulings, reversals and repeals of the government’s own laws, each with sources.':'Court rulings and reversals, with sources.')+'</span></p><span class="linkbtn">See the government record</span></a></section>';
+  h+='<section class="grid3"><a class="panel sec" href="#opposition" style="text-decoration:none"><span class="eyebrow">Opposition bills</span><p><span class="big">'+pct(lawOf(opb),opb.length)+'%</span> <span class="muted">of '+opb.length+' opposition bills became law, compared with '+pct(lawOf(pcb),pcb.length)+'% of PC backbench bills.</span></p><span class="linkbtn">See every defeated bill and its vote</span></a>'+
+   '<a class="panel sec" href="#record" style="text-decoration:none"><span class="eyebrow">Government record</span><p><span class="big">'+(rec||'—')+'</span> <span class="muted">'+(rec?'court rulings, reversals and repeals of the government’s own laws, each with sources.':'Court rulings and reversals, with sources.')+'</span></p><span class="linkbtn">See the government record</span></a>'+
+   '<a class="panel sec" href="#integrity" style="text-decoration:none"><span class="eyebrow">Integrity record</span><p><span class="big">'+((D.integrity||[]).length||'—')+'</span> <span class="muted">official findings, reports, court rulings and open investigations since 2018, each with the response and sources.</span></p><span class="linkbtn">See the integrity record</span></a></section>';
   h+='<section class="panel sec"><div class="sec-head"><h2>How often debate gets cut short</h2><a class="linkbtn" href="#votes" data-preset="cut">See these votes</a></div><p class="sub">Recorded votes per quarter. Red marks votes on closure or time allocation, which end or limit debate on a bill.</p><div class="chart">'+timeline()+'</div>'+
     '<div class="grid3">'+[42,43,44].map(function(p){return '<div><span class="eyebrow">'+PARL[p]+'</span><p><b class="num" style="font-family:var(--serif);font-size:1.5rem">'+cutBy[p][0]+'</b> <span class="muted">of '+cutBy[p][1]+' votes ('+pct(cutBy[p][0],cutBy[p][1])+'%)</span></p></div>';}).join('')+'</div></section>';
   h+='<section class="grid2">'+
@@ -559,37 +560,41 @@ function recordCard(r){
 
 
 /* ----- integrity record ----- */
+var RES={adverse:['Problem found','bad'],mixed:['Mixed finding','warn'],clear:['No breach found','good'],none:['No finding','k'],open:['Open','warn']};
 var IT_TYPE={finding:['Official finding','bad'],court:['Court ruling','bad'],investigation:['Investigation','warn'],report:['Official report','prog']};
-var itf=Object.assign({q:'',body:'',type:'',year:''},store.get('itf')||{});
+var itf=Object.assign({q:'',body:'',type:'',year:'',res:''},store.get('itf')||{});
 function vIntegrity(){
   var R=(D.integrity||[]).slice().sort(function(a,b){return b.date.localeCompare(a.date);});
   var bodies=[],years=[];R.forEach(function(r){if(bodies.indexOf(r.body)<0)bodies.push(r.body);var y=r.date.slice(0,4);if(years.indexOf(y)<0)years.push(y);});
   bodies.sort();years.sort().reverse();
   var q=itf.q.toLowerCase();
-  var list=R.filter(function(r){return (!itf.body||r.body===itf.body)&&(!itf.type||r.type===itf.type)&&(!itf.year||r.date.slice(0,4)===itf.year)&&(!q||(r.title+' '+r.summary+' '+(r.who||[]).join(' ')+' '+(r.subject||'')).toLowerCase().indexOf(q)>-1);});
+  var list=R.filter(function(r){return (!itf.body||r.body===itf.body)&&(!itf.type||r.type===itf.type)&&(!itf.year||r.date.slice(0,4)===itf.year)&&(!itf.res||r.result===itf.res)&&(!q||(r.title+' '+r.summary+' '+(r.who||[]).join(' ')+' '+(r.subject||'')).toLowerCase().indexOf(q)>-1);});
   var cnt=function(t){return R.filter(function(r){return r.type===t;}).length;};
-  var h='<section class="lede"><span class="eyebrow">Official findings only</span><h1>Integrity record</h1><p class="dek">Findings by the Integrity Commissioner, Auditor General, Ombudsman and the courts, and investigations confirmed open by police, involving Ontario ministers, MPPs and their staff since 2018. Allegations that no official body has examined are not included.</p></section>';
+  var h='<section class="lede"><span class="eyebrow">Official findings only</span><h1>Integrity record</h1><p class="dek">Findings by the Integrity Commissioner, Auditor General, Lobbyist Registrar and the courts, and investigations confirmed open by police, involving Ontario ministers, MPPs and their staff since 2018. Allegations that no official body has examined are not included.</p></section>';
   if(!R.length){page('integrity',h+'<section class="panel"><p class="muted">Sourced items are being added.</p></section>');return;}
-  h+='<section class="stats">'+stat(cnt('finding'),'official findings by the Integrity Commissioner, Auditor General or another official body')+stat(cnt('court'),'court rulings on government conduct')+stat(cnt('investigation'),'police or official investigations confirmed open')+stat(R.filter(function(r){return r.status==='ongoing';}).length,'items still open')+'</section>';
+  var rc=function(k){return R.filter(function(r){return r.result===k;}).length;};
+  h+='<section class="stats">'+stat(rc('adverse'),'items where an official body found a breach, unfairness or unlawful conduct')+stat(rc('mixed'),'mixed: no breach by the person, but a problem found in the process')+stat(rc('clear'),'items where the body found no breach or declined to inquire')+stat(rc('open')+rc('none'),'open, or closed without a finding on the MPP')+'</section>';
   var byBody=bodies.map(function(b){return [b,R.filter(function(r){return r.body===b;}).length,'var(--accent)'];}).sort(function(a,b){return b[1]-a[1];});
   h+='<section class="grid2"><div class="panel sec"><h2>Who made the finding</h2>'+hbars(byBody)+'</div><div class="panel sec"><h2>How to read this page</h2><ul class="ev"><li><b>A finding is not a conviction.</b> A breach of the Members’ Integrity Act is an ethics finding. Only a court can convict someone of a crime.</li><li><b>An investigation is not a charge.</b> Open investigations are listed with their last public status.</li><li><b>Both sides are shown.</b> Each item includes the response of the person or government where one exists.</li><li><b>Where we stop.</b> Opinions, including from opposition parties and this site’s own commentary, are not findings and are not listed.</li></ul></div></section>';
   h+='<section class="sec"><div class="filters" role="search"><label class="sr" for="iq">Search the integrity record</label><input id="iq" type="search" placeholder="Search: Greenbelt, MZO, fundraising, a name…" value="'+esc(itf.q)+'">'+
-   sel('ibody','Body',[['','All bodies']].concat(bodies.map(function(b){return [b,b];})),itf.body)+sel('itype','Type',[['','All types'],['finding','Official findings'],['court','Court rulings'],['investigation','Investigations'],['report','Official reports']],itf.type)+sel('iyear','Year',[['','All years']].concat(years.map(function(y){return [y,y];})),itf.year)+'<button type="button" class="linkbtn" id="ireset">Clear filters</button></div><p class="count"><b>'+list.length+'</b> items</p>'+
+   sel('ibody','Body',[['','All bodies']].concat(bodies.map(function(b){return [b,b];})),itf.body)+sel('itype','Type',[['','All types'],['finding','Official findings'],['court','Court rulings'],['investigation','Investigations'],['report','Official reports']],itf.type)+sel('iyear','Year',[['','All years']].concat(years.map(function(y){return [y,y];})),itf.year)+sel('ires','Result',[['','Any result'],['adverse','Problem found'],['mixed','Mixed finding'],['clear','No breach found'],['open','Open'],['none','No finding']],itf.res)+'<button type="button" class="linkbtn" id="ireset">Clear filters</button></div><p class="count"><b>'+list.length+'</b> items</p>'+
    '<div class="grid2">'+(list.length?list.map(integrityCard).join(''):'<p class="muted">No items match these filters.</p>')+'</div></section>';
   page('integrity',h);
 }
 function integrityCard(r){
-  var t=IT_TYPE[r.type]||['Item','k'];
+  var t=IT_TYPE[r.type]||['Item','k'],rs=RES[r.result]||['Item','k'];
   var hits=(r.bills||[]).map(function(k){return D.allBills.filter(function(b){return b.k===k;})[0];}).filter(Boolean);
   var links=hits.map(function(b){return bills[b.k]?'<a href="#b-'+b.k+'">'+esc(b.n)+'</a>':'<a href="'+esc(b.url)+'" target="_blank" rel="noopener">'+esc(b.n)+'</a>';});
   var rv=[];hits.forEach(function(b){(billVotes[b.k]||[]).forEach(function(v){if(v.bill===b.n&&rv.indexOf(v)<0)rv.push(v);});});rv.sort(function(a,b){return a.date.localeCompare(b.date);});
+  var dp=byName['Doug Downey'];
+  var dv=function(v){var x=dp&&dp.votes.filter(function(y){return y.v===v;})[0];return x?'<span class="chip '+(x.vote==='y'?'good':'bad')+'">Downey: '+(x.vote==='y'?'for':'against')+'</span>':'<span class="chip k">Downey: absent</span>';};
   return '<article class="card"><div class="top"><span class="eyebrow">'+esc(fmt(r.date))+' · '+esc(r.body)+(links.length?' · '+links.join(', '):'')+'</span></div>'+
-   '<div style="display:flex;gap:.4rem;flex-wrap:wrap"><span class="chip '+t[1]+'">'+t[0]+'</span>'+(r.subject?'<span class="chip k">'+esc(r.subject)+'</span>':'')+(r.status==='ongoing'?'<span class="chip warn">Ongoing</span>':'')+'</div>'+
+   '<div style="display:flex;gap:.4rem;flex-wrap:wrap"><span class="chip '+rs[1]+'">'+rs[0]+'</span><span class="chip k">'+t[0]+'</span>'+(r.subject?'<span class="chip k">'+esc(r.subject)+'</span>':'')+(r.status==='ongoing'?'<span class="chip warn">Ongoing</span>':'')+(r.verified===false?'<span class="chip k" title="The official document could not be read for this entry; it relies on news reports or secondary sources.">Based on news reports</span>':'')+'</div>'+
    '<h3>'+esc(r.title)+'</h3>'+((r.who||[]).length?'<p class="meta">Named: '+r.who.map(esc).join('; ')+'</p>':'')+'<p>'+esc(r.summary)+'</p>'+
    ((r.findings||[]).length?'<h4 class="eyebrow" style="margin:0">What the '+esc(r.body)+' found</h4><ul class="ev">'+r.findings.map(function(f){return '<li>'+esc(f)+'</li>';}).join('')+'</ul>':'')+
    (r.consequence?'<p><b>Outcome:</b> '+esc(r.consequence)+'</p>':'')+
    (r.timeline&&r.timeline.length?'<ol class="timeline">'+r.timeline.map(function(x){return '<li><span class="d">'+esc(fmt(x[0]))+'</span>'+esc(x[1])+'</li>';}).join('')+'</ol>':'')+
-   (rv.length?'<h4 class="eyebrow" style="margin:0">Recorded votes</h4><ul class="rank">'+rv.map(function(v){var pcb=v.by.PC||{y:0,n:0};return '<li><a href="#v-'+v.id+'">'+esc(v.bill+' · '+v.stage)+'<small>'+esc(fmt(v.date))+' · PC '+pcb.y+' for, '+pcb.n+' against</small></a><span class="num '+(v.carried?'res-c':'res-l')+'">'+v.yes+'–'+v.no+'</span></li>';}).join('')+'</ul>':'')+
+   (rv.length?'<h4 class="eyebrow" style="margin:0">Recorded votes</h4><ul class="rank">'+rv.map(function(v){var pcb=v.by.PC||{y:0,n:0};return '<li><a href="#v-'+v.id+'">'+esc(v.bill+' · '+v.stage)+'<small>'+esc(fmt(v.date))+' · PC '+pcb.y+' for, '+pcb.n+' against</small></a><span class="num '+(v.carried?'res-c':'res-l')+'">'+v.yes+'–'+v.no+'</span><span style="grid-column:1/-1">'+dv(v)+'</span></li>';}).join('')+'</ul>':'')+
    (r.response&&r.response.text?'<p class="side"><b>Response'+(r.response.by?' ('+esc(r.response.by)+')':'')+':</b> '+esc(r.response.text)+(r.response.source?' <a href="'+esc(r.response.source)+'" target="_blank" rel="noopener">Source</a>':'')+'</p>':'')+
    '<p class="srcs">Sources: '+(r.sources||[]).map(function(x){return '<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+esc(x[0])+'</a>';}).join(', ')+'</p></article>';
 }
@@ -617,13 +622,13 @@ app.addEventListener('change',function(e){var t=e.target,id=t.id;
   else if(id==='vreb'||id==='vclose'||id==='vlocal'){vf[{vreb:'reb',vclose:'close',vlocal:'local'}[id]]=t.checked;vf.n=40;store.set('vf',vf);vVotes();}
   else if(id==='mparty'||id==='mparl'){mf[id==='mparty'?'party':'parl']=t.value;store.set('mf',mf);vMpps();}
   else if(id==='btype'||id==='bparl'||id==='blaw'){bf[{btype:'type',bparl:'parl',blaw:'law'}[id]]=t.value;store.set('bf',bf);vBills();}
-  else if(id==='ibody'||id==='itype'||id==='iyear'){var y2=window.scrollY;itf[{ibody:'body',itype:'type',iyear:'year'}[id]]=t.value;store.set('itf',itf);vIntegrity();window.scrollTo(0,y2);}
+  else if(id==='ibody'||id==='itype'||id==='iyear'||id==='ires'){var y2=window.scrollY;itf[{ibody:'body',itype:'type',iyear:'year',ires:'res'}[id]]=t.value;store.set('itf',itf);vIntegrity();window.scrollTo(0,y2);}
   else if(id==='oparty'||id==='oparl'){var y=window.scrollY;of[id==='oparty'?'party':'parl']=t.value;store.set('of',of);vOpposition();window.scrollTo(0,y);}
   else if(id==='cmp'){var p=bySlug[(location.hash||'').slice(3)];store.set('cmp:'+(p&&p.slug),t.value);document.getElementById('cmpout').innerHTML=compare(p,byName[t.value]);}
 });
 app.addEventListener('click',function(e){var t=e.target.closest('button,a');if(!t)return;
   if(t.id==='vmore'){vf.n+=60;vVotes();}
-  else if(t.id==='ireset'){itf={q:'',body:'',type:'',year:''};store.set('itf',itf);vIntegrity();}
+  else if(t.id==='ireset'){itf={q:'',body:'',type:'',year:'',res:''};store.set('itf',itf);vIntegrity();}
   else if(t.id==='vreset'){vf={q:'',parl:'',kind:'',res:'',year:'',reb:false,local:false,close:false,sort:'new',n:40};store.set('vf',vf);vVotes();}
   else if(t.dataset.msort){var k=t.dataset.msort;mf.dir=mf.sort===k?-mf.dir:(k==='votes'||k==='rebel'||k==='part'?-1:1);mf.sort=k;store.set('mf',mf);vMpps();}
   else if(t.dataset.mall){var p=bySlug[t.dataset.mall];document.getElementById('mvl').innerHTML=p.votes.slice().reverse().map(function(x){return voteRow(x.v,'<span class="chip '+(x.vote==='y'?'good':'bad')+'">Voted '+(x.vote==='y'?'for':'against')+'</span>');}).join('');t.parentNode.remove();}

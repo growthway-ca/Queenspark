@@ -272,6 +272,12 @@ python -m scraper.site_data    # writes site/data.json and site/dist/
   the government's stated position and source links; bills are referenced
   as `parliament-session-number` because numbers repeat across sessions.
   Dates were cross-checked against the scraped bill pages.
+- `data/integrity.json` is the Integrity record: official findings, reports,
+  court rulings and confirmed open investigations only, each with a result
+  (`adverse`, `mixed`, `clear`, `open`, `none`), the response of the person or
+  government, and sources. `verified: false` items rely on news reports and
+  show a "Based on news reports" chip. Items to add or confirm: the 2023
+  Science Centre audit, and whether the Piccini inquiry has reported.
 - The editorial content (commitments, metrics, money, bill notes) lives in
   `data/editorial.json`. It was copied from the original Queen's Park Watch
   page; edit it there and rerun `site_data`.
