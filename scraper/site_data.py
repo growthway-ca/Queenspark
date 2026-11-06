@@ -216,11 +216,13 @@ def main() -> int:
         all_bills.append(rec)
 
     record = json.loads((DATA / "record.json").read_text()) if (DATA / "record.json").exists() else []
+    integrity = json.loads((DATA / "integrity.json").read_text()) if (DATA / "integrity.json").exists() else []
 
     out = {
         "built": max(v["d"] for v in votes_out),
         "allBills": all_bills,
         "record": record,
+        "integrity": integrity,
         "parties": PARTY_ORDER,
         "people": list(people),
         "ridings": list(ridings),
